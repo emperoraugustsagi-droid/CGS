@@ -1,0 +1,21 @@
+.hero-image,
+.impact-image,
+.card-image {
+  position: relative;
+}
+
+.card-image {
+  min-height: 300px;
+}
+
+.hero-image > img,
+.impact-image > img,
+.card-image > img {
+  object-fit: cover;
+}
+
+@media (max-width: 850px) {
+  .card-image {
+    min-height: 240px;
+  }
+}
