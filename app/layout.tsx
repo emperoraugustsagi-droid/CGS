@@ -1,19 +1,41 @@
 import type { Metadata } from "next";
-import { DM_Sans, Instrument_Serif } from "next/font/google";
+import { DM_Serif_Display, Inter } from "next/font/google";
 import "./site.css";
+import { siteUrl } from "../lib/site-config";
+import { ScrollToTop } from "../components/scroll-to-top";
 
-const sans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
-const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--font-serif" });
+const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const serif = DM_Serif_Display({ subsets: ["latin"], weight: "400", variable: "--font-serif" });
 
 export const metadata: Metadata = {
-  title: "Centre for Gender Studies | NSUK",
-  description: "Centre for Gender Studies, Nasarawa State University, Keffi.",
+  metadataBase: new URL(siteUrl),
+  title: { default: "Centre for Gender Studies | NSUK", template: "%s | Centre for Gender Studies" },
+  description: "Research, teaching and public engagement focused on gender and society at Nasarawa State University, Keffi.",
+  applicationName: "Centre for Gender Studies",
+  keywords: ["gender studies", "Nasarawa State University", "gender research", "gender studies programmes", "Keffi"],
+  openGraph: {
+    type: "website",
+    siteName: "Centre for Gender Studies",
+    title: "Centre for Gender Studies | NSUK",
+    description: "Research, teaching and public engagement focused on gender and society at Nasarawa State University, Keffi.",
+    images: [{ url: "/assets/cgs-research-workshop.jpg", width: 1600, height: 1067, alt: "Participants at a CGS research workshop" }],
+  },
+  twitter: { card: "summary_large_image", title: "Centre for Gender Studies | NSUK", description: "Research, teaching and public engagement focused on gender and society at Nasarawa State University, Keffi.", images: ["/assets/cgs-research-workshop.jpg"] },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return (
-    <html lang="en" className={`${sans.variable} ${serif.variable}`}>
-      <body>{children}</body>
-    </html>
-  );
+  const organization = {
+    "@context": "https://schema.org",
+    "@type": "EducationalOrganization",
+    name: "Centre for Gender Studies",
+    alternateName: "CGS NSUK",
+    url: siteUrl,
+    email: "genderstudies@nsuk.edu.ng",
+    telephone: ["08035810883", "09065535223"],
+    address: { "@type": "PostalAddress", streetAddress: "Old Administrative Block / Lincoln Building", addressCountry: "NG" },
+    parentOrganization: { "@type": "CollegeOrUniversity", name: "Nasarawa State University, Keffi" },
+  };
+
+  return <html lang="en" className={`${sans.variable} ${serif.variable}`}><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} /><ScrollToTop />{children}</body></html>;
 }
