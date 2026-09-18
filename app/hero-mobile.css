@@ -16,11 +16,25 @@
   .hero__actions .button:hover { background: #b90f63; }
   .hero__actions .text-link { width: max-content; min-height: 43px; margin-inline: auto; border-bottom-color: rgb(255 255 255 / 46%); font-size: 11px; }
 
-  /* Give Next/Image a definite mobile box and keep the photo above the hero background layer. */
-  .hero__media { position: relative; z-index: 2; width: 100%; height: 430px; min-height: 430px; margin: 0; overflow: hidden; background: #061a3d; }
-  .hero__media > img { position: absolute !important; z-index: 0; inset: 0 !important; width: 100% !important; height: 100% !important; max-width: none !important; opacity: 1 !important; visibility: visible !important; object-fit: cover !important; object-position: center 32% !important; }
-  .hero__media::before { position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgb(7 31 73 / 48%) 0%, rgb(7 31 73 / 8%) 18%, transparent 50%, rgb(7 31 73 / 12%) 100%); content: ""; pointer-events: none; }
-  .hero__media::after { z-index: 1; background: linear-gradient(180deg, transparent 68%, rgb(4 20 48 / 28%)); pointer-events: none; }
+  /* Render the hero from the public asset directly on mobile. This bypasses
+     the Next/Image optimizer path that was leaving the live mobile hero blank. */
+  .hero__media {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 430px;
+    min-height: 430px;
+    margin: 0;
+    overflow: hidden;
+    background-color: #061a3d;
+    background-image: url('/assets/cgs-student-placeholder.jpg');
+    background-repeat: no-repeat;
+    background-position: center 32%;
+    background-size: cover;
+  }
+  .hero__media > img { display: none !important; }
+  .hero__media::before { position: absolute; z-index: 1; inset: 0; background: linear-gradient(180deg, rgb(7 31 73 / 22%) 0%, transparent 30%, transparent 72%, rgb(7 31 73 / 16%) 100%); content: ""; pointer-events: none; }
+  .hero__media::after { z-index: 1; background: linear-gradient(180deg, transparent 68%, rgb(4 20 48 / 20%)); pointer-events: none; }
   .hero__media figcaption { display: none; }
 
   .hero > .proof-strip { position: relative; z-index: 2; width: 100%; display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 0; border: 0; background: #fbf7f4; color: #0b2348; }
