@@ -1,11 +1,14 @@
 /* Mobile-only homepage hero treatment based on the approved editorial mockup. */
+.eyebrow > span { display: none; }
+.eyebrow { gap: 0; }
+
 @media (max-width: 620px) {
   .hero { padding: 0; background: #071f49; }
   .hero::before { z-index: 0; background: radial-gradient(circle at 50% 22%, rgb(255 255 255 / 8%), transparent 32%), linear-gradient(180deg, rgb(4 23 55 / 12%), rgb(4 25 62 / 52%)); }
   .hero > .hero__layout { position: relative; z-index: 1; width: 100%; display: flex; flex-direction: column; gap: 0; }
   .hero__copy { display: flex; width: min(100% - 34px, 520px); margin-inline: auto; padding: 40px 0 28px; flex-direction: column; align-items: center; text-align: center; }
-  .hero__copy .eyebrow { justify-content: center; gap: 10px; color: rgb(255 255 255 / 82%); font-size: 9px; letter-spacing: .15em; }
-  .hero__copy .eyebrow > span { width: 28px; background: #d11b72; }
+  .hero__copy .eyebrow { justify-content: center; gap: 0; color: rgb(255 255 255 / 82%); font-size: 9px; letter-spacing: .15em; }
+  .hero__copy .eyebrow > span { display: none; }
   .hero__copy h1 { max-width: 390px; margin-top: 25px; font-size: clamp(38px, 10.6vw, 50px); line-height: .98; letter-spacing: -.04em; text-wrap: balance; }
   .hero__copy h1 > span { display: inline; }
   .hero__copy h1 > span::after { content: " "; }
