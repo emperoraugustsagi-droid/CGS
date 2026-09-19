@@ -1,0 +1,32 @@
+@media (max-width: 620px) {
+  .programmes--home .section-heading {
+    text-align: center;
+  }
+
+  .programmes--home .section-heading > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .programmes--home .section-heading .eyebrow {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .programmes--home .section-heading .eyebrow::before {
+    display: none;
+  }
+
+  .programmes--home .section-heading h2 {
+    margin-inline: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .programmes--home .section-heading > p {
+    margin-inline: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+}
