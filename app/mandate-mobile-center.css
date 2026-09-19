@@ -1,0 +1,19 @@
+@media (max-width: 620px) {
+  .mandate-section .section-intro {
+    text-align: center;
+  }
+
+  .mandate-section .section-intro .eyebrow {
+    justify-content: center;
+  }
+
+  .mandate-section .section-intro .eyebrow::before {
+    display: none;
+  }
+
+  .mandate-section .section-intro h2,
+  .mandate-section .section-intro > p {
+    margin-inline: auto;
+    text-align: center;
+  }
+}
