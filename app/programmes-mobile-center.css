@@ -29,4 +29,42 @@
     text-align: center;
     text-wrap: balance;
   }
+
+  .programmes--home .programme-row > a {
+    gap: 8px;
+    align-items: center;
+  }
+
+  .programmes--home .programme-row > a > span {
+    position: relative;
+    width: 17px;
+    height: 17px;
+    display: inline-block;
+    overflow: hidden;
+    flex: 0 0 17px;
+    font-size: 0;
+  }
+
+  .programmes--home .programme-row > a > span::before {
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    width: 8px;
+    height: 8px;
+    border-top: 1.8px solid currentColor;
+    border-right: 1.8px solid currentColor;
+    content: "";
+  }
+
+  .programmes--home .programme-row > a > span::after {
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    width: 11px;
+    height: 1.8px;
+    background: currentColor;
+    content: "";
+    transform: rotate(-45deg);
+    transform-origin: center;
+  }
 }
