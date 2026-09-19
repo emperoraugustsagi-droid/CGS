@@ -4,6 +4,7 @@ import "./site.css";
 import "./hero-mobile.css";
 import "./mandate-mobile-center.css";
 import "./mandate-cta-mobile.css";
+import "./programmes-mobile-center.css";
 import { siteUrl } from "../lib/site-config";
 import { ScrollToTop } from "../components/scroll-to-top";
 
