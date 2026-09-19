@@ -40,6 +40,11 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
 .nav-cta { display: inline-flex; min-height: 46px; align-items: center; justify-content: space-between; gap: 30px; padding: 0 18px; border: 1px solid var(--charcoal); border-radius: 4px; }
 .nav-cta:hover { border-color: var(--burgundy); background: var(--burgundy); color: white; }
 .menu-button { display: none; min-height: 44px; padding: 0 13px; border: 1px solid var(--charcoal); border-radius: 4px; background: transparent; color: var(--charcoal); font: inherit; }
+.menu-button > span { display: block; width: 26px; height: 2px; background: currentColor; transition: transform .2s ease, opacity .2s ease; }
+.menu-button > span + span { margin-top: 6px; }
+.menu-button--open > span:first-child { transform: translateY(8px) rotate(45deg); }
+.menu-button--open > span:nth-child(2) { opacity: 0; }
+.menu-button--open > span:last-child { transform: translateY(-8px) rotate(-45deg); }
 
 .eyebrow { display: flex; align-items: center; gap: 12px; color: var(--burgundy); font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; }
 .eyebrow > span { width: 30px; height: 1px; background: var(--gold); }
@@ -70,6 +75,7 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
 .hero__media img { object-fit: cover; object-position: 48% center; }
 .hero__media::after { position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgb(32 13 24 / 82%)); content: ""; }
 .hero__media figcaption { position: absolute; z-index: 1; right: 20px; bottom: 18px; left: 20px; display: flex; justify-content: space-between; gap: 20px; color: white; font-size: 9px; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
+.hero__summary-mobile, .hero__annotations, .proof-strip__icon, .proof-strip__scroll { display: none; }
 .proof-strip { display: grid; grid-template-columns: .65fr 1fr 1.25fr; margin-top: 42px; border-top: 1px solid rgb(255 255 255 / 21%); border-right: 1px solid rgb(255 255 255 / 21%); border-left: 1px solid rgb(255 255 255 / 21%); }
 .proof-strip > div { min-height: 112px; padding: 23px 25px; border-right: 1px solid rgb(255 255 255 / 21%); }
 .proof-strip > div:last-child { border-right: 0; }

@@ -18,7 +18,7 @@ export function SiteHeader() {
             <Image src="/assets/cgs-logo.jpg" alt="Centre for Gender Studies logo" width={48} height={48} priority />
             <span><strong>Centre for Gender Studies</strong><small>Nasarawa State University, Keffi</small></span>
           </Link>
-          <button ref={menuButton} className="menu-button" type="button" aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(!open)}>{open ? "Close" : "Menu"}<span aria-hidden="true">{open ? " ×" : " +"}</span></button>
+          <button ref={menuButton} className={open ? "menu-button menu-button--open" : "menu-button"} type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(!open)}><span aria-hidden="true"/><span aria-hidden="true"/><span aria-hidden="true"/></button>
           <nav id="site-nav" className={open ? "site-nav site-nav--open" : "site-nav"} aria-label="Primary navigation">
             {navigation.map(([label, href]) => <Link href={href} key={href} onClick={() => setOpen(false)}>{label}</Link>)}
             <Link className="nav-cta" href="/contact" onClick={() => setOpen(false)}>Contact CGS <span aria-hidden="true">↗</span></Link>
