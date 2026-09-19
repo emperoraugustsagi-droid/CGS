@@ -14,7 +14,8 @@
     text-align: center;
   }
 
-  .programmes--home .section-heading .eyebrow::before {
+  .programmes--home .section-heading .eyebrow::before,
+  .programmes--home .section-heading .eyebrow > span {
     display: none;
   }
 
@@ -66,5 +67,28 @@
     content: "";
     transform: rotate(-45deg);
     transform-origin: center;
+  }
+
+  .programmes--home .programme-support {
+    text-align: center;
+  }
+
+  .programmes--home .programme-support > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .programmes--home .programme-support h3,
+  .programmes--home .programme-support p {
+    margin-inline: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .programmes--home .programme-support .button,
+  .programmes--home .programme-support > a {
+    justify-content: center;
+    text-align: center;
   }
 }
