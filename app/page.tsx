@@ -4,7 +4,7 @@ import { team } from "./site-data";
 
 const images = {
   heroDesktop: "/assets/cgs-hero-desktop.png",
-  heroMobile: "/assets/cgs-hero-mobile.png",
+  heroMobile: "/assets/cgs-hero-mobile-v3.png",
   director: "/assets/cgs-director-comfort-adokwe.jpeg",
   community: "/assets/cgs-advisory-group.jpg",
 };
