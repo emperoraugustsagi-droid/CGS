@@ -1,0 +1,33 @@
+@media (max-width: 620px) {
+  .research .research__header {
+    text-align: center;
+  }
+
+  .research .research__header > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .research .research__header .eyebrow {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .research .research__header .eyebrow::before,
+  .research .research__header .eyebrow > span {
+    display: none;
+  }
+
+  .research .research__header h2 {
+    margin-inline: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .research .research__header > p {
+    margin-inline: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+}
