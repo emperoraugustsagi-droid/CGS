@@ -30,4 +30,49 @@
     text-align: center;
     text-wrap: balance;
   }
+
+  .leadership--home .leadership__copy {
+    text-align: center;
+  }
+
+  .leadership--home .leadership__copy .eyebrow {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .leadership--home .leadership__copy .eyebrow::before,
+  .leadership--home .leadership__copy .eyebrow > span {
+    display: none;
+  }
+
+  .leadership--home .leadership__copy h2,
+  .leadership--home .leadership__copy > p {
+    margin-inline: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .leadership--home .team-roster > div:first-child {
+    text-align: center;
+  }
+
+  .leadership--home .team-roster .eyebrow {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .leadership--home .team-roster .eyebrow::before,
+  .leadership--home .team-roster .eyebrow > span {
+    display: none;
+  }
+
+  .leadership--home .team-roster h3 {
+    margin-inline: auto;
+    text-align: center;
+    text-wrap: balance;
+  }
+
+  .leadership--home .team-roster > div:first-child > .text-link {
+    margin-inline: auto;
+  }
 }
