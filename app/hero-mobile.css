@@ -224,6 +224,53 @@
   .leadership--home .team-roster__list .index { grid-column: 1; grid-row: 1 / span 2; align-self: start; color: #cf1470; font-size: 9px; }
   .leadership--home .team-roster__list small { grid-column: 2; grid-row: 2; color: #5a6a85; font-size: 9px; }
   .leadership--home .team-roster__arrow { grid-column: 3; grid-row: 1 / span 2; align-self: center; color: #cf1470; font-size: 18px; }
+
+  .activity { padding: 58px 0 65px; background: #fbfaf8; }
+  .activity__layout { display: flex; flex-direction: column; gap: 27px; }
+  .activity__media { width: 100%; min-height: 300px; border-radius: 5px; background: #0b2348; }
+  .activity__media::after { background: linear-gradient(180deg, transparent 56%, rgb(11 35 72 / 82%)); }
+  .activity__media figcaption { right: 14px; bottom: 15px; left: 14px; color: white; font-size: 8px; line-height: 1.4; }
+  .activity__copy .eyebrow { color: #cf1470; }
+  .activity__copy .eyebrow > span { display: none; }
+  .activity__copy h2 { max-width: 340px; margin-top: 17px; color: #0b2348; font-size: 36px; line-height: .99; }
+  .activity__copy > p { max-width: 340px; margin-top: 18px; color: #5a6a85; font-size: 13px; line-height: 1.55; }
+  .activity-list { display: grid; gap: 10px; margin-top: 27px; border: 0; }
+  .activity-list a { min-height: 118px; padding: 18px 42px 19px 16px; border: 1px solid rgb(207 20 112 / 15%); border-radius: 5px; background: #fff1f8; }
+  .activity-list a:nth-child(even) { border-color: rgb(22 119 232 / 16%); background: #eff8ff; }
+  .activity-list a > span:first-child { color: #cf1470; }
+  .activity-list a:nth-child(even) > span:first-child { color: #1169d3; }
+  .activity-list strong { margin-top: 9px; color: #0b2348; font-size: 22px; }
+  .activity-list small { margin-top: 7px; color: #5a6a85; font-size: 10px; line-height: 1.45; }
+  .activity-list a > span:last-child { top: 18px; right: 15px; color: #cf1470; }
+  .activity-list a:nth-child(even) > span:last-child { color: #1169d3; }
+
+  .engage { padding: 62px 0 68px; background: #0b2348; color: white; }
+  .engage__layout { display: block; }
+  .engage .eyebrow { justify-content: center; color: #ef88bd; text-align: center; }
+  .engage .eyebrow > span { background: #cf1470; }
+  .engage h2 { max-width: 330px; margin: 17px auto 0; color: white; font-size: 44px; line-height: .98; text-align: center; text-wrap: balance; }
+  .engage__options { display: grid; grid-template-columns: 1fr; gap: 10px; margin-top: 32px; border: 0; }
+  .engage__options a { min-height: 105px; padding: 20px 46px 21px 20px; border: 1px solid rgb(239 136 189 / 24%); border-radius: 5px; background: rgb(207 20 112 / 12%); }
+  .engage__options a:nth-child(even) { border-color: rgb(113 195 244 / 24%); background: rgb(22 119 232 / 13%); }
+  .engage__options a > span:first-child,
+  .engage__options a > span:last-child { color: #ef88bd; }
+  .engage__options a:nth-child(even) > span:first-child,
+  .engage__options a:nth-child(even) > span:last-child { color: #71c3f4; }
+  .engage__options strong { max-width: 250px; margin-top: 17px; color: white; font-size: 23px; }
+  .engage__options a:hover { background: rgb(207 20 112 / 19%); }
+  .engage__options a:nth-child(even):hover { background: rgb(22 119 232 / 20%); }
+
+  .site-footer { padding: 48px 0 22px; border-top: 1px solid rgb(239 136 189 / 24%); background: #071a36; color: white; }
+  .footer__grid { gap: 30px; padding-bottom: 38px; }
+  .footer__brand strong { color: #ef88bd; }
+  .footer__brand small,
+  .footer__grid > p,
+  .footer__grid address,
+  .site-footer nav { color: rgb(255 255 255 / 68%); }
+  .footer__grid address a,
+  .site-footer nav a { color: rgb(255 255 255 / 84%); }
+  .site-footer a:hover { color: #71c3f4; }
+  .footer__bottom { border-top-color: rgb(113 195 244 / 20%); color: rgb(255 255 255 / 55%); }
 }
 
 @media (max-width: 370px) {
