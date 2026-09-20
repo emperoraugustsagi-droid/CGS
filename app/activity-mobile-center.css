@@ -1,24 +1,27 @@
 @media (max-width: 620px) {
-  .activity-section .section-heading,
-  .activity-section .section-heading > div {
+  .activity .activity__copy {
     text-align: center;
   }
 
-  .activity-section .section-heading .eyebrow {
+  .activity .activity__copy .eyebrow {
     justify-content: center;
     text-align: center;
   }
 
-  .activity-section .section-heading h2,
-  .activity-section .section-heading > p {
-    margin-left: auto;
-    margin-right: auto;
+  .activity .activity__copy .eyebrow::before {
+    display: none;
+  }
+
+  .activity .activity__copy h2,
+  .activity .activity__copy > p {
+    margin-inline: auto;
     text-align: center;
+    text-wrap: balance;
   }
 
   /* Keep individual activity records easy to scan. */
   .activity-list,
-  .activity-list article {
+  .activity-list a {
     text-align: left;
   }
 }
