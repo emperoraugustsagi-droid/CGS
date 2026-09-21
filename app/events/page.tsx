@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Arrow, Eyebrow, PageIntro, PageShell } from "../../components/page-shell";
+import { Arrow, Eyebrow, PageIntro, PageShell, SectionHeading } from "../../components/page-shell";
 import { events } from "../site-data";
 import { siteUrl } from "../../lib/site-config";
 
@@ -109,9 +109,7 @@ export default function EventsPage() {
 
     <section className="section page-section" aria-labelledby="event-guests-title">
       <div className="container">
-        <div className="section-heading section-heading--single">
-          <div><Eyebrow>Conference leadership</Eyebrow><h2 id="event-guests-title">The people convening the conversation.</h2></div>
-        </div>
+        <SectionHeading eyebrow="Conference leadership" title="The people convening the conversation." id="event-guests-title" single />
         <div className="event-people">
           {event.programmeLeads.map(([role, name, detail], index) => <article key={name}>
             <span className="index">0{index + 1}</span>
@@ -125,9 +123,7 @@ export default function EventsPage() {
 
     <section className="section research research--page event-subthemes" aria-labelledby="event-subthemes-title">
       <div className="container">
-        <div className="section-heading section-heading--single">
-          <div><Eyebrow light>Conference subthemes</Eyebrow><h2 id="event-subthemes-title">Twelve lenses on gender, crisis and resilience.</h2></div>
-        </div>
+        <SectionHeading eyebrow="Conference subthemes" title="Twelve lenses on gender, crisis and resilience." id="event-subthemes-title" light single />
         <div className="event-subtheme-grid">
           {event.subthemes.map((subtheme, index) => <article key={subtheme}><span className="index">{String(index + 1).padStart(2, "0")}</span><h3>{subtheme}</h3></article>)}
         </div>
@@ -136,10 +132,7 @@ export default function EventsPage() {
 
     <section className="section page-section page-section--paper" aria-labelledby="registration-title">
       <div className="container">
-        <div className="section-heading">
-          <div><Eyebrow>Conference registration</Eyebrow><h2 id="registration-title">Choose the category that matches how you will participate.</h2></div>
-          <p>Early-bird fees apply through {event.deadlines.earlyBirdRegistration}. Standard rates apply after that date.</p>
-        </div>
+        <SectionHeading eyebrow="Conference registration" title="Choose the category that matches how you will participate." id="registration-title">Early-bird fees apply through {event.deadlines.earlyBirdRegistration}. Standard rates apply after that date.</SectionHeading>
         <div className="event-table-wrap">
           <table className="event-table">
             <thead><tr><th>Category</th><th>Early bird</th><th>Standard</th></tr></thead>
