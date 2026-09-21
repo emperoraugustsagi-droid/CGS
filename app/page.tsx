@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
-import { activities, events, programmes, researchAreas, team } from "./site-data";
+import { activities, events, programmes, researchAreas } from "./site-data";
 
 const images = {
   heroDesktop: "/assets/cgs-hero-desktop.png",
