@@ -10,6 +10,7 @@ import "./activity-mobile-center.css";
 import "./content-cards-mobile.css";
 import "./desktop-hero.css";
 import "./desktop-flow.css";
+import "./hero-carousel.css";
 import "./eyebrow-cleanup.css";
 import { siteUrl } from "../lib/site-config";
 import { ScrollToTop } from "../components/scroll-to-top";
