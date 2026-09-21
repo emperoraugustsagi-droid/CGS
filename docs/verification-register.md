@@ -194,17 +194,44 @@ These are plausible and useful editorial categories, but no official current NSU
 
 ## Upcoming events
 
-### First CGS International Conference
-**Status:** CENTRE/PROJECT-SUPPLIED UPCOMING EVENT  
-**Confidence:** D
+### First International Gender Conference ’26
+**Status:** VERIFIED FROM CENTRE-SUPPLIED OFFICIAL CONFERENCE FLYER  
+**Confidence:** D — Centre-supplied primary material
 
-Current supplied details:
-- Registration deadline: 30 September 2026
-- Conference dates: 3–8 November 2026
+Verified flyer details:
 
-No authoritative public NSUK page for this specific conference was located during the current verification search.
+- Official title: First International Gender Conference ’26
+- Theme: “Gender, Crisis, and Resilience: Forging Equitable Futures in a Changing World.”
+- Venue: NSUK Multipurpose Hall by Second Gate, Keffi
+- Conference dates: 4–7 November 2026
+- Abstract submission deadline: 30 September 2026
+- Notification of acceptance: 7 October 2026
+- Early bird registration deadline: 10 October 2026
+- Full paper submission deadline: 21 October 2026
+- Standard registration deadline: 28 October 2026
+- Conference website: https://1st-international-gender-conference.ng
 
-**Website action:** Publish the supplied title and dates as Centre-provided information. Do not invent venue, fees, speakers, theme, registration URL, eligibility, programme schedule or participation requirements. Route visitors to CGS for current registration instructions.
+The flyer also supplies:
+- 12 conference subthemes
+- registration fee categories
+- additional co-author fees
+- guest/keynote/host information
+- conference contact persons and emails
+- NSUK Microfinance Bank payment details for the Centre for Gender Studies
+- special book launch: “A LEGACY of Inclusion”
+
+### Correction to provisional website copy
+
+Earlier project-supplied notes described:
+- 30 September as a registration deadline
+- conference dates as 3–8 November 2026
+- title as “First CGS International Conference”
+
+The official flyer supersedes those provisional details.
+
+**Website action:** Use the flyer details as the current authoritative Centre-supplied event record. Do not add speakers, fees, dates, venue information, registration procedures or programme claims beyond what the flyer provides unless newer official information is supplied.
+
+---
 
 ## Activity records
 
