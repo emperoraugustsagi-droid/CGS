@@ -55,7 +55,7 @@ export default function EventsPage() {
         <div className="event-feature__date" aria-label={event.dateLabel}>
           <span>NOV</span>
           <strong>04</strong>
-          <small>→ 07 · 2026</small>
+          <small>TO 07 · 2026</small>
         </div>
         <div className="event-feature__content">
           <Eyebrow>Upcoming · {event.type}</Eyebrow>
