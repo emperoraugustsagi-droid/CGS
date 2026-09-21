@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Arrow, ContactBand, Eyebrow, PageIntro, PageShell } from "../../components/page-shell";
+import { Arrow, ContactBand, Eyebrow, PageIntro, PageShell, SectionHeading } from "../../components/page-shell";
 import { programmes, site } from "../site-data";
 
 export const metadata: Metadata = {
@@ -22,7 +22,7 @@ export default function ProgrammesPage() {
       </div>
     </section>
     <section className="section page-section" aria-labelledby="programme-list-title">
-      <div className="container"><div className="section-heading section-heading--single"><div><Eyebrow>Programme index</Eyebrow><h2 id="programme-list-title">A complete study pathway.</h2></div></div>
+      <div className="container"><SectionHeading eyebrow="Programme index" title="A complete study pathway." id="programme-list-title" single />
         <div className="programme-list programme-list--page">{programmes.map((programme, index) => <article className="programme-row" key={programme.code}><span className="index">0{index + 1}</span><div className="programme-row__title"><strong>{programme.code}</strong><h3>{programme.title}</h3></div><div className="programme-row__detail"><span>{programme.format}</span><p>{programme.summary}</p></div><a href={`mailto:${site.email}?subject=${encodeURIComponent(`${programme.title} enquiry`)}`} aria-label={`Enquire about ${programme.title}`}>Enquire <Arrow diagonal /></a></article>)}</div>
         <div className="page-note"><p>For current admissions guidance, contact the Centre directly. The site does not publish unverified deadlines or requirements.</p><Link className="text-link" href="/contact">Ask about a programme <Arrow diagonal /></Link></div>
       </div>
