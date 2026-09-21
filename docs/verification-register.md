@@ -265,3 +265,43 @@ An older official NSUK CGS document contains a different historical phone number
 ## Phase 0 decision
 
 The redesign may continue architecturally, but programme counts, exact programme titles, staff-status wording and research-area labels must remain evidence-aware until CGS confirms the outstanding items.
+
+---
+
+## Source ledger
+
+### Official NSUK sources
+
+1. **NSUK School of Postgraduate Studies — Programmes**  
+   https://spgs.nsuk.edu.ng/programmes/  
+   Used to verify the five currently listed postgraduate Gender Studies entries.
+
+2. **NSUK LMS — Gender Studies / Certificate Programme**  
+   https://lms.nsuk.edu.ng/course/index.php?categoryid=519  
+   Used to verify that the official LMS has Gender Studies Certificate and Diploma programme categories and certificate courses GEN101–GEN109.
+
+3. **NSUK — Curriculum for Certificate and Diploma Courses in Women Leadership Development**  
+   https://nsuk.edu.ng/wp-content/uploads/2023/12/CURRICULUM-FOR-CERTIFICATE-AND-DIPLOMA-COURSES.pdf  
+   Used as official historical evidence for the Certificate/Diploma curriculum and its structure.
+
+4. **NSUK — Centre for Gender Studies / African Women Conference admission list**  
+   https://nsuk.edu.ng/wp-content/uploads/2023/12/Center-for-Gender-Studies-Admission-List.pdf  
+   Used as official historical evidence for Women in Leadership Development Certificate/Diploma enrolment and the Centre email address.
+
+### Recent secondary/current-role sources
+
+5. **Punch — International Women’s Day 2026 coverage**  
+   https://punchng.com/iwd-nasarawa-varsity-vc-urges-unrestricted-opportunities-for-females/  
+   Identifies Dr. Comfort Adokwe as Ag. Director, Centre for Gender Studies in 2026.
+
+6. **MySchoolNews — NSUK strategic appointments**  
+   https://myschoolnews.ng/nsuk-vc-announces-strategic-appointments-to-strengthen-academic-and-administrative-leadership  
+   Supports Dr. Comfort Adokwe’s Acting Director role and Dr. Hajara Hassan Ahmed’s Deputy Director (Programs) role.
+
+7. **Blueprint/Manhaja coverage of CGS activity**  
+   https://manhaja.blueprint.ng/cibiyar-cfgs-ta-jamiar-nsuk-ta-bu%C6%99aci-%C6%99arin-fafatawaar-mata-a-harkokin-ict-da-kiwon-lafiya/  
+   Supports current-role references for Dr. Ochanya Mercy Yakubu Lamai and Dr. Hajara Ahmed II.
+
+### Evidence policy
+
+Where official NSUK evidence and secondary reporting conflict, official NSUK evidence wins. Where only secondary evidence exists for a current role, the website should use conservative wording and seek direct CGS confirmation before final launch.
