@@ -57,12 +57,36 @@ export const centreStudyOfferings = [
 ] as const;
 
 export const researchAreas = [
-  ["Gender & Development", "Opportunity, work and economic life"],
-  ["Gender-Based Violence", "Prevention, response and lived experience"],
-  ["Women & Leadership", "Participation, power and decision-making"],
-  ["Gender & Health", "Health, wellbeing and access to care"],
-  ["Gender & Education", "Learning, opportunity and social expectations"],
-  ["Gender & Governance", "Policy, institutions and public life"],
+  [
+    "Gender & Development",
+    "Opportunity, work and economic life",
+    "Questions about how gender shapes access to opportunity, livelihoods, economic participation and development outcomes.",
+  ],
+  [
+    "Gender-Based Violence",
+    "Prevention, response and lived experience",
+    "Inquiry into the conditions that produce gender-based violence, the experiences surrounding it and the systems involved in prevention and response.",
+  ],
+  [
+    "Women & Leadership",
+    "Participation, power and decision-making",
+    "Study of participation, representation, leadership and the ways power is distributed across institutions and public life.",
+  ],
+  [
+    "Gender & Health",
+    "Health, wellbeing and access to care",
+    "Questions about wellbeing, health systems, access to care and how gender can shape health experiences and outcomes.",
+  ],
+  [
+    "Gender & Education",
+    "Learning, opportunity and social expectations",
+    "Study of learning, access, expectations and the social conditions that can shape educational opportunity and experience.",
+  ],
+  [
+    "Gender & Governance",
+    "Policy, institutions and public life",
+    "Inquiry into policy, institutions, participation and how gender analysis can deepen understanding of governance and public decision-making.",
+  ],
 ] as const;
 
 export const team = [
