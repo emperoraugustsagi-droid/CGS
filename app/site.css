@@ -381,6 +381,12 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
   .programme-row__title { grid-template-columns: 88px 1fr; }
   .programme-row__detail { grid-column: 2 / -1; }
   .programme-row > a { grid-column: 3; grid-row: 1; }
+  .home-page .programmes--home .programme-row { grid-template-columns: 32px 64px minmax(0, 1fr) 72px; }
+  .home-page .programmes--home .programme-row > .index { grid-column: 1; grid-row: 1 / span 2; }
+  .home-page .programmes--home .programme-row__icon { grid-column: 2; grid-row: 1 / span 2; }
+  .home-page .programmes--home .programme-row__title { grid-column: 3; grid-row: 1; }
+  .home-page .programmes--home .programme-row__detail { grid-column: 3; grid-row: 2; }
+  .home-page .programmes--home .programme-row > a { grid-column: 4; grid-row: 1 / span 2; }
   .research__header .eyebrow { grid-column: auto; }
   .research-grid { grid-template-columns: repeat(2, 1fr); }
   .team-roster__list > div { grid-template-columns: 34px 1fr 180px; }
@@ -756,11 +762,13 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
   .about-hero__copy h1 { max-width: 350px; margin-inline: auto; color: white; text-wrap: balance; }
   .about-hero__body { max-width: 345px; margin-inline: auto; color: rgb(255 255 255 / 78%); }
   .about-hero__body p { text-wrap: balance; }
-  .about-hero__media { min-height: 300px; box-shadow: 7px 7px 0 rgb(207 20 112 / 18%); }
+  .about-page .about-hero__media { min-height: 300px; box-shadow: 7px 7px 0 rgb(207 20 112 / 18%); }
 
   .about-page .page-grid,
   .about-page .page-visual__copy,
   .about-page .team-page-section > div:first-child { text-align: center; }
+  .about-page .team-page-section > *,
+  .about-page .team-roster__list { min-width: 0; }
   .about-page .page-grid .eyebrow,
   .about-page .page-visual__copy .eyebrow,
   .about-page .team-page-section .eyebrow { justify-content: center; }

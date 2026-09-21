@@ -1,10 +1,10 @@
 @media (max-width: 620px) {
-  .site-header { position: sticky; z-index: 50; top: 0; background: var(--cgs-warm-white); box-shadow: 0 2px 14px rgb(11 35 72 / 10%); backdrop-filter: none; }
+  .site-header { position: sticky; z-index: 50; top: 0; background: var(--cgs-warm-white); box-shadow: 0 1px 0 rgb(11 35 72 / 10%); backdrop-filter: none; }
   .header__inner { width: calc(100% - 46px); min-height: 92px; }
   .brand { gap: 11px; }
   .brand img { width: 42px; height: 42px; }
-  .brand strong { color: var(--cgs-navy-800); font-size: 13px; letter-spacing: 0; }
-  .brand small { margin-top: 3px; color: var(--cgs-navy-800); font-size: 8px; }
+  .brand strong { color: var(--cgs-navy-800); font-size: clamp(14.5px, 4.1vw, 16px); letter-spacing: 0; }
+  .brand small { margin-top: 3px; color: var(--cgs-navy-800); font-size: clamp(9.5px, 2.7vw, 10.5px); }
   .menu-button { width: 44px; min-height: 44px; display: grid; padding: 8px; place-content: center; border: 0; border-radius: 0; color: var(--cgs-navy-800); }
 
   .hero {

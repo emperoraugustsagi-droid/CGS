@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { Arrow, Eyebrow, PageIntro, PageShell, SectionHeading } from "../../components/page-shell";
 import { events } from "../site-data";
 import { siteUrl } from "../../lib/site-config";

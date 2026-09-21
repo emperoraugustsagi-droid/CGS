@@ -8,6 +8,8 @@ import "./programmes-mobile-center.css";
 import "./research-mobile-center.css";
 import "./activity-mobile-center.css";
 import "./content-cards-mobile.css";
+import "./desktop-hero.css";
+import "./desktop-flow.css";
 import { siteUrl } from "../lib/site-config";
 import { ScrollToTop } from "../components/scroll-to-top";
 

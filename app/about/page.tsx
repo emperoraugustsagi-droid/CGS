@@ -105,7 +105,7 @@ export default function AboutPage() {
 
     <section className="section page-section about-team" id="team" aria-labelledby="team-title">
       <div className="container team-page-section">
-        <div><Eyebrow>The people behind the work</Eyebrow><h2 id="team-title">Different responsibilities. One shared Centre.</h2><p className="team-page-section__intro">Academic leadership, programmes and administration work together to make the Centre's teaching, research and engagement possible.</p></div>
+        <div><Eyebrow>The people behind the work</Eyebrow><h2 id="team-title">Different responsibilities. One shared Centre.</h2><p className="team-page-section__intro">Academic leadership, programmes and administration work together to make the Centre&apos;s teaching, research and engagement possible.</p></div>
         <div className="team-roster__list">{team.map(([name, role], index) => <div key={name}><span className="index">0{index + 1}</span><strong>{name}</strong><small>{role}</small></div>)}</div>
       </div>
     </section>

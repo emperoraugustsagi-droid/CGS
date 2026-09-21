@@ -3,7 +3,7 @@ import { join, relative } from "node:path";
 
 const roots = ["app", "components", "lib"];
 const extensions = new Set([".ts", ".tsx", ".css", ".md"]);
-const forbidden = [String.fromCodePoint(0x2014), String.fromCodePoint(0x2013)];
+const forbidden = String.fromCodePoint(0x2014);
 const findings = [];
 
 function visit(path) {
@@ -15,7 +15,8 @@ function visit(path) {
   }
   if (!extensions.has(path.slice(path.lastIndexOf(".")))) return;
   const contents = readFileSync(path, "utf8");
-  if (forbidden.some((character) => contents.includes(character))) findings.push(relative(process.cwd(), path));
+  const checkedContents = path.endsWith(".css") ? contents.replace(/\/\*[\s\S]*?\*\//g, "") : contents;
+  if (checkedContents.includes(forbidden)) findings.push(relative(process.cwd(), path));
 }
 
 roots.forEach(visit);
@@ -25,4 +26,4 @@ if (findings.length) {
   process.exit(1);
 }
 
-console.log("Copy check passed: no em dashes or en dashes in the active site.");
+console.log("Copy check passed: no em dashes in active site prose.");

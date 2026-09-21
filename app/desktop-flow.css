@@ -1,0 +1,238 @@
+/* Desktop-only homepage flow refinements.
+ * This layer preserves the locked CGS visual system and leaves all mobile
+ * composition, shared chrome, and homepage content unchanged.
+ */
+@media (min-width: 821px) {
+  .home-page > .section {
+    padding-block: clamp(88px, 7.25vw, 104px);
+  }
+
+  /* Mandate: keep the opening argument compact and end on an editorial rule. */
+  .home-page .mandate-layout {
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    gap: clamp(56px, 7vw, 104px);
+  }
+
+  .home-page .mandate-list article {
+    min-height: 132px;
+    padding-block: 23px 25px;
+  }
+
+  .home-page .mandate-cta {
+    margin-top: 48px;
+    padding: 30px 0;
+    border-top: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--border-default);
+    border-left: 0;
+    background: transparent;
+  }
+
+  /* Programmes: a shorter image-to-list handoff and a resilient row grid. */
+  .home-page .programmes__feature {
+    min-height: clamp(360px, 30vw, 430px);
+    margin-top: 44px;
+  }
+
+  .home-page .programmes--home .programme-list {
+    margin-top: 24px;
+  }
+
+  .home-page .programmes--home .programme-row {
+    grid-template-columns: 34px 58px minmax(210px, .86fr) minmax(250px, 1.14fr) 82px;
+    gap: clamp(14px, 1.5vw, 20px);
+    min-height: 154px;
+  }
+
+  .home-page .programmes--home .programme-row__title,
+  .home-page .programmes--home .programme-row__detail {
+    min-width: 0;
+  }
+
+  .home-page .programmes--home .programme-row h3,
+  .home-page .programmes--home .programme-row__detail p {
+    overflow-wrap: anywhere;
+  }
+
+  .home-page .programmes--home .programme-row__icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .home-page .programme-support {
+    margin-top: 30px;
+    padding: 28px 30px;
+    border-color: var(--border-default);
+    border-left: 3px solid var(--color-accent);
+    background: var(--surface-card);
+  }
+
+  /* Research: let the image lead, then keep the inquiry index readable. */
+  .home-page .research__header {
+    grid-template-columns: minmax(0, 1.05fr) minmax(280px, .65fr);
+    column-gap: clamp(56px, 6vw, 84px);
+    row-gap: 34px;
+  }
+
+  .home-page .research__feature {
+    min-height: clamp(350px, 28vw, 430px);
+    margin-top: 4px;
+  }
+
+  .home-page .research-grid {
+    margin-top: 48px;
+  }
+
+  .home-page .research-grid article {
+    grid-template-columns: 34px 52px minmax(0, 1fr) 20px;
+    gap: 12px;
+    min-height: 164px;
+    padding: 22px;
+  }
+
+  .home-page .research-grid__icon {
+    width: 50px;
+    height: 50px;
+  }
+
+  .home-page .research-grid__icon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .home-page .research-grid h3 {
+    font-size: clamp(22px, 2vw, 29px);
+  }
+
+  .home-page .research__action {
+    margin-top: 28px;
+  }
+
+  .home-page .research-cta {
+    padding: 22px 24px;
+  }
+
+  /* Event: align the date with the story instead of floating at mid-copy. */
+  .home-page .home-event__grid {
+    grid-template-columns: minmax(210px, .34fr) minmax(0, 1.66fr);
+    gap: clamp(48px, 7vw, 96px);
+    align-items: start;
+  }
+
+  .home-page .home-event__date {
+    min-height: 280px;
+    margin-top: 26px;
+  }
+
+  .home-page .home-event__facts {
+    gap: 28px 44px;
+    padding-top: 25px;
+    border-top: 1px solid var(--border-default);
+  }
+
+  /* Leadership and activity: strengthen portrait/evidence proportions. */
+  .home-page .leadership__layout {
+    grid-template-columns: minmax(430px, .92fr) minmax(0, 1.08fr);
+    gap: clamp(56px, 7vw, 96px);
+  }
+
+  .home-page .director-card {
+    grid-template-columns: minmax(215px, .82fr) minmax(0, 1.18fr);
+  }
+
+  .home-page .director-card figure {
+    min-height: 340px;
+  }
+
+  .home-page .director-card > div {
+    min-width: 0;
+    padding: 30px 27px;
+  }
+
+  .home-page .director-card strong {
+    font-size: 29px;
+  }
+
+  .home-page .leadership-handoff {
+    margin-top: 56px;
+    padding-top: 28px;
+  }
+
+  .home-page .activity__layout {
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr);
+    gap: clamp(56px, 6.5vw, 92px);
+  }
+
+  .home-page .activity__media {
+    min-height: clamp(500px, 40vw, 580px);
+  }
+
+  .home-page .activity__media img {
+    object-position: center 44%;
+  }
+
+  .home-page .activity-list a {
+    min-height: 118px;
+  }
+
+  /* Closing router: maintain one calm, decisive final handoff. */
+  .home-page .engage {
+    padding-block: clamp(88px, 6.8vw, 98px);
+  }
+
+  .home-page .engage__layout {
+    grid-template-columns: minmax(300px, .68fr) minmax(0, 1.32fr);
+    gap: clamp(56px, 7vw, 100px);
+  }
+
+  .home-page .engage__options a {
+    min-height: 132px;
+    padding: 25px 48px 25px 24px;
+  }
+}
+
+/* Tablet landscape / compact desktop needs fewer simultaneous columns. */
+@media (min-width: 821px) and (max-width: 1100px) {
+  .home-page .programmes--home .programme-row {
+    grid-template-columns: 30px 50px minmax(170px, .82fr) minmax(190px, 1.18fr) 66px;
+    gap: 12px;
+  }
+
+  .home-page .programmes--home .programme-row__icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .home-page .programmes--home .programme-row h3 {
+    font-size: 21px;
+  }
+
+  .home-page .research-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-page .home-event__grid {
+    grid-template-columns: minmax(185px, .32fr) minmax(0, 1.68fr);
+    gap: 48px;
+  }
+
+  .home-page .home-event__date {
+    min-height: 244px;
+  }
+
+  .home-page .leadership__layout {
+    grid-template-columns: minmax(390px, .96fr) minmax(0, 1.04fr);
+    gap: 48px;
+  }
+
+  .home-page .director-card {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+
+  .home-page .director-card figure {
+    min-height: 330px;
+  }
+
+  .home-page .activity__layout {
+    gap: 48px;
+  }
+}

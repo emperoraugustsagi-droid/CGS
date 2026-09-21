@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Arrow, ContactBand, Eyebrow, PageIntro, PageShell, SectionHeading } from "../../components/page-shell";
-import { centreStudyOfferings, programmes, site } from "../site-data";
+import { centreStudyOfferings, programmes } from "../site-data";
 
 export const metadata: Metadata = {
   title: "Programmes",

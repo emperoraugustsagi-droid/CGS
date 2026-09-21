@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
@@ -13,6 +13,33 @@ const images = {
   study: "/assets/cgs-research-workshop.jpg",
   researchStory: "/assets/cgs-awareness-campaign.jpg",
 };
+
+const heroImageCommon = {
+  alt: "Nigerian university student studying on campus",
+  sizes: "100vw",
+  loading: "eager" as const,
+  fetchPriority: "high" as const,
+};
+
+const {
+  props: { srcSet: heroDesktopSrcSet, ...heroDesktopImageProps },
+} = getImageProps({
+  ...heroImageCommon,
+  src: images.heroDesktop,
+  width: 1672,
+  height: 941,
+  quality: 88,
+});
+
+const {
+  props: { srcSet: heroMobileSrcSet },
+} = getImageProps({
+  ...heroImageCommon,
+  src: images.heroMobile,
+  width: 1024,
+  height: 1536,
+  quality: 84,
+});
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) { return <p className={light ? "eyebrow eyebrow--light" : "eyebrow"}>{children}</p>; }
 function ProofIcon({ name }: { name: "book" | "community" | "impact" }) {
@@ -58,7 +85,7 @@ export default function Home() {
           <p><span className="hero__summary-desktop">We examine how gender shapes institutions, opportunity and everyday life, then connect rigorous scholarship with teaching, policy and public engagement.</span><span className="hero__summary-mobile">Research, teaching and public engagement connecting gender scholarship to real life.</span></p>
           <div className="hero__actions"><Link className="button button--accent" href="/programmes">Explore programmes <Arrow /></Link><Link className="text-link text-link--light" href="/research">Our research focus <Arrow /></Link></div>
         </div>
-        <figure className="hero__media"><picture><source media="(max-width: 620px)" srcSet={images.heroMobile} /><img src={images.heroDesktop} alt="Nigerian university student studying on campus" /></picture><figcaption><span>Centre for Gender Studies</span><span>Scholarship in conversation</span></figcaption></figure>
+        <figure className="hero__media"><picture><source media="(max-width: 620px)" srcSet={heroMobileSrcSet} /><source media="(min-width: 621px)" srcSet={heroDesktopSrcSet} /><img {...heroDesktopImageProps} alt={heroImageCommon.alt} /></picture><figcaption><span>Centre for Gender Studies</span><span>Scholarship in conversation</span></figcaption></figure>
       </div>
       <div className="container proof-strip" aria-label="Centre at a glance">
         <div><ProofIcon name="book"/><strong>{String(programmes.length).padStart(2, "0")}</strong><span>Postgraduate programmes</span></div>
