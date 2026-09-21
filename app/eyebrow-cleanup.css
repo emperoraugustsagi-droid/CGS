@@ -1,0 +1,14 @@
+/* Eyebrow labels use typography only. Decorative leading rules were removed
+ * site-wide to keep section labels quieter and more consistent.
+ */
+.eyebrow::before,
+.eyebrow > span {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  content: none !important;
+}
+
+.eyebrow {
+  gap: 0;
+}
