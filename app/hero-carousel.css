@@ -33,56 +33,56 @@
   position: absolute;
   z-index: 6;
   display: flex;
-  align-items: stretch;
-  gap: 8px;
+  align-items: center;
+  gap: 5px;
 }
 
 .hero-carousel__controls button {
-  min-height: 46px;
+  width: 34px;
+  min-height: 34px;
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  padding: 0 14px;
-  border: 1px solid rgb(255 255 255 / 32%);
-  border-radius: 4px;
-  background: rgb(4 19 39 / 38%);
-  color: rgb(255 255 255 / 72%);
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-bottom: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 0;
+  background: transparent;
+  color: rgb(255 255 255 / 58%);
   font: inherit;
   cursor: pointer;
-  backdrop-filter: blur(7px);
-  transition: border-color .2s ease, background .2s ease, color .2s ease;
+  transition: border-color .2s ease, color .2s ease, opacity .2s ease;
 }
 
 .hero-carousel__controls button:hover,
 .hero-carousel__controls button:focus-visible {
-  border-color: rgb(255 255 255 / 72%);
-  background: rgb(4 19 39 / 64%);
+  border-bottom-color: rgb(255 255 255 / 78%);
   color: white;
   outline: none;
 }
 
 .hero-carousel__controls button.is-active {
-  border-color: var(--cgs-pink-300);
-  background: rgb(207 20 112 / 20%);
+  border-bottom: 2px solid var(--cgs-pink-300);
   color: white;
 }
 
 .hero-carousel__controls button > span {
-  font-size: 11px;
+  font-size: 10px;
   font-weight: 800;
-  letter-spacing: .12em;
+  letter-spacing: .08em;
 }
 
 .hero-carousel__controls button > small {
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .02em;
+  display: none;
 }
 
 .hero-carousel__controls .hero-carousel__pause {
-  width: 46px;
-  justify-content: center;
-  padding: 0;
+  width: 32px;
+  min-height: 32px;
+  margin-right: 7px;
+  border: 1px solid rgb(255 255 255 / 28%);
+  border-radius: 50%;
+  background: rgb(4 19 39 / 24%);
 }
 
 .hero-carousel__pause svg {
@@ -103,7 +103,7 @@
 @media (min-width: 821px) {
   .home-page .hero-carousel__controls {
     right: max(32px, calc((100% - 1240px) / 2));
-    bottom: 160px;
+    bottom: 154px;
   }
 }
 
@@ -111,10 +111,6 @@
   .hero-carousel__controls {
     right: 24px;
     bottom: 24px;
-  }
-
-  .hero-carousel__controls button > small {
-    display: none;
   }
 }
 
