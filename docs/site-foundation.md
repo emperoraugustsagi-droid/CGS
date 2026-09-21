@@ -97,13 +97,14 @@ Primary destinations:
 
 ---
 
-## 4. Five primary user intentions
+## 4. Six primary user intentions
 
 The website should make these intents easy to recognize:
 
 - **Understand** — About CGS
 - **Study** — Programmes
 - **Explore knowledge** — Research
+- **Attend** — Events
 - **See the work** — Activity
 - **Engage** — Contact
 
@@ -158,6 +159,16 @@ The page should answer:
 - How does research connect to teaching and public life?
 - How can researchers or institutions start a conversation?
 
+### Events
+
+Job: Show what is coming next and make participation clear.
+
+The page should answer:
+- What events are upcoming?
+- When do they take place?
+- When does registration close?
+- How does someone register or request current details?
+
 ### Activity
 
 Job: Demonstrate evidence of an active Centre.
@@ -187,13 +198,15 @@ Primary enquiry intents:
 
 The target journey is:
 
-**Discovery → Understanding → Evidence → Participation → Action**
+**Discovery → Understanding → Participation / Evidence → Action**
 
 Typical paths:
 
-Home → About → Research → Activity → Contact
+Home → About → Research / Events → Activity → Contact
 
 Home → Programmes → Contact
+
+Home → Events → Contact
 
 Home → Research → Programmes
 
@@ -445,7 +458,7 @@ Phase 0 is complete when:
 
 - audience hierarchy is agreed
 - narrative spine is agreed
-- five primary user intentions are agreed
+- six primary user intentions are agreed
 - page responsibilities are agreed
 - cross-page journey is agreed
 - evidence/content truth rules are agreed
