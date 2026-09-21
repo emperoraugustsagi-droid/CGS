@@ -250,7 +250,27 @@ When information can change, direct visitors to the Centre for current guidance.
 
 ---
 
-## 8. Programme verification status
+## 8. Content and data governance
+
+Shared institutional facts should have one canonical source in the codebase.
+
+### Rule
+
+Programme names, research areas, team names/titles, contact details, navigation and other repeated institutional data should be imported from shared data/configuration rather than copied into individual pages.
+
+### Current architecture risk
+
+The current homepage contains its own local programme and research-area arrays while child pages use `app/site-data.ts`. This creates a risk that the homepage and child pages publish different facts after future edits.
+
+### Phase rule
+
+During implementation, consolidate repeated institutional facts into one verified shared source before expanding the child pages.
+
+Editorial page-specific copy may remain local to a page.
+
+---
+
+## 9. Programme verification status
 
 The current NSUK School of Postgraduate Studies public programme listing verifies the following entries under the Center for Gender Studies:
 
@@ -273,7 +293,7 @@ Until verified, programme architecture should distinguish:
 
 ---
 
-## 9. Voice and content principles
+## 10. Voice and content principles
 
 The CGS voice should be:
 
@@ -295,7 +315,7 @@ Use plain language first; academic specificity second.
 
 ---
 
-## 10. Visual principles
+## 11. Visual principles
 
 ### Institutional editorial, not sales landing page
 
@@ -328,7 +348,7 @@ Avoid:
 
 ---
 
-## 11. Photography principles
+## 12. Photography principles
 
 Photography is evidence, not decoration.
 
@@ -350,7 +370,7 @@ Every important image should answer at least one question:
 
 ---
 
-## 12. Mobile principle
+## 13. Mobile principle
 
 Mobile is a designed reading sequence, not desktop stacked vertically.
 
@@ -369,7 +389,7 @@ Avoid long chains of text-only sections.
 
 ---
 
-## 13. Homepage/child-page relationship
+## 14. Homepage/child-page relationship
 
 The homepage should introduce each major idea once.
 
@@ -405,7 +425,7 @@ This principle prevents copy duplication.
 
 ---
 
-## 14. Phase 0 non-negotiables
+## 15. Phase 0 non-negotiables
 
 Before a page is considered structurally complete:
 
@@ -419,7 +439,7 @@ Before a page is considered structurally complete:
 
 ---
 
-## 15. Phase 0 exit criteria
+## 16. Phase 0 exit criteria
 
 Phase 0 is complete when:
 
@@ -437,7 +457,7 @@ Once locked, Phase 1 may map the information architecture and exact cross-page n
 
 ---
 
-## 16. Open verification queue
+## 17. Open verification queue
 
 Before final publication, confirm with CGS:
 
