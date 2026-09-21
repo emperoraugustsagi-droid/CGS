@@ -17,6 +17,11 @@ export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title
   return <section className="page-intro"><div className="container page-intro__inner"><Eyebrow light>{eyebrow}</Eyebrow><h1>{title}</h1><div className="page-intro__body">{children}</div></div></section>;
 }
 
+export function SectionHeading({ eyebrow, title, id, children, light = false, single = false }: { eyebrow: string; title: string; id?: string; children?: React.ReactNode; light?: boolean; single?: boolean }) {
+  const className = single ? "section-heading section-heading--single" : "section-heading";
+  return <div className={className}><div><Eyebrow light={light}>{eyebrow}</Eyebrow><h2 id={id}>{title}</h2></div>{children ? <p>{children}</p> : null}</div>;
+}
+
 export function ContactBand({ title = "Have a question for CGS?", text = "Talk to the Centre about study, research, training or public dialogue." }: { title?: string; text?: string }) {
   return <section className="contact-band"><div className="container contact-band__inner"><div><Eyebrow light>Start a conversation</Eyebrow><h2>{title}</h2><p>{text}</p></div><a className="button button--gold" href="mailto:genderstudies@nsuk.edu.ng?subject=CGS%20enquiry">Contact the Centre <Arrow /></a></div></section>;
 }
