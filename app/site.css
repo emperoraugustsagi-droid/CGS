@@ -919,7 +919,7 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
 @media (max-width: 620px) {
   .programmes-page .page-intro { text-align: center; }
   .programmes-page .page-intro .eyebrow { justify-content: center; }
-  .programmes-page .page-intro__body { max-width: 345px; margin-inline: auto; }
+  .programmes-page .page-intro__body { max-width: 345px; margin-inline: auto; text-align: left; }
 
   .programmes-page .page-visual__copy,
   .programmes-page .page-grid,
@@ -931,6 +931,7 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
   .programmes-page .page-grid h2,
   .programmes-page .section-heading h2,
   .programmes-page .section-heading > p { margin-inline: auto; }
+  .programmes-page .section-heading > p { max-width: 345px; text-align: left; }
 
   .programmes-page .page-visual__copy p,
   .programmes-page .page-grid .prose { max-width: 345px; margin-inline: auto; text-align: left; }
