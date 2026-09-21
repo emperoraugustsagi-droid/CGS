@@ -101,6 +101,21 @@
 }
 
 @media (min-width: 821px) {
+  /* Reserve the lower hero band for the proof strip. Variable-length carousel
+   * copy is vertically balanced inside the remaining safe area so CTA buttons
+   * can never sit underneath the transparent strip.
+   */
+  .home-page .hero-carousel__slide .hero__copy {
+    position: absolute;
+    top: 0;
+    bottom: 170px;
+    display: flex;
+    box-sizing: border-box;
+    padding: clamp(34px, 4.5vh, 58px) 0 34px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .home-page .hero-carousel__controls {
     right: max(32px, calc((100% - 1240px) / 2));
     bottom: 154px;
