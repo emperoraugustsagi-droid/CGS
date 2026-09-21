@@ -26,8 +26,9 @@ The website should behave as a connected system, not six separate pages.
 1. About Us
 2. Programmes
 3. Research
-4. Activity
-5. Contact CGS
+4. Events
+5. Activity
+6. Contact CGS
 
 ### Navigation principle
 
@@ -60,7 +61,7 @@ This remains the persistent utility action.
 
 Mapped to pages:
 
-**Home → About → Research / Programmes → Activity → Contact**
+**Home → About → Research / Programmes / Events → Activity → Contact**
 
 There is no required single linear path. The site should support several high-intent journeys.
 
@@ -70,6 +71,13 @@ Home
 → Programmes
 → relevant programme information
 → Contact
+
+### Event attendee journey
+
+Home
+→ Events
+→ upcoming event details
+→ registration/contact
 
 Optional trust path:
 Home
@@ -246,7 +254,31 @@ Replace direct-mail research CTA as the dominant action with an internal Researc
 
 ---
 
-### H6. Leadership / people preview
+### H6. Upcoming events preview
+
+Question answered:
+**What is happening next at CGS?**
+
+Homepage owns:
+- one featured upcoming event
+- dates
+- registration deadline
+- concise reason to attend
+
+Events owns:
+- complete upcoming-event information
+- registration guidance
+- future events listing
+
+CTA:
+**View event details**
+
+Handoff:
+- Events
+
+---
+
+### H7. Leadership / people preview
 
 Question answered:
 **Who is behind the Centre?**
@@ -273,7 +305,7 @@ Do not duplicate the full team roster on Home and About. Home should tease; Abou
 
 ---
 
-### H7. Activity preview
+### H8. Activity preview
 
 Question answered:
 **Is this Centre active?**
@@ -300,7 +332,7 @@ The homepage activity cards should not bypass the Activity page by sending users
 
 ---
 
-### H8. Intent router
+### H9. Intent router
 
 Question answered:
 **What do you want to do next?**
@@ -646,7 +678,50 @@ Contact
 
 ---
 
-# 8. Activity architecture
+# 8. Events architecture
+
+## Primary job
+
+**Show upcoming CGS events and make participation easy.**
+
+Events is forward-looking. Activity is retrospective/documentary.
+
+## Recommended section order
+
+### E1. Hero — Events at CGS
+
+Question:
+**What is coming next?**
+
+### E2. Featured upcoming event
+
+Own:
+- event title
+- event type
+- verified/CGS-supplied dates
+- registration deadline
+- registration/contact action
+
+Do not invent venue, fees, speakers, theme, eligibility or programme details.
+
+### E3. Why events matter
+
+Connect events to CGS's mandate:
+- research exchange
+- teaching/learning
+- institutional and public engagement
+
+### E4. Registration guidance
+
+Explain which details should be confirmed directly with the Centre.
+
+### E5. Future event listing
+
+As new events are supplied, list upcoming events in chronological order. Past events move conceptually to Activity once documented.
+
+---
+
+# 9. Activity architecture
 
 ## Primary job
 
@@ -723,7 +798,7 @@ Links:
 
 ---
 
-# 9. Contact architecture
+# 10. Contact architecture
 
 ## Primary job
 
@@ -798,7 +873,7 @@ Encourage visitors to confirm current details.
 
 ---
 
-# 10. Duplication rules
+# 11. Duplication rules
 
 ## Homepage vs About
 
@@ -870,7 +945,7 @@ Do not repeat identical six-area descriptions verbatim on both pages.
 
 ---
 
-# 11. CTA hierarchy
+# 12. CTA hierarchy
 
 ## Level 1 — Page-primary action
 
@@ -904,7 +979,7 @@ Email/phone is the final action layer, not the first answer to every question.
 
 ---
 
-# 12. Internal linking map
+# 13. Internal linking map
 
 ### Home
 → About
@@ -930,9 +1005,16 @@ Email/phone is the final action layer, not the first answer to every question.
 → Programmes
 → Contact
 
+### Events
+→ About
+→ Research
+→ Activity
+→ Contact
+
 ### Activity
 → About
 → Research
+→ Events
 → Contact
 
 ### Contact
@@ -942,7 +1024,7 @@ Email/phone is the final action layer, not the first answer to every question.
 
 ---
 
-# 13. URL strategy
+# 14. URL strategy
 
 Keep current primary URLs:
 
@@ -950,6 +1032,7 @@ Keep current primary URLs:
 - /about
 - /programmes
 - /research
+- /events
 - /activity
 - /contact
 
@@ -966,7 +1049,7 @@ This avoids premature route complexity.
 
 ---
 
-# 14. Content ownership matrix
+# 15. Content ownership matrix
 
 | Content | Canonical owner | Homepage treatment |
 |---|---|---|
@@ -977,13 +1060,14 @@ This avoids premature route complexity.
 | Research themes | Research + shared data | Preview |
 | Director profile | About + shared data | Teaser |
 | Team roster | About + shared data | Do not duplicate fully |
+| Event listings | Events + shared data | Preview |
 | Activity archive | Activity + shared data | Preview |
 | Contact details | shared data / Contact | Utility only |
 | Enquiry routing | Contact | Preview |
 
 ---
 
-# 15. Data architecture rule for implementation
+# 16. Data architecture rule for implementation
 
 Before redesigning the child pages further:
 
@@ -995,7 +1079,7 @@ Before redesigning the child pages further:
 
 ---
 
-# 16. Phase 1 implementation priorities
+# 17. Phase 1 implementation priorities
 
 ## Priority 1 — Navigation and routing logic
 
@@ -1013,6 +1097,7 @@ Reduce duplication:
 Strengthen:
 - Programmes
 - Research
+- Events
 - Activity
 - Contact
 
@@ -1024,7 +1109,7 @@ Consolidate repeated facts before visual redesign expands.
 
 ---
 
-# 17. Phase 1 acceptance criteria
+# 18. Phase 1 acceptance criteria
 
 Phase 1 is complete when:
 
