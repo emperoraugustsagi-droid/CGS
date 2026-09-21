@@ -10,40 +10,49 @@ export const site = {
 
 export const programmes = [
   {
-    code: "ECGS",
-    title: "Executive Certificate in Gender Studies",
-    format: "Part-time certificate",
-    summary: "A practical foundation for students, public servants, development practitioners and community leaders.",
+    code: "PGD",
+    title: "PGD Gender Studies",
+    format: "Postgraduate Diploma",
+    summary: "Postgraduate study for graduates and professionals seeking a structured foundation in gender analysis and its application.",
   },
   {
-    code: "PGDGS",
-    title: "Postgraduate Diploma in Gender Studies",
-    format: "Part-time postgraduate diploma",
-    summary: "For graduates and professionals building gender awareness for public service and organisational practice.",
+    code: "M.Sc.",
+    title: "M.Sc. Gender Studies",
+    format: "Academic Masters",
+    summary: "Advanced academic study focused on research, analysis and scholarly engagement with gender and society.",
   },
   {
     code: "MGS",
-    title: "Master of Gender Studies",
-    format: "Full-time professional degree",
-    summary: "Advanced interdisciplinary study for academics, practitioners, policymakers and professionals.",
+    title: "Masters in Gender Studies",
+    format: "Professional Masters",
+    summary: "Professional postgraduate study connecting gender knowledge with practice, institutions and public life.",
   },
   {
-    code: "MSc",
-    title: "Master of Science in Gender Studies",
-    format: "Full-time master’s degree",
-    summary: "Research, policy analysis and scholarly training for academic and development-focused careers.",
+    code: "M.Phil./Ph.D.",
+    title: "M.Phil./Ph.D. Gender Studies",
+    format: "Master of Philosophy pathway",
+    summary: "An advanced research pathway for scholars progressing toward doctoral-level work in Gender Studies.",
   },
   {
-    code: "M.Phil.",
-    title: "Master of Philosophy in Gender Studies",
-    format: "Full-time research degree",
-    summary: "Advanced theoretical and research training for independent scholarship and consultancy.",
+    code: "Ph.D.",
+    title: "Ph.D. Gender Studies",
+    format: "Doctoral programme",
+    summary: "Doctoral research for scholars developing original work in Gender Studies.",
+  },
+] as const;
+
+export const centreStudyOfferings = [
+  {
+    code: "CERT",
+    title: "Gender Studies Certificate Programme",
+    format: "Certificate programme",
+    summary: "The official NSUK learning platform lists a Gender Studies Certificate Programme. Contact CGS for current admissions and delivery guidance.",
   },
   {
-    code: "PhD",
-    title: "Doctor of Philosophy in Gender Studies",
-    format: "Full-time doctoral degree",
-    summary: "Original research for scholars prepared to advance knowledge and address complex gender questions.",
+    code: "DIP",
+    title: "Gender Studies Diploma Programme",
+    format: "Diploma programme",
+    summary: "The official NSUK learning platform lists a Gender Studies Diploma Programme. Contact CGS for current admissions and delivery guidance.",
   },
 ] as const;
 
