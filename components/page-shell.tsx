@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SiteFooter } from "./site-footer";
 import { SiteHeader } from "./site-header";
 
@@ -23,5 +24,5 @@ export function SectionHeading({ eyebrow, title, id, children, light = false, si
 }
 
 export function ContactBand({ title = "Have a question for CGS?", text = "Talk to the Centre about study, research, training or public dialogue." }: { title?: string; text?: string }) {
-  return <section className="contact-band"><div className="container contact-band__inner"><div><Eyebrow light>Start a conversation</Eyebrow><h2>{title}</h2><p>{text}</p></div><a className="button button--gold" href="mailto:genderstudies@nsuk.edu.ng?subject=CGS%20enquiry">Contact the Centre <Arrow /></a></div></section>;
+  return <section className="contact-band"><div className="container contact-band__inner"><div><Eyebrow light>Start a conversation</Eyebrow><h2>{title}</h2><p>{text}</p></div><Link className="button button--gold" href="/contact">Contact the Centre <Arrow /></Link></div></section>;
 }
