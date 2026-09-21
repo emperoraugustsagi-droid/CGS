@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Arrow, ContactBand, Eyebrow, PageIntro, PageShell } from "../../components/page-shell";
+import { Arrow, ContactBand, Eyebrow, PageIntro, PageShell, SectionHeading } from "../../components/page-shell";
 import { researchAreas, site } from "../site-data";
 
 export const metadata: Metadata = {
@@ -20,7 +20,7 @@ export default function ResearchPage() {
         <div className="page-visual__copy"><Eyebrow>From question to evidence</Eyebrow><h2 id="research-visual-title">Research is a practice of attention.</h2><p>It asks us to look closely, listen carefully and stay with complexity long enough to understand what is really happening.</p><p>That is the spirit behind the Centre’s research focus.</p></div>
       </div>
     </section>
-    <section className="section research research--page" aria-labelledby="research-areas-title"><div className="container"><div className="section-heading section-heading--single"><div><Eyebrow light>Areas of inquiry</Eyebrow><h2 id="research-areas-title">Where gender meets society.</h2></div></div><div className="research-grid">{researchAreas.map(([title, description], index) => <article key={title}><span className="index">0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
+    <section className="section research research--page" aria-labelledby="research-areas-title"><div className="container"><SectionHeading eyebrow="Areas of inquiry" title="Where gender meets society." id="research-areas-title" light single /><div className="research-grid">{researchAreas.map(([title, description], index) => <article key={title}><span className="index">0{index + 1}</span><h3>{title}</h3><p>{description}</p></article>)}</div></div></section>
     <section className="section page-section" aria-labelledby="research-conversation-title"><div className="container page-grid page-grid--wide"><div><Eyebrow>Research with purpose</Eyebrow><h2 id="research-conversation-title">Good questions need good conversations.</h2></div><div className="prose"><p>CGS welcomes conversations with students, researchers, practitioners, institutions and communities whose work connects with these areas.</p><a className="text-link" href={`mailto:${site.email}?subject=Research%20enquiry`}>Discuss a research question <Arrow diagonal /></a></div></div></section>
     <ContactBand title="Bring a research question" text="Start a conversation about collaboration, supervision, public dialogue or a research idea." />
   </PageShell>;
