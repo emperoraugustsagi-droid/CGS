@@ -99,17 +99,19 @@ export const team = [
 
 export const activities = [
   {
+    id: "research-workshop",
     type: "Academic development",
     title: "CGS Research Workshop",
     description: "A working session bringing the Centre’s academic community together.",
-    href: "https://drive.google.com/drive/folders/1hpHDTWqsrZHiBJ4_RJHPcIy-FU5TdIlh",
+    sourceHref: "https://drive.google.com/drive/folders/1hpHDTWqsrZHiBJ4_RJHPcIy-FU5TdIlh",
     image: "/assets/cgs-research-workshop.jpg",
   },
   {
+    id: "advisory-committee-inauguration",
     type: "Institutional leadership",
     title: "Inauguration of the CGS Advisory Committee",
     description: "A documented advisory committee inauguration and institutional gathering.",
-    href: "https://drive.google.com/drive/folders/1cKRh2d7ZJfGsUaSDe6bxrS7AkB8me2sC",
+    sourceHref: "https://drive.google.com/drive/folders/1cKRh2d7ZJfGsUaSDe6bxrS7AkB8me2sC",
     image: "/assets/cgs-advisory-group.jpg",
   },
 ] as const;
