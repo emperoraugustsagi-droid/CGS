@@ -2,9 +2,9 @@
   :root {
     --mobile-card-surface: #fff;
     --mobile-card-border: rgb(11 35 72 / 14%);
-    --mobile-card-ink: #0b2348;
-    --mobile-card-muted: #5a6a85;
-    --mobile-card-accent: #cf1470;
+    --mobile-card-ink: var(--cgs-navy-800);
+    --mobile-card-muted: var(--cgs-muted);
+    --mobile-card-accent: var(--cgs-pink-600);
     --mobile-card-accent-soft: rgb(207 20 112 / 10%);
   }
 
