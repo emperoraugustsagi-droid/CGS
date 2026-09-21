@@ -27,15 +27,16 @@
   --text-muted: var(--cgs-muted);
   --border-default: var(--cgs-border);
   --focus-ring: var(--cgs-blue-600);
-  --wine: #321525;
-  --burgundy: #54233d;
-  --burgundy-bright: #6b2d4e;
-  --gold: #c99a4a;
-  --ivory: #faf7f2;
-  --paper: #f2ebe5;
-  --charcoal: #252225;
-  --muted: #686267;
-  --line: rgb(84 35 61 / 18%);
+  /* Compatibility aliases: legacy selectors now resolve to the CGS semantic system. */
+  --wine: var(--color-primary-strong);
+  --burgundy: var(--color-primary);
+  --burgundy-bright: var(--color-accent);
+  --gold: var(--color-accent);
+  --ivory: var(--surface-page);
+  --paper: var(--surface-paper);
+  --charcoal: var(--text-primary);
+  --muted: var(--text-muted);
+  --line: var(--border-default);
   --content: 1240px;
 }
 
