@@ -52,7 +52,7 @@ export default function Home() {
     <section className="hero" id="top" aria-labelledby="hero-title">
       <HomeHeroCarousel />
       <div className="container proof-strip" aria-label="Centre at a glance">
-        <div><ProofIcon name="book"/><strong>{String(programmes.length).padStart(2, "0")}</strong><span>Postgraduate programmes</span></div>
+        <div><ProofIcon name="book"/><strong>{String(programmes.length).padStart(2, "0")}</strong><span data-mobile-label="Academic programmes">Postgraduate programmes</span></div>
         <div><ProofIcon name="community"/><strong>Certificate + Diploma</strong><span data-mobile-label="Study pathways">Additional Centre learning</span></div>
         <div><ProofIcon name="impact"/><strong>Research · Teaching · Engagement</strong><span data-mobile-label="Public engagement">Knowledge connected to public life</span></div>
         <a className="proof-strip__scroll" href="#about">Scroll to explore <span aria-hidden="true">⌄</span></a>
