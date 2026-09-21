@@ -71,7 +71,7 @@
 
   .programmes--home .programme-support {
     border-color: rgb(207 20 112 / 15%);
-    background: #fff1f8;
+    background: var(--cgs-pink-tint);
     text-align: center;
   }
 
@@ -91,8 +91,8 @@
   .programmes--home .programme-support .button,
   .programmes--home .programme-support > a {
     justify-content: center;
-    border-color: #cf1470;
-    background: #cf1470;
+    border-color: var(--cgs-pink-600);
+    background: var(--cgs-pink-600);
     color: white;
     text-align: center;
   }
@@ -106,6 +106,6 @@
   .programmes--home .programme-footer-cta {
     border: 1px solid rgb(22 119 232 / 16%);
     border-radius: 5px;
-    background: #eff8ff;
+    background: var(--cgs-blue-tint);
   }
 }
