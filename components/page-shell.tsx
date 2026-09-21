@@ -15,7 +15,7 @@ export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
 }
 
 export function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
-  return <p className={light ? "eyebrow eyebrow--light" : "eyebrow"}><span aria-hidden="true" />{children}</p>;
+  return <p className={light ? "eyebrow eyebrow--light" : "eyebrow"}>{children}</p>;
 }
 
 export function PageIntro({ eyebrow, title, children }: { eyebrow: string; title: string; children: React.ReactNode }) {
