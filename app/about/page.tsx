@@ -85,7 +85,7 @@ export default function AboutPage() {
       <ul className="container about-fields" aria-label="CGS areas of study">
         {researchAreas.map(([title, description], index) => <li key={title}><span className="index">0{index + 1}</span><strong>{title}</strong><small>{description}</small></li>)}
       </ul>
-      <div className="container page-intro__actions"><Link className="text-link" href="/research">Explore our research focus <Arrow diagonal /></Link></div>
+      <div className="container about-section-link"><Link className="text-link" href="/research">Explore our research focus <Arrow diagonal /></Link></div>
     </section>
 
     <section className="section page-section page-section--paper" id="people" aria-labelledby="leadership-title">
