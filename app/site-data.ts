@@ -81,9 +81,25 @@ export const activities = [
   },
 ] as const;
 
+export const events = [
+  {
+    slug: "first-cgs-international-conference",
+    title: "First CGS International Conference",
+    type: "International conference",
+    registrationDeadline: "30 September 2026",
+    startDate: "3 November 2026",
+    endDate: "8 November 2026",
+    dateLabel: "3–8 November 2026",
+    status: "Registration open",
+    registrationHref: `mailto:${site.email}?subject=${encodeURIComponent("First CGS International Conference registration")}`,
+    summary: "Join the Centre for Gender Studies for its first international conference, bringing scholarship, dialogue and public engagement into one academic gathering.",
+  },
+] as const;
+
 export const navigation = [
   ["About Us", "/about"],
   ["Programmes", "/programmes"],
   ["Research", "/research"],
+  ["Events", "/events"],
   ["Activity", "/activity"],
 ] as const;
