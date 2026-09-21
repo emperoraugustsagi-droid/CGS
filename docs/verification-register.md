@@ -190,6 +190,22 @@ These are plausible and useful editorial categories, but no official current NSU
 
 ---
 
+
+
+## Upcoming events
+
+### First CGS International Conference
+**Status:** CENTRE/PROJECT-SUPPLIED UPCOMING EVENT  
+**Confidence:** D
+
+Current supplied details:
+- Registration deadline: 30 September 2026
+- Conference dates: 3–8 November 2026
+
+No authoritative public NSUK page for this specific conference was located during the current verification search.
+
+**Website action:** Publish the supplied title and dates as Centre-provided information. Do not invent venue, fees, speakers, theme, registration URL, eligibility, programme schedule or participation requirements. Route visitors to CGS for current registration instructions.
+
 ## Activity records
 
 ### CGS Research Workshop
