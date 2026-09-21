@@ -1,6 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { SiteHeader } from "../components/site-header";
-import { events, team } from "./site-data";
+import { activities, events, programmes, researchAreas, team } from "./site-data";
 
 const images = {
   heroDesktop: "/assets/cgs-hero-desktop.png",
@@ -10,24 +11,6 @@ const images = {
   study: "/assets/cgs-research-workshop.jpg",
   researchStory: "/assets/cgs-awareness-campaign.jpg",
 };
-
-const programmes = [
-  { code: "ECGS", title: "Executive Certificate in Gender Studies", format: "Part-time certificate", summary: "A practical foundation for students, public servants, development practitioners and community leaders." },
-  { code: "PGDGS", title: "Postgraduate Diploma in Gender Studies", format: "Part-time postgraduate diploma", summary: "For graduates and professionals building gender awareness for public service and organisational practice." },
-  { code: "MGS", title: "Master of Gender Studies", format: "Full-time professional degree", summary: "Advanced interdisciplinary study for academics, practitioners, policymakers and professionals." },
-  { code: "MSc", title: "Master of Science in Gender Studies", format: "Full-time master’s degree", summary: "Research, policy analysis and scholarly training for academic and development-focused careers." },
-  { code: "M.Phil.", title: "Master of Philosophy in Gender Studies", format: "Full-time research degree", summary: "Advanced theoretical and research training for independent scholarship and consultancy." },
-  { code: "PhD", title: "Doctor of Philosophy in Gender Studies", format: "Full-time doctoral degree", summary: "Original research for scholars prepared to advance knowledge and address complex gender questions." },
-] as const;
-
-const researchAreas = [
-  ["Gender & Development", "Opportunity, work and economic life"], ["Gender-Based Violence", "Prevention, response and lived experience"], ["Women & Leadership", "Participation, power and decision-making"], ["Gender & Health", "Health, wellbeing and access to care"], ["Gender & Education", "Learning, opportunity and social expectations"], ["Gender & Governance", "Policy, institutions and public life"],
-] as const;
-
-const activities = [
-  { type: "Academic development", title: "CGS Research Workshop", description: "See the Centre’s supplied record of a working session bringing its academic community together.", href: "https://drive.google.com/drive/folders/1hpHDTWqsrZHiBJ4_RJHPcIy-FU5TdIlh" },
-  { type: "Institutional leadership", title: "Inauguration of the CGS Advisory Committee", description: "View the Centre’s documented advisory committee inauguration and institutional gathering.", href: "https://drive.google.com/drive/folders/1cKRh2d7ZJfGsUaSDe6bxrS7AkB8me2sC" },
-] as const;
 
 function Arrow({ diagonal = false }: { diagonal?: boolean }) { return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>; }
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) { return <p className={light ? "eyebrow eyebrow--light" : "eyebrow"}>{children}</p>; }
@@ -77,14 +60,41 @@ export default function Home() {
         <figure className="hero__media"><picture><source media="(max-width: 620px)" srcSet={images.heroMobile} /><img src={images.heroDesktop} alt="Nigerian university student studying on campus" /></picture><figcaption><span>Centre for Gender Studies</span><span>Scholarship in conversation</span></figcaption></figure>
       </div>
       <div className="container proof-strip" aria-label="Centre at a glance">
-        <div><ProofIcon name="book"/><strong>06</strong><span>Academic programmes</span></div>
-        <div><ProofIcon name="community"/><strong>Certificate → PhD</strong><span data-mobile-label="Stronger communities">A complete study pathway</span></div>
-        <div><ProofIcon name="impact"/><strong>Research · Teaching · Policy</strong><span data-mobile-label="Real-world impact">Knowledge connected to public life</span></div>
+        <div><ProofIcon name="book"/><strong>{String(programmes.length).padStart(2, "0")}</strong><span>Postgraduate programmes</span></div>
+        <div><ProofIcon name="community"/><strong>Certificate + Diploma</strong><span data-mobile-label="Study pathways">Additional Centre learning</span></div>
+        <div><ProofIcon name="impact"/><strong>Research · Teaching · Engagement</strong><span data-mobile-label="Public engagement">Knowledge connected to public life</span></div>
         <a className="proof-strip__scroll" href="#about">Scroll to explore <span aria-hidden="true">⌄</span></a>
       </div>
     </section>
     <section className="section mandate-section" id="about" aria-labelledby="mandate-title"><div className="container mandate-layout"><div className="section-intro"><Eyebrow>Our mandate</Eyebrow><h2 id="mandate-title">Gender shapes institutions. We study how, and what can change.</h2><p>CGS is a multidisciplinary home for advanced study, research and public engagement at Nasarawa State University, Keffi.</p></div><div className="mandate-list">{[["01","Research","Produce evidence.","Examine the policies, systems and social expectations that shape people’s opportunities.","research"],["02","Teaching","Develop expertise.","Equip students and professionals with the knowledge and methods needed for serious gender analysis.","teaching"],["03","Engagement","Inform public life.","Bring scholarship into conversation with communities, institutions, practitioners and policymakers.","engagement"]].map(([i,l,h,p,icon])=><article key={i}><div className="mandate-list__marker"><MandateIcon name={icon as "research" | "teaching" | "engagement"}/><span className="index">{i}</span></div><div><p className="label">{l}</p><h3>{h}</h3><p>{p}</p></div></article>)}</div></div><div className="container mandate-cta"><p>Knowledge.<br/>People.<br/><em>A fairer tomorrow.</em></p><a className="text-link" href="#research">Explore our work <Arrow /></a></div></section>
-    <section className="section programmes programmes--home" id="programmes" aria-labelledby="programmes-title"><div className="container"><div className="section-heading"><div><Eyebrow>Study at CGS</Eyebrow><h2 id="programmes-title">Choose the level that matches <em>your next step.</em></h2></div><p>From professional development to original doctoral research, the Centre offers six pathways into deeper gender knowledge.</p></div><figure className="programmes__feature"><Image src={images.study} alt="CGS research workshop with participants gathered around a table" fill sizes="(max-width: 620px) 100vw, 760px" /><figcaption><span>Learning for<br/>a more equal<br/>tomorrow.</span></figcaption></figure><div className="programme-list">{programmes.map((programme,index)=><article className="programme-row" key={programme.code}><span className="index">0{index+1}</span><ProgrammeIcon index={index}/><div className="programme-row__title"><strong>{programme.code}</strong><h3>{programme.title}</h3></div><div className="programme-row__detail"><span>{programme.format}</span><p>{programme.summary}</p></div><a href={`mailto:genderstudies@nsuk.edu.ng?subject=${encodeURIComponent(`${programme.title} enquiry`)}`} aria-label={`Learn more about ${programme.title}`}>Learn more <Arrow diagonal /></a></article>)}</div><div className="programme-support"><div><strong>Not sure which pathway is right for you?</strong><p>Talk to the Centre about programmes and current application guidance.</p></div><a className="button button--wine" href="mailto:genderstudies@nsuk.edu.ng?subject=Programme%20guidance">Speak to us <Arrow /></a></div><div className="programme-footer-cta"><p>Knowledge. People. <em>A fairer tomorrow.</em></p></div></div></section>
+    <section className="section programmes programmes--home" id="programmes" aria-labelledby="programmes-title">
+      <div className="container">
+        <div className="section-heading">
+          <div><Eyebrow>Study at CGS</Eyebrow><h2 id="programmes-title">Choose the level that matches <em>your next step.</em></h2></div>
+          <p>CGS supports different routes into gender study, from certificate and diploma learning to postgraduate and doctoral research.</p>
+        </div>
+        <figure className="programmes__feature"><Image src={images.study} alt="CGS research workshop with participants gathered around a table" fill sizes="(max-width: 620px) 100vw, 760px" /><figcaption><span>Learning for<br/>a more equal<br/>tomorrow.</span></figcaption></figure>
+        <div className="programme-list">
+          {[
+            ["01", "Foundation learning", "Certificate & diploma", "Begin with structured Gender Studies learning and confirm current admission arrangements directly with CGS."],
+            ["02", "Postgraduate transition", "PGD Gender Studies", "Build a postgraduate foundation before progressing further in academic or professional study."],
+            ["03", "Advanced study", "Academic & professional masters", "Choose between academic research-oriented study and a professional masters pathway."],
+            ["04", "Research degrees", "M.Phil./Ph.D. & Ph.D.", "Progress into advanced research and original doctoral scholarship in Gender Studies."],
+          ].map(([number, label, title, summary], index) => <article className="programme-row" key={number}>
+            <span className="index">{number}</span>
+            <ProgrammeIcon index={index}/>
+            <div className="programme-row__title"><strong>{label}</strong><h3>{title}</h3></div>
+            <div className="programme-row__detail"><span>Study pathway</span><p>{summary}</p></div>
+            <Link href="/programmes" aria-label={`Explore ${title}`}>Explore <Arrow diagonal /></Link>
+          </article>)}
+        </div>
+        <div className="programme-support">
+          <div><strong>See the verified programme structure.</strong><p>Explore current postgraduate listings and Centre study offerings, then contact CGS for up-to-date admissions guidance.</p></div>
+          <Link className="button button--wine" href="/programmes">View all programmes <Arrow /></Link>
+        </div>
+        <div className="programme-footer-cta"><p>Knowledge. People. <em>A fairer tomorrow.</em></p></div>
+      </div>
+    </section>
     <section className="section research research--home" id="research" aria-labelledby="research-title"><div className="container research__header"><Eyebrow light>Research focus</Eyebrow><h2 id="research-title">Questions grounded in the realities <em>of society.</em></h2><p>Our areas of inquiry reflect the many ways gender intersects with development, institutions, health, education, leadership and public life.</p><figure className="research__feature"><Image src={images.researchStory} alt="Women taking part in a domestic violence awareness and survivor support campaign" fill sizes="(max-width: 620px) 100vw, 760px" /><figcaption>Evidence, dialogue and survivor support</figcaption></figure></div><div className="container research-grid">{researchAreas.map(([title,description],index)=><article key={title}><span className="index">0{index+1}</span><ResearchIcon index={index}/><div className="research-grid__copy"><h3>{title}</h3><p>{description}</p></div><span className="research-grid__arrow" aria-hidden="true">→</span></article>)}</div><div className="container research__action"><div className="research-cta"><ResearchIcon index={0}/><div><strong>Have a research question<br/>or collaboration idea?</strong><p>Let&apos;s explore it together.</p></div><a href="mailto:genderstudies@nsuk.edu.ng?subject=Research%20enquiry" aria-label="Discuss a research question"><Arrow diagonal /></a></div></div></section>
     <section className="section home-event" id="events" aria-labelledby="home-event-title"><div className="container home-event__grid"><div className="home-event__date" aria-label={events[0].dateLabel}><span>NOV</span><strong>04</strong><small>→ 07 · 2026</small></div><div className="home-event__copy"><Eyebrow>Upcoming at CGS</Eyebrow><p className="label">{events[0].type}</p><h2 id="home-event-title">{events[0].title}</h2><p className="home-event__theme">{events[0].theme}</p><p>{events[0].summary}</p><div className="home-event__facts"><span><strong>{events[0].dateLabel}</strong>Conference dates</span><span><strong>{events[0].deadlines.abstractSubmission}</strong>Abstracts close</span><span><strong>{events[0].deadlines.earlyBirdRegistration}</strong>Early bird closes</span></div><div className="home-event__actions"><a className="button button--wine" href="/events">View event details <Arrow /></a><a className="text-link" href={events[0].website} target="_blank" rel="noreferrer">Conference website <Arrow diagonal /></a></div></div></div></section>
     <section className="section leadership leadership--home" id="leadership" aria-labelledby="leadership-title"><div className="container leadership__layout"><div className="director-card"><figure><Image src={images.director} alt="Dr. Comfort Ayine Adokwe-Obed, Director of the Centre for Gender Studies" fill sizes="(max-width: 760px) 45vw, 260px" /></figure><div><span>Director since February 2026</span><strong>Dr. Comfort Ayine<br/>Adokwe-Obed</strong><small>Senior Lecturer, Department of Public Administration</small><div className="director-card__links"><a className="text-link" href="https://www.linkedin.com/in/adokwe-comfort-392a4223b/" target="_blank" rel="noreferrer">View LinkedIn profile <Arrow diagonal /></a><a className="text-link" href="mailto:genderstudies@nsuk.edu.ng?subject=Connect%20with%20the%20CGS%20Director">Contact the Centre <Arrow diagonal /></a></div></div></div><div className="leadership__copy"><Eyebrow>Leadership</Eyebrow><h2 id="leadership-title">Policy scholarship with an institutional purpose.</h2><p>Dr. Comfort Ayine Adokwe-Obed leads the Centre with expertise in public policy and gender analysis. Her work spans governance, women’s empowerment, development and gender-responsive public policy.</p><p>Before becoming Director, she served as Deputy Director for Academics and Deputy Director of Programs at CGS.</p></div></div><div className="container team-roster" aria-labelledby="team-title"><div><Eyebrow>Centre team</Eyebrow><h3 id="team-title">The people supporting CGS programmes and scholarship.</h3><a className="text-link" href="/about#team">See more about the Centre team <Arrow diagonal /></a></div><div className="team-roster__list">{team.map(([name,role],index)=><div key={name}><span className="index">0{index+1}</span><strong>{name}</strong><small>{role}</small><span className="team-roster__arrow" aria-hidden="true">→</span></div>)}</div></div></section>
