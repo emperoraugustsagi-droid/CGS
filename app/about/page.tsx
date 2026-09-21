@@ -17,6 +17,7 @@ const pillars = [
 
 export default function AboutPage() {
   return <PageShell>
+    <div className="about-page">
     <section className="about-hero" aria-labelledby="about-title">
       <div className="container about-hero__layout">
         <div className="about-hero__copy">
@@ -26,7 +27,7 @@ export default function AboutPage() {
             <p>{site.name} at {site.university} brings research, teaching and public engagement together to examine how gender shapes institutions, opportunity and everyday life.</p>
             <p>We create a place where difficult questions can be studied seriously, evidence can be tested, and knowledge can move beyond the university into public life.</p>
             <div className="page-intro__actions">
-              <Link className="button button--gold" href="#purpose">Discover our purpose <Arrow /></Link>
+              <Link className="button button--accent" href="#purpose">Discover our purpose <Arrow /></Link>
               <Link className="text-link text-link--light" href="#people">Meet the people <Arrow diagonal /></Link>
             </div>
           </div>
@@ -38,7 +39,7 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section page-section" id="purpose" aria-labelledby="purpose-title">
+    <section className="section page-section about-purpose" id="purpose" aria-labelledby="purpose-title">
       <div className="container page-grid page-grid--wide">
         <div>
           <Eyebrow>Why CGS exists</Eyebrow>
@@ -51,7 +52,7 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section page-section page-section--paper" aria-labelledby="pillars-title">
+    <section className="section page-section page-section--paper about-mandate" aria-labelledby="pillars-title">
       <div className="container page-grid page-grid--wide">
         <div><Eyebrow>Our mandate</Eyebrow><h2 id="pillars-title">One Centre. Three connected responsibilities.</h2></div>
         <div className="prose"><p>Research gives us evidence. Teaching develops people who can work with that evidence. Engagement brings knowledge into conversation with the society it is meant to serve.</p></div>
@@ -61,7 +62,7 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section page-visual page-visual--paper" aria-labelledby="conversation-title">
+    <section className="section page-visual page-visual--paper about-public" aria-labelledby="conversation-title">
       <div className="container page-visual__grid">
         <figure className="page-visual__media">
           <Image src="/assets/cgs-speaker-podium.png" alt="A university speaker addressing an audience at a CGS event" fill sizes="(max-width: 820px) 100vw, 55vw" />
@@ -77,7 +78,7 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section page-section" aria-labelledby="lens-title">
+    <section className="section page-section about-lens" aria-labelledby="lens-title">
       <div className="container page-grid page-grid--wide">
         <div><Eyebrow>How we study society</Eyebrow><h2 id="lens-title">Gender is not a single subject. It is a lens across public life.</h2></div>
         <div className="prose"><p>Our work crosses disciplines because the questions that shape opportunity and wellbeing do not fit neatly inside one field.</p><p>These six areas provide a practical map of the questions CGS brings into research, teaching and public engagement.</p></div>
@@ -88,37 +89,43 @@ export default function AboutPage() {
       <div className="container about-section-link"><Link className="text-link" href="/research">Explore our research focus <Arrow diagonal /></Link></div>
     </section>
 
-    <section className="section page-section page-section--paper" id="people" aria-labelledby="leadership-title">
+    <section className="section page-section page-section--paper about-leadership" id="people" aria-labelledby="leadership-title">
       <div className="container person-feature">
-        <figure className="person-feature__media"><Image src="/assets/cgs-director-comfort-adokwe.jpeg" alt="Dr. Comfort Ayine Adokwe-Obed, Director of the Centre for Gender Studies" fill sizes="(max-width: 820px) 100vw, 40vw" /></figure>
+        <figure className="person-feature__media"><Image src="/assets/cgs-director-comfort-adokwe.jpeg" alt="Dr. Comfort Ayine Adokwe-Obed, Acting Director of the Centre for Gender Studies" fill sizes="(max-width: 820px) 100vw, 40vw" /></figure>
         <div className="person-feature__copy">
           <Eyebrow>Centre leadership</Eyebrow>
           <h2 id="leadership-title">Keeping scholarship connected to people, institutions and public life.</h2>
-          <p className="person-feature__role">Dr. Comfort Ayine Adokwe-Obed, Director</p>
-          <p>Dr. Comfort Ayine Adokwe-Obed is a Senior Lecturer in the Department of Public Administration and Director of the Centre for Gender Studies. Her work brings public policy, governance, gender analysis and development into conversation.</p>
-          <p>As Director, she leads a Centre that connects academic study with capacity development, institutional engagement and the practical questions facing society.</p>
+          <p className="person-feature__role">Dr. Comfort Ayine Adokwe-Obed, Ag. Director</p>
+          <p>Dr. Comfort Ayine Adokwe-Obed is a Senior Lecturer in the Department of Public Administration and Ag. Director of the Centre for Gender Studies. Her work brings public policy, governance, gender analysis and development into conversation.</p>
+          <p>As Ag. Director, she leads a Centre that connects academic study with capacity development, institutional engagement and the practical questions facing society.</p>
           <div className="leadership__links"><a className="text-link" href={site.directorLinkedIn} target="_blank" rel="noreferrer">View LinkedIn profile <Arrow diagonal /></a><Link className="text-link" href="#team">Meet the wider team <Arrow diagonal /></Link></div>
         </div>
       </div>
     </section>
 
-    <section className="section page-section" id="team" aria-labelledby="team-title">
+    <section className="section page-section about-team" id="team" aria-labelledby="team-title">
       <div className="container team-page-section">
         <div><Eyebrow>The people behind the work</Eyebrow><h2 id="team-title">Different responsibilities. One shared Centre.</h2><p className="team-page-section__intro">Academic leadership, programmes and administration work together to make the Centre's teaching, research and engagement possible.</p></div>
         <div className="team-roster__list">{team.map(([name, role], index) => <div key={name}><span className="index">0{index + 1}</span><strong>{name}</strong><small>{role}</small></div>)}</div>
       </div>
     </section>
 
-    <section className="section page-section page-section--paper" aria-labelledby="next-title">
+    <section className="section page-section page-section--paper about-next" aria-labelledby="next-title">
       <div className="container page-grid page-grid--wide">
         <div><Eyebrow>Continue exploring</Eyebrow><h2 id="next-title">There is more than one way into the work of CGS.</h2></div>
         <div className="prose">
-          <p>Study gender at the level that matches your next step, explore the questions shaping our research, or see how the Centre brings scholarship into public life.</p>
-          <div className="leadership__links"><Link className="text-link" href="/programmes">Explore programmes <Arrow diagonal /></Link><Link className="text-link" href="/research">Explore research <Arrow diagonal /></Link><Link className="text-link" href="/activity">See our activity <Arrow diagonal /></Link></div>
+          <p>Choose the next part of the Centre to explore: study, research, upcoming events, or documented activity.</p>
+          <div className="about-next-links">
+            <Link href="/programmes"><span>Study</span><strong>Explore programmes</strong><Arrow diagonal /></Link>
+            <Link href="/research"><span>Knowledge</span><strong>Explore research</strong><Arrow diagonal /></Link>
+            <Link href="/events"><span>Participate</span><strong>See upcoming events</strong><Arrow diagonal /></Link>
+            <Link href="/activity"><span>Evidence</span><strong>See CGS activity</strong><Arrow diagonal /></Link>
+          </div>
         </div>
       </div>
     </section>
 
-    <ContactBand title="Work with the Centre" text="Connect with CGS about a programme, research question, training need, partnership or public conversation." />
+    <ContactBand title="Work with the Centre" text="Connect with CGS about a programme, research question, event, training need, partnership or public conversation." />
+    </div>
   </PageShell>;
 }
