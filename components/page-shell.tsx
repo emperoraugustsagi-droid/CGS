@@ -24,5 +24,5 @@ export function SectionHeading({ eyebrow, title, id, children, light = false, si
 }
 
 export function ContactBand({ title = "Have a question for CGS?", text = "Talk to the Centre about study, research, training or public dialogue." }: { title?: string; text?: string }) {
-  return <section className="contact-band"><div className="container contact-band__inner"><div><Eyebrow light>Start a conversation</Eyebrow><h2>{title}</h2><p>{text}</p></div><Link className="button button--gold" href="/contact">Contact the Centre <Arrow /></Link></div></section>;
+  return <section className="contact-band"><div className="container contact-band__inner"><div><Eyebrow light>Start a conversation</Eyebrow><h2>{title}</h2><p>{text}</p></div><Link className="button button--accent" href="/contact">Contact the Centre <Arrow /></Link></div></section>;
 }
