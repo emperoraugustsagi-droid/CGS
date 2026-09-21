@@ -21,7 +21,7 @@ export function SiteHeader() {
           <button ref={menuButton} className={open ? "menu-button menu-button--open" : "menu-button"} type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(!open)}><span aria-hidden="true"/><span aria-hidden="true"/><span aria-hidden="true"/></button>
           <nav id="site-nav" className={open ? "site-nav site-nav--open" : "site-nav"} aria-label="Primary navigation">
             {navigation.map(([label, href]) => <Link href={href} key={href} onClick={() => setOpen(false)}>{label}</Link>)}
-            <Link className="nav-cta" href="/contact" onClick={() => setOpen(false)}>Contact CGS <span aria-hidden="true">↗</span></Link>
+            <Link className="nav-cta" href="/contact" onClick={() => setOpen(false)}>Contact CGS <span className="link-arrow link-arrow--diagonal" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M8 7h9v9" /></svg></span></Link>
           </nav>
         </div>
       </header>
