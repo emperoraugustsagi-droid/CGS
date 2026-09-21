@@ -12,6 +12,7 @@ const enquiries = [
   ["Study", "Programme guidance and next steps", "Programme guidance"],
   ["Research", "Collaboration, supervision and evidence", "Research enquiry"],
   ["Training", "Capacity development and professional learning", "Training and capacity development"],
+  ["Events", "Conference registration and participation", "Events and conference enquiry"],
   ["Dialogue", "Policy, institutions and public engagement", "Policy and public dialogue"],
 ] as const;
 
