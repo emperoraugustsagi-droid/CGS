@@ -7,7 +7,13 @@
     padding-block: clamp(88px, 7.25vw, 104px);
   }
 
-  /* Mandate: keep the opening argument compact and end on an editorial rule. */
+  /* Mandate: keep the opening argument compact and let the closing thought
+   * bridge directly into Programmes instead of becoming a large empty band.
+   */
+  .home-page .mandate-section {
+    padding-bottom: clamp(60px, 5vw, 72px);
+  }
+
   .home-page .mandate-layout {
     grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
     gap: clamp(56px, 7vw, 104px);
@@ -19,8 +25,8 @@
   }
 
   .home-page .mandate-cta {
-    margin-top: 48px;
-    padding: 30px 0;
+    margin-top: 36px;
+    padding: 24px 0 22px;
     border-top: 1px solid var(--border-default);
     border-bottom: 1px solid var(--border-default);
     border-left: 0;
@@ -58,12 +64,29 @@
     height: 54px;
   }
 
+  .home-page .programmes--home {
+    padding-bottom: clamp(68px, 5.5vw, 80px);
+  }
+
   .home-page .programme-support {
-    margin-top: 30px;
-    padding: 28px 30px;
-    border-color: var(--border-default);
-    border-left: 3px solid var(--color-accent);
-    background: var(--surface-card);
+    margin-top: 32px;
+    padding: 26px 0 24px;
+    border: 0;
+    border-top: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--border-default);
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .home-page .programme-support > div {
+    max-width: 650px;
+  }
+
+  .home-page .programme-support strong {
+    font-family: var(--font-serif), Georgia, serif;
+    font-size: clamp(24px, 2.2vw, 30px);
+    font-weight: 400;
+    letter-spacing: -.02em;
   }
 
   /* Research: let the image lead, then keep the inquiry index readable. */
@@ -141,6 +164,13 @@
 
   .home-page .director-card figure {
     min-height: 340px;
+    overflow: hidden;
+    border-top: 3px solid var(--color-accent);
+    border-left: 3px solid var(--color-accent);
+  }
+
+  .home-page .director-card figure img {
+    transform: scale(1.025);
   }
 
   .home-page .director-card > div {
