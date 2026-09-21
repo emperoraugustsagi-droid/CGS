@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
+import { Arrow } from "../components/page-shell";
 import { activities, events, programmes, researchAreas } from "./site-data";
 
 const images = {
@@ -13,7 +14,6 @@ const images = {
   researchStory: "/assets/cgs-awareness-campaign.jpg",
 };
 
-function Arrow({ diagonal = false }: { diagonal?: boolean }) { return <span aria-hidden="true">{diagonal ? "↗" : "→"}</span>; }
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) { return <p className={light ? "eyebrow eyebrow--light" : "eyebrow"}>{children}</p>; }
 function ProofIcon({ name }: { name: "book" | "community" | "impact" }) {
   if (name === "book") return <svg className="proof-strip__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 7.5c4.8-1.8 8.8-.9 12 2.3v17.4c-3.2-3.2-7.2-4-12-2.3V7.5Zm24 0c-4.8-1.8-8.8-.9-12 2.3v17.4c3.2-3.2 7.2-4 12-2.3V7.5Z"/></svg>;
