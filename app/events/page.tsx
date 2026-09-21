@@ -42,6 +42,7 @@ export default function EventsPage() {
   };
 
   return <PageShell>
+    <div className="events-page">
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventSchema) }} />
 
     <PageIntro eyebrow="Events at CGS" title="Where scholarship becomes a shared experience.">
@@ -49,7 +50,7 @@ export default function EventsPage() {
       <p>The Centre’s next major gathering is the First International Gender Conference ’26.</p>
     </PageIntro>
 
-    <section className="section event-feature" aria-labelledby="featured-event-title">
+    <section className="section event-feature events-feature" aria-labelledby="featured-event-title">
       <div className="container event-feature__grid">
         <div className="event-feature__date" aria-label={event.dateLabel}>
           <span>NOV</span>
@@ -67,7 +68,7 @@ export default function EventsPage() {
             <div><dt>Early bird closes</dt><dd>{event.deadlines.earlyBirdRegistration}</dd></div>
           </dl>
           <div className="event-feature__actions">
-            <a className="button button--wine" href={event.website} target="_blank" rel="noreferrer">Conference website <Arrow /></a>
+            <a className="button button--accent" href={event.website} target="_blank" rel="noreferrer">Conference website <Arrow /></a>
             <a className="text-link" href={`mailto:${event.emails[0]}?subject=${encodeURIComponent("First International Gender Conference registration")}`}>Ask about registration <Arrow diagonal /></a>
           </div>
           <p className="event-feature__note">Abstract submission closes {event.deadlines.abstractSubmission}. Standard registration closes {event.deadlines.standardRegistration}.</p>
@@ -75,7 +76,7 @@ export default function EventsPage() {
       </div>
     </section>
 
-    <section className="section page-section page-section--paper" aria-labelledby="event-dates-title">
+    <section className="section page-section page-section--paper events-dates" aria-labelledby="event-dates-title">
       <div className="container page-grid page-grid--wide">
         <div>
           <Eyebrow>Important dates</Eyebrow>
@@ -92,7 +93,7 @@ export default function EventsPage() {
       </div>
     </section>
 
-    <section className="section page-visual" aria-labelledby="event-feature-title">
+    <section className="section page-visual events-special" aria-labelledby="event-feature-title">
       <div className="container page-visual__grid">
         <figure className="page-visual__media">
           <Image src="/assets/cgs-speaker-podium.png" alt="A speaker addressing an audience during a CGS academic event" fill sizes="(max-width: 820px) 100vw, 55vw" />
@@ -107,7 +108,7 @@ export default function EventsPage() {
       </div>
     </section>
 
-    <section className="section page-section" aria-labelledby="event-guests-title">
+    <section className="section page-section events-leadership" aria-labelledby="event-guests-title">
       <div className="container">
         <SectionHeading eyebrow="Conference leadership" title="The people convening the conversation." id="event-guests-title" single />
         <div className="event-people">
@@ -121,7 +122,7 @@ export default function EventsPage() {
       </div>
     </section>
 
-    <section className="section research research--page event-subthemes" aria-labelledby="event-subthemes-title">
+    <section className="section event-subthemes events-subthemes" aria-labelledby="event-subthemes-title">
       <div className="container">
         <SectionHeading eyebrow="Conference subthemes" title="Twelve lenses on gender, crisis and resilience." id="event-subthemes-title" light single />
         <div className="event-subtheme-grid">
@@ -130,7 +131,7 @@ export default function EventsPage() {
       </div>
     </section>
 
-    <section className="section page-section page-section--paper" aria-labelledby="registration-title">
+    <section className="section page-section page-section--paper events-registration" aria-labelledby="registration-title">
       <div className="container">
         <SectionHeading eyebrow="Conference registration" title="Choose the category that matches how you will participate." id="registration-title">Early-bird fees apply through {event.deadlines.earlyBirdRegistration}. Standard rates apply after that date.</SectionHeading>
         <div className="event-table-wrap">
@@ -147,7 +148,7 @@ export default function EventsPage() {
       </div>
     </section>
 
-    <section className="section page-section" aria-labelledby="payment-title">
+    <section className="section page-section events-payment-section" aria-labelledby="payment-title">
       <div className="container event-contact-grid">
         <div>
           <Eyebrow>Payment details</Eyebrow>
@@ -157,7 +158,7 @@ export default function EventsPage() {
             <div><dt>Account name</dt><dd>{event.payment.accountName}</dd></div>
             <div><dt>Account number</dt><dd>{event.payment.accountNumber}</dd></div>
           </dl>
-          <a className="button button--wine" href={event.website} target="_blank" rel="noreferrer">Open conference website <Arrow /></a>
+          <a className="button button--accent" href={event.website} target="_blank" rel="noreferrer">Open conference website <Arrow /></a>
         </div>
         <div>
           <Eyebrow>Conference contacts</Eyebrow>
@@ -172,15 +173,16 @@ export default function EventsPage() {
       </div>
     </section>
 
-    <section className="contact-band">
+    <section className="contact-band events-contact-band">
       <div className="container contact-band__inner">
         <div>
           <Eyebrow light>First International Gender Conference ’26</Eyebrow>
           <h2>Planning to attend or submit a paper?</h2>
           <p>Abstracts close {event.deadlines.abstractSubmission}. Early-bird registration closes {event.deadlines.earlyBirdRegistration}.</p>
         </div>
-        <a className="button button--gold" href={event.website} target="_blank" rel="noreferrer">Conference website <Arrow /></a>
+        <a className="button button--accent" href={event.website} target="_blank" rel="noreferrer">Conference website <Arrow /></a>
       </div>
     </section>
+    </div>
   </PageShell>;
 }
