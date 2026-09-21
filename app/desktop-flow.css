@@ -165,8 +165,17 @@
   .home-page .director-card figure {
     min-height: 340px;
     overflow: hidden;
-    border-top: 3px solid var(--color-accent);
-    border-left: 3px solid var(--color-accent);
+  }
+
+  .home-page .director-card figure::after {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    box-shadow:
+      inset 5px 0 0 var(--color-accent),
+      inset 0 5px 0 var(--color-accent);
+    content: "";
+    pointer-events: none;
   }
 
   .home-page .director-card figure img {
