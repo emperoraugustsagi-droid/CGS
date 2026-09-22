@@ -5,6 +5,13 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     deviceSizes: [640, 750, 828, 1080, 1200, 1440, 1680, 1920],
     qualities: [75, 84, 88],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "www.pngkey.com",
+        pathname: "/png/detail/**",
+      },
+    ],
   },
 };
 
