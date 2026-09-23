@@ -11,6 +11,11 @@ const nextConfig: NextConfig = {
         hostname: "www.pngkey.com",
         pathname: "/png/detail/**",
       },
+      {
+        protocol: "https",
+        hostname: "spgs.nsuk.edu.ng",
+        pathname: "/wp-content/uploads/**",
+      },
     ],
   },
 };
