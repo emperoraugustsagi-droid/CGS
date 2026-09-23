@@ -4,12 +4,12 @@ import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
 import { Arrow } from "../components/page-shell";
 import { HomeHeroCarousel } from "../components/home-hero-carousel";
+import { ProgrammeShowcase } from "../components/programme-showcase";
 import { activities, events, programmes, researchAreas } from "./site-data";
 
 const images = {
   director: "/assets/cgs-director-comfort-adokwe.jpeg",
   community: "/assets/cgs-advisory-group.jpg",
-  study: "/assets/cgs-research-workshop.jpg",
   researchStory: "/assets/cgs-awareness-campaign.jpg",
 };
 
@@ -79,11 +79,7 @@ export default function Home() {
             <Link href="/programmes" aria-label={`Explore ${title}`}>Explore <Arrow diagonal /></Link>
           </article>)}
         </div>
-        <figure className="programmes__feature"><Image src={images.study} alt="CGS research workshop with participants gathered around a table" fill sizes="(max-width: 620px) 100vw, 760px" /><figcaption><span>Learning for<br/>a more equal<br/>tomorrow.</span></figcaption></figure>
-        <div className="programme-support">
-          <div><strong>See the verified programme structure.</strong><p>Explore current postgraduate listings and Centre study offerings, then contact CGS for up-to-date admissions guidance.</p></div>
-          <Link className="button button--accent" href="/programmes">View all programmes <Arrow /></Link>
-        </div>
+        <ProgrammeShowcase />
         
       </div>
     </section>
