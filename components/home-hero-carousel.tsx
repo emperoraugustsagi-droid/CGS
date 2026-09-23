@@ -6,17 +6,20 @@ const leadership = [
   {
     role: "Vice-Chancellor",
     image: "/assets/nsuk-vice-chancellor-saadatu-liman.jpeg",
-    objectPosition: "50% 22%",
+    objectPosition: "50% 20%",
+    scale: 1,
   },
   {
-    role: "DVC Academic",
+    role: "Deputy Vice-Chancellor (Academic)",
     image: "https://spgs.nsuk.edu.ng/wp-content/uploads/2025/09/542092165_1188100066686717_1667538861005516670_n-768x548.jpg",
-    objectPosition: "50% 28%",
+    objectPosition: "50% 25%",
+    scale: 1.8,
   },
   {
     role: "CGS Director",
     image: "/assets/cgs-director-comfort-adokwe.jpeg",
-    objectPosition: "50% 20%",
+    objectPosition: "50% 18%",
+    scale: 1.08,
   },
 ] as const;
 
@@ -58,24 +61,28 @@ export function HomeHeroCarousel() {
       </div>
 
       <aside className="hero-leadership" aria-label="University and Centre leadership">
-        <div className="hero-leadership__heading">
-          <span>University &amp; Centre leadership</span>
-          <small>Part of the NSUK academic community</small>
-        </div>
+        <p className="hero-leadership__heading">University &amp; Centre leadership</p>
         <div className="hero-leadership__portraits">
           {leadership.map((person) => (
-            <figure className="hero-leadership__portrait" key={person.role}>
+            <figure
+              className="hero-leadership__portrait"
+              key={person.role}
+              aria-label={person.role}
+            >
               <div className="hero-leadership__image">
                 <Image
                   src={person.image}
                   alt=""
                   fill
-                  sizes="(max-width: 620px) 88px, 150px"
+                  sizes="(max-width: 620px) 78px, 128px"
                   quality={88}
-                  style={{ objectFit: "cover", objectPosition: person.objectPosition }}
+                  style={{
+                    objectFit: "cover",
+                    objectPosition: person.objectPosition,
+                    transform: `scale(${person.scale})`,
+                  }}
                 />
               </div>
-              <figcaption>{person.role}</figcaption>
             </figure>
           ))}
         </div>
