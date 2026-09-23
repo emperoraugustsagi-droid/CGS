@@ -334,3 +334,71 @@
   .hero__copy > p { margin-top: 12px; font-size: 11px; }
   .hero__actions { margin-top: 14px; }
 }
+
+
+@media (max-width: 620px) {
+  .programme-showcase {
+    margin-top: 22px;
+    border-radius: 0;
+  }
+
+  .programme-showcase__carousel {
+    min-height: 270px;
+  }
+
+  .programme-showcase__controls {
+    left: 14px;
+    bottom: 12px;
+    gap: 5px;
+  }
+
+  .programme-showcase__controls button {
+    width: 28px;
+    height: 28px;
+  }
+
+  .programme-showcase__controls button span {
+    width: 15px;
+  }
+
+  .programme-showcase__controls button.is-active span,
+  .programme-showcase__controls button:hover span,
+  .programme-showcase__controls button:focus-visible span {
+    width: 23px;
+  }
+
+  .programme-showcase__count {
+    right: 15px;
+    bottom: 18px;
+    font-size: 8px;
+  }
+
+  .programme-showcase__content {
+    min-height: 0;
+    padding: 29px 20px 24px;
+  }
+
+  .programme-showcase__content .eyebrow {
+    margin-bottom: 15px;
+  }
+
+  .programme-showcase__content h3 {
+    max-width: 310px;
+    font-size: 31px;
+    line-height: 1.02;
+  }
+
+  .programme-showcase__content > p:not(.eyebrow) {
+    max-width: 320px;
+    margin-top: 14px;
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .programme-showcase__content .button {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+}
