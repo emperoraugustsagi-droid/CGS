@@ -402,3 +402,52 @@
     justify-content: center;
   }
 }
+
+
+/* Open editorial programme showcase on small screens */
+@media (max-width: 620px) {
+  .programme-showcase {
+    gap: 24px;
+    margin-top: 28px;
+    border: 0;
+    background: transparent;
+  }
+
+  .programme-showcase__carousel {
+    min-height: 270px;
+  }
+
+  .programme-showcase__content {
+    min-height: 0;
+    padding: 0 1px;
+    background: transparent;
+    color: var(--cgs-navy-800);
+  }
+
+  .programme-showcase__content .eyebrow {
+    margin-bottom: 14px;
+    color: var(--cgs-pink-600);
+  }
+
+  .programme-showcase__content h3 {
+    max-width: 320px;
+    color: var(--cgs-navy-800);
+    font-size: 31px;
+    line-height: 1;
+  }
+
+  .programme-showcase__content > p:not(.eyebrow) {
+    max-width: 330px;
+    margin-top: 14px;
+    color: var(--cgs-muted);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .programme-showcase__content .button {
+    width: 100%;
+    min-height: 46px;
+    margin-top: 20px;
+    justify-content: center;
+  }
+}
