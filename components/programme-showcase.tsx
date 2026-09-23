@@ -40,7 +40,7 @@ export function ProgrammeShowcase() {
     if (paused || reducedMotion) return;
     const timer = window.setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
-    }, 6000);
+    }, 3000);
     return () => window.clearInterval(timer);
   }, [paused, reducedMotion]);
 
