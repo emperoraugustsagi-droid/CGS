@@ -7,42 +7,45 @@ import { Arrow } from "./page-shell";
 
 const slides = [
   {
-    eyebrow: "Research at CGS",
-    title: [<>Researching gender.</>, <>Understanding society.</>, <>Informing <em>change.</em></>],
-    summary: "We examine how gender shapes institutions, opportunity and everyday life, then connect rigorous scholarship with teaching, policy and public engagement.",
-    mobileSummary: "Research, teaching and public engagement connecting gender scholarship to real life.",
-    image: "/assets/cgs-research-workshop.jpg",
-    alt: "Participants at a Centre for Gender Studies research workshop gathered around a conference table",
-    objectPosition: "center 48%",
-    primary: { label: "Explore research", href: "/research" },
+    eyebrow: "University leadership",
+    title: [<>Professor Sa’adatu</>, <>Hassan <em>Liman.</em></>],
+    role: "Vice-Chancellor · Nasarawa State University, Keffi",
+    summary: "The Centre for Gender Studies is part of NSUK’s academic community, connecting gender scholarship with the University’s wider teaching, research and public-service mission.",
+    mobileSummary: "Vice-Chancellor of NSUK, the university within which the Centre for Gender Studies is situated.",
+    image: "/assets/nsuk-vice-chancellor-saadatu-liman.jpeg",
+    alt: "Official portrait used for the Vice-Chancellor of Nasarawa State University, Keffi",
+    objectPosition: "72% 28%",
+    primary: { label: "Visit NSUK", href: "https://nsuk.edu.ng/" },
+    secondary: { label: "About the Centre", href: "/about" },
+    control: "Vice-Chancellor",
+  },
+  {
+    eyebrow: "Academic leadership",
+    title: [<>Professor Maikano</>, <>Muhammad <em>Ari.</em></>],
+    role: "Deputy Vice-Chancellor (Academic) · NSUK",
+    summary: "CGS programmes, research and academic development sit within the University’s broader academic structure and standards.",
+    mobileSummary: "Deputy Vice-Chancellor (Academic), connecting Centre activity to the wider academic mission of NSUK.",
+    image: "https://spgs.nsuk.edu.ng/wp-content/uploads/2025/09/543107585_1188099703353420_1573205616288366401_n-768x548.jpg",
+    alt: "NSUK academic leadership during an official School of Postgraduate Studies courtesy visit",
+    objectPosition: "55% 42%",
+    primary: { label: "About the Centre", href: "/about" },
     secondary: { label: "Study at CGS", href: "/programmes" },
-    control: "Research",
+    control: "DVC Academic",
   },
   {
-    eyebrow: "Institutional leadership",
-    title: [<>Building dialogue.</>, <>Shaping institutions.</>, <>Informing <em>practice.</em></>],
-    summary: "CGS brings scholars, leaders and partners into evidence-based institutional conversation.",
-    mobileSummary: "CGS brings scholars, leaders and partners into evidence-based institutional conversation.",
-    image: "/assets/cgs-advisory-group.jpg",
-    alt: "Members of the CGS academic and advisory community gathered after a Centre meeting",
-    objectPosition: "center 42%",
-    primary: { label: "Meet the Centre", href: "/about" },
-    secondary: { label: "Recent activity", href: "/activity" },
-    control: "Leadership",
-  },
-  {
-    eyebrow: "Public engagement",
-    title: [<>Knowledge in public life.</>, <>Community dialogue.</>, <><em>Action.</em></>],
-    summary: "CGS connects scholarship with communities, dialogue and public life.",
-    mobileSummary: "CGS connects scholarship with communities, dialogue and public life.",
-    image: "/assets/cgs-awareness-campaign.jpg",
-    alt: "Women taking part in a gender awareness and survivor support campaign",
-    objectPosition: "center 38%",
-    primary: { label: "Explore activity", href: "/activity" },
+    eyebrow: "Centre leadership",
+    title: [<>Dr. Comfort</>, <>Adokwe-<em>Obed.</em></>],
+    role: "Ag. Director · Centre for Gender Studies, NSUK",
+    summary: "The Centre’s leadership advances teaching, research and public engagement as part of Nasarawa State University, Keffi.",
+    mobileSummary: "Ag. Director of the Centre for Gender Studies, advancing the Centre’s work within NSUK.",
+    image: "/assets/cgs-director-comfort-adokwe.jpeg",
+    alt: "Dr. Comfort Adokwe-Obed, Acting Director of the Centre for Gender Studies",
+    objectPosition: "72% 24%",
+    primary: { label: "Meet the Centre", href: "/about#leadership" },
     secondary: { label: "Contact CGS", href: "/contact" },
-    control: "Engagement",
+    control: "CGS Director",
   },
-];
+] as const;
 
 function PauseIcon({ paused }: { paused: boolean }) {
   return paused ? (
@@ -78,7 +81,7 @@ export function HomeHeroCarousel() {
     <div
       className="container hero__layout hero-carousel"
       aria-roledescription="carousel"
-      aria-label="Centre for Gender Studies stories"
+      aria-label="NSUK and Centre for Gender Studies leadership"
       onMouseEnter={() => setInteractionPaused(true)}
       onMouseLeave={() => setInteractionPaused(false)}
       onFocusCapture={() => setInteractionPaused(true)}
@@ -93,11 +96,13 @@ export function HomeHeroCarousel() {
             key={slide.control}
           >
             <div className="hero__copy">
+              <p className="hero__affiliation">An academic centre of Nasarawa State University, Keffi</p>
               <p className="eyebrow eyebrow--light">{slide.eyebrow}</p>
               <h1 id={index === 0 ? "hero-title" : `hero-title-${index}`}>
                 {slide.title.map((line, lineIndex) => <span key={lineIndex}>{line}</span>)}
               </h1>
-              <p>
+              <p className="hero__role">{slide.role}</p>
+              <p className="hero__summary">
                 <span className="hero__summary-desktop">{slide.summary}</span>
                 <span className="hero__summary-mobile">{slide.mobileSummary}</span>
               </p>
@@ -121,11 +126,11 @@ export function HomeHeroCarousel() {
         );
       })}
 
-      <div className="hero-carousel__controls" aria-label="Choose a hero story">
+      <div className="hero-carousel__controls" aria-label="Choose a leadership profile">
         <button
           className="hero-carousel__pause"
           type="button"
-          aria-label={manualPaused ? "Play hero stories" : "Pause hero stories"}
+          aria-label={manualPaused ? "Play leadership profiles" : "Pause leadership profiles"}
           onClick={() => setManualPaused((current) => !current)}
         >
           <PauseIcon paused={manualPaused} />
