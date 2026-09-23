@@ -10,8 +10,16 @@ import { activities, events, programmes, researchAreas } from "./site-data";
 const images = {
   director: "/assets/cgs-director-comfort-adokwe.jpeg",
   community: "/assets/cgs-advisory-group.jpg",
-  researchStory: "/assets/cgs-awareness-campaign.jpg",
 };
+
+const researchImages = [
+  { src: "/assets/expo-community.jpg", position: "center 42%" },
+  { src: "/assets/cgs-awareness-campaign.jpg", position: "center 38%" },
+  { src: "/assets/expo-panel.jpg", position: "center 42%" },
+  { src: "/assets/cgs-academic-event.jpeg", position: "center 30%" },
+  { src: "/assets/cgs-research-workshop.jpg", position: "center 42%" },
+  { src: "/assets/cgs-advisory-group.jpg", position: "center 44%" },
+] as const;
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) { return <p className={light ? "eyebrow eyebrow--light" : "eyebrow"}>{children}</p>; }
 function ProofIcon({ name }: { name: "book" | "community" | "impact" }) {
@@ -35,18 +43,6 @@ function ProgrammeIcon({ index }: { index: number }) {
   ];
   return <span className="programme-row__icon" aria-hidden="true"><svg viewBox="0 0 36 36">{paths[index]}</svg></span>;
 }
-function ResearchIcon({ index }: { index: number }) {
-  const paths = [
-    <><circle cx="18" cy="10" r="4"/><circle cx="9" cy="15" r="3"/><circle cx="27" cy="15" r="3"/><path d="M8 30v-3c0-5 4.4-9 10-9s10 4 10 9v3M2 30v-2c0-3 2.4-5 6-5M34 30v-2c0-3-2.4-5-6-5"/></>,
-    <><path d="m18 4 12 5v8c0 7-5.2 11-12 15C11.2 28 6 24 6 17V9l12-5Z"/><path d="m12 18 4 4 8-9"/></>,
-    <><circle cx="18" cy="10" r="5"/><path d="M8 31v-4c0-5 4.4-9 10-9s10 4 10 9v4"/></>,
-    <><path d="M18 31S6 24 6 14a6 6 0 0 1 12-2 6 6 0 0 1 12 2c0 10-12 17-12 17Z"/><path d="M10 18h5l2-4 3 8 2-4h4"/></>,
-    <><path d="M5 8c5-2 9-.9 13 2.5V31c-4-3.4-8-4.5-13-2.5V8ZM31 8c-5-2-9-.9-13 2.5V31c4-3.4 8-4.5 13-2.5V8Z"/></>,
-    <><path d="M5 31h26M8 31V13h20v18M5 13h26M11 9h14M15 5h6"/><path d="M13 18v8M18 18v8M23 18v8"/></>,
-  ];
-  return <span className="research-grid__icon" aria-hidden="true"><svg viewBox="0 0 36 36">{paths[index]}</svg></span>;
-}
-
 export default function Home() {
   return <><SiteHeader /><main id="main" className="home-page">
     <section className="hero" id="top" aria-labelledby="hero-title">
@@ -83,7 +79,43 @@ export default function Home() {
         
       </div>
     </section>
-    <section className="section research research--home" id="research" aria-labelledby="research-title"><div className="container research__header"><Eyebrow light>Research focus</Eyebrow><h2 id="research-title">Questions grounded in the realities <em>of society.</em></h2><p>Our areas of inquiry reflect the many ways gender intersects with development, institutions, health, education, leadership and public life.</p><figure className="research__feature"><Image src={images.researchStory} alt="Women taking part in a domestic violence awareness and survivor support campaign" fill sizes="(max-width: 620px) 100vw, 760px" /><figcaption>Evidence, dialogue and survivor support</figcaption></figure></div><div className="container research-grid">{researchAreas.map(([title,description],index)=><article key={title}><span className="index">0{index+1}</span><ResearchIcon index={index}/><div className="research-grid__copy"><h3>{title}</h3><p>{description}</p></div><span className="research-grid__arrow"><Arrow /></span></article>)}</div><div className="container research__action"><div className="research-cta"><ResearchIcon index={0}/><div><strong>Explore the Centre&apos;s research focus.</strong><p>See the areas of inquiry, evidence and ways to begin a research conversation.</p></div><Link href="/research" aria-label="Explore CGS research"><Arrow diagonal /></Link></div></div></section>
+    <section className="section research research--home research-gallery" id="research" aria-labelledby="research-title">
+      <div className="container research-gallery__header">
+        <div>
+          <Eyebrow>Research focus</Eyebrow>
+          <h2 id="research-title">Questions grounded in the realities <em>of society.</em></h2>
+        </div>
+        <div className="research-gallery__intro">
+          <span>06 areas of inquiry</span>
+          <p>Our research explores how gender intersects with development, institutions, health, education, leadership and public life.</p>
+          <Link className="text-link" href="/research">Explore all research <Arrow diagonal /></Link>
+        </div>
+      </div>
+      <div className="container research-gallery__grid">
+        {researchAreas.map(([title, description], index) => (
+          <Link className={`research-card research-card--${index + 1}`} href="/research" key={title}>
+            <figure>
+              <Image
+                src={researchImages[index].src}
+                alt=""
+                fill
+                sizes={index === 0 || index === 5 ? "(max-width: 820px) 100vw, 65vw" : "(max-width: 820px) 100vw, 34vw"}
+                quality={88}
+                style={{ objectFit: "cover", objectPosition: researchImages[index].position }}
+              />
+            </figure>
+            <div className="research-card__content">
+              <span className="index">0{index + 1}</span>
+              <div>
+                <h3>{title}</h3>
+                <p>{description}</p>
+              </div>
+              <span className="research-card__arrow" aria-hidden="true"><Arrow diagonal /></span>
+            </div>
+          </Link>
+        ))}
+      </div>
+    </section>
     <section className="section home-event" id="events" aria-labelledby="home-event-title"><div className="container home-event__grid"><div className="home-event__date" aria-label={events[0].dateLabel}><span>NOV</span><strong>04</strong><small>TO 07 · 2026</small></div><div className="home-event__copy"><Eyebrow>Upcoming at CGS</Eyebrow><p className="label">{events[0].type}</p><h2 id="home-event-title">{events[0].title}</h2><p className="home-event__theme">{events[0].theme}</p><p>{events[0].summary}</p><div className="home-event__facts"><span><strong>{events[0].dateLabel}</strong>Conference dates</span><span><strong>{events[0].deadlines.abstractSubmission}</strong>Abstracts close</span><span><strong>{events[0].deadlines.earlyBirdRegistration}</strong>Early bird closes</span></div><div className="home-event__actions"><Link className="button button--accent" href="/events">View event details <Arrow /></Link><a className="text-link" href={events[0].website} target="_blank" rel="noreferrer">Conference website <Arrow diagonal /></a></div></div></div></section>
     <section className="section leadership leadership--home" id="leadership" aria-labelledby="leadership-title"><div className="container leadership__layout"><div className="director-card"><figure><Image src={images.director} alt="Dr. Comfort Ayine Adokwe-Obed, Acting Director of the Centre for Gender Studies" fill sizes="(max-width: 760px) 45vw, 260px" /></figure><div><span>Ag. Director, Centre for Gender Studies</span><strong>Dr. Comfort Ayine<br/>Adokwe-Obed</strong><small>Senior Lecturer, Department of Public Administration</small><div className="director-card__links"><a className="text-link" href="https://www.linkedin.com/in/adokwe-comfort-392a4223b/" target="_blank" rel="noreferrer">View LinkedIn profile <Arrow diagonal /></a><Link className="text-link" href="/contact">Contact the Centre <Arrow diagonal /></Link></div></div></div><div className="leadership__copy"><Eyebrow>Leadership</Eyebrow><h2 id="leadership-title">Policy scholarship with an institutional purpose.</h2><p>Dr. Comfort Ayine Adokwe-Obed serves as Ag. Director of the Centre, with academic interests connecting public policy, governance, gender analysis and development.</p><p>Her leadership connects the Centre’s teaching, research, capacity development and public engagement.</p></div></div><div className="container leadership-handoff"><div><Eyebrow>Meet the Centre</Eyebrow><p>Leadership is only one part of the institution. Explore the wider academic and administrative team behind CGS.</p></div><Link className="text-link" href="/about#team">Meet the wider team <Arrow diagonal /></Link></div></section>
     <section className="section activity" id="activity" aria-labelledby="activity-title"><div className="container activity__layout"><figure className="activity__media"><Image src={images.community} alt="Members of the CGS academic and advisory community gathered after a Centre meeting" fill sizes="(max-width: 760px) 100vw, 52vw" /><figcaption>An institutional community for gender scholarship</figcaption></figure><div className="activity__copy"><Eyebrow>Current at CGS</Eyebrow><h2 id="activity-title">A Centre that convenes people around serious questions.</h2><p>Recent Centre records show an active academic and institutional community. Explore the documented activity on this site, with source folders available as supporting evidence.</p><div className="activity-list">{activities.map(activity=><Link href={`/activity#${activity.id}`} key={activity.title}><span>{activity.type}</span><strong>{activity.title}</strong><small>{activity.description}</small><Arrow diagonal /></Link>)}</div></div></div></section>
