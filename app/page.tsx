@@ -65,7 +65,6 @@ export default function Home() {
           <div><Eyebrow>Study at CGS</Eyebrow><h2 id="programmes-title">Choose the level that matches <em>your next step.</em></h2></div>
           <p>CGS supports different routes into gender study, from certificate and diploma learning to postgraduate and doctoral research.</p>
         </div>
-        <figure className="programmes__feature"><Image src={images.study} alt="CGS research workshop with participants gathered around a table" fill sizes="(max-width: 620px) 100vw, 760px" /><figcaption><span>Learning for<br/>a more equal<br/>tomorrow.</span></figcaption></figure>
         <div className="programme-list">
           {[
             ["01", "Foundation learning", "Certificate & diploma", "Begin with structured Gender Studies learning and confirm current admission arrangements directly with CGS."],
@@ -80,6 +79,7 @@ export default function Home() {
             <Link href="/programmes" aria-label={`Explore ${title}`}>Explore <Arrow diagonal /></Link>
           </article>)}
         </div>
+        <figure className="programmes__feature"><Image src={images.study} alt="CGS research workshop with participants gathered around a table" fill sizes="(max-width: 620px) 100vw, 760px" /><figcaption><span>Learning for<br/>a more equal<br/>tomorrow.</span></figcaption></figure>
         <div className="programme-support">
           <div><strong>See the verified programme structure.</strong><p>Explore current postgraduate listings and Centre study offerings, then contact CGS for up-to-date admissions guidance.</p></div>
           <Link className="button button--accent" href="/programmes">View all programmes <Arrow /></Link>
