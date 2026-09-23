@@ -11,9 +11,9 @@ const leadership = [
   },
   {
     role: "Deputy Vice-Chancellor (Academic)",
-    image: "https://spgs.nsuk.edu.ng/wp-content/uploads/2025/09/542092165_1188100066686717_1667538861005516670_n-768x548.jpg",
-    objectPosition: "50% 25%",
-    scale: 1.8,
+    image: "/assets/nsuk-dvc-academic-maikano-ari.jpeg",
+    objectPosition: "50% 24%",
+    scale: 1.05,
   },
   {
     role: "CGS Director",
