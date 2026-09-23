@@ -563,3 +563,88 @@
     color: var(--cgs-pink-300);
   }
 }
+
+
+/* Compact homepage research cards on mobile */
+@media (max-width: 620px) {
+  .research--home.research-gallery {
+    padding: 56px 0 62px;
+    background: var(--cgs-warm-white);
+  }
+
+  .research--home.research-gallery .research-gallery__header {
+    padding-bottom: 24px;
+    border-bottom-color: rgb(11 35 72 / 14%);
+  }
+
+  .research--home.research-gallery .research-gallery__header h2 {
+    max-width: 335px;
+    margin-top: 16px;
+    color: var(--cgs-navy-800);
+    font-size: 36px;
+    line-height: .99;
+  }
+
+  .research--home.research-gallery .research-gallery__intro {
+    max-width: 335px;
+    margin-top: 18px;
+  }
+
+  .research--home.research-gallery .research-gallery__intro > p {
+    color: var(--cgs-muted);
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .research--home.research-gallery .research-gallery__grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    margin-top: 26px;
+  }
+
+  .research--home.research-gallery .research-card,
+  .research--home.research-gallery .research-card--1,
+  .research--home.research-gallery .research-card--2,
+  .research--home.research-gallery .research-card--3,
+  .research--home.research-gallery .research-card--4,
+  .research--home.research-gallery .research-card--5,
+  .research--home.research-gallery .research-card--6 {
+    min-height: 0;
+    background: transparent;
+  }
+
+  .research--home.research-gallery .research-card figure {
+    aspect-ratio: 16 / 10;
+  }
+
+  .research--home.research-gallery .research-card__content {
+    grid-template-columns: 28px minmax(0, 1fr) 28px;
+    gap: 10px;
+    padding: 14px 1px 0;
+  }
+
+  .research--home.research-gallery .research-card h3,
+  .research--home.research-gallery .research-card--3 h3,
+  .research--home.research-gallery .research-card--4 h3,
+  .research--home.research-gallery .research-card--5 h3 {
+    max-width: 270px;
+    color: var(--cgs-navy-800);
+    font-size: 25px;
+  }
+
+  .research--home.research-gallery .research-card p {
+    max-width: 285px;
+    color: var(--cgs-muted);
+    font-size: 10px;
+    line-height: 1.45;
+  }
+
+  .research--home.research-gallery .research-card__content .index {
+    color: var(--cgs-pink-600);
+  }
+
+  .research--home.research-gallery .research-card__arrow {
+    border-color: rgb(207 20 112 / 28%);
+    color: var(--cgs-pink-600);
+  }
+}
