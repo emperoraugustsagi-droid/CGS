@@ -336,3 +336,46 @@
     padding-bottom: 0;
   }
 }
+
+
+/* Research intro: explanation belongs under the heading; CTA closes the cards. */
+@media (min-width: 821px) {
+  .home-page .research--home.research-gallery .research-gallery__header {
+    display: block;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__header > div {
+    max-width: 1040px;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__intro {
+    max-width: 680px;
+    margin-top: 24px;
+    padding: 0;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__intro > span {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__intro > p {
+    max-width: 680px;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__grid {
+    margin-top: 38px;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__footer .text-link {
+    width: max-content;
+    min-width: 190px;
+    justify-content: space-between;
+  }
+}
