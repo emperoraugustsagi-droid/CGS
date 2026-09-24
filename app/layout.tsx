@@ -12,6 +12,7 @@ import "./desktop-hero.css";
 import "./desktop-flow.css";
 import "./hero-carousel.css";
 import "./eyebrow-cleanup.css";
+import "./editorial-center-desktop.css";
 import { siteUrl } from "../lib/site-config";
 import { ScrollToTop } from "../components/scroll-to-top";
 
