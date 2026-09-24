@@ -1164,3 +1164,91 @@
     font-size: 20px;
   }
 }
+
+
+/* Refined About team cards on phones */
+@media (max-width: 620px) {
+  .about-page .team-profile-grid {
+    gap: 14px;
+  }
+
+  .about-page .team-profile-card,
+  .about-page .team-profile-card:nth-child(-n + 2) {
+    grid-template-columns: minmax(112px, 34%) minmax(0, 66%);
+    min-height: 220px;
+    border-radius: 9px;
+    background:
+      linear-gradient(180deg, #fffefd 0%, #fffafd 100%);
+    box-shadow: 0 8px 22px rgb(11 35 72 / 4%);
+  }
+
+  .about-page .team-profile-card__media {
+    min-height: 220px;
+    background: #eef3f8;
+  }
+
+  .about-page .team-profile-card__body {
+    padding: 18px 15px 17px;
+    justify-content: center;
+  }
+
+  .about-page .team-profile-card__role {
+    padding: 5px 7px;
+    font-size: 7px;
+    line-height: 1.25;
+    letter-spacing: .08em;
+  }
+
+  .about-page .team-profile-card h3 {
+    margin-top: 10px;
+    font-size: 23px;
+    line-height: 1.02;
+  }
+
+  .about-page .team-profile-card__department {
+    margin-top: 8px;
+    color: var(--cgs-blue-700);
+    font-size: 8.5px;
+    line-height: 1.4;
+  }
+
+  .about-page .team-profile-card__summary {
+    margin-top: 12px;
+    color: var(--text-primary);
+    font-size: 11px;
+    line-height: 1.52;
+  }
+
+  .about-page .team-profile-card__detail {
+    display: none;
+  }
+
+  .about-page .team-profile-card__link {
+    min-height: 30px;
+    margin-top: 11px;
+    font-size: 8px;
+  }
+
+  .about-page .team-profile-card__index {
+    top: 10px;
+    left: 10px;
+    min-width: 28px;
+    height: 24px;
+    border-radius: 4px;
+  }
+}
+
+@media (max-width: 390px) {
+  .about-page .team-profile-card,
+  .about-page .team-profile-card:nth-child(-n + 2) {
+    grid-template-columns: 33% minmax(0, 67%);
+  }
+
+  .about-page .team-profile-card h3 {
+    font-size: 21px;
+  }
+
+  .about-page .team-profile-card__summary {
+    font-size: 10.5px;
+  }
+}
