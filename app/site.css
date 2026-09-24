@@ -3712,3 +3712,10 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
     transition: none;
   }
 }
+
+
+/* Homepage next-step labels: use one accent color consistently */
+.home-page .engage__options a > span,
+.home-page .engage__options a:nth-child(even) > span {
+  color: var(--cgs-pink-300) !important;
+}
