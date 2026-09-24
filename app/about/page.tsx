@@ -22,7 +22,7 @@ export default function AboutPage() {
       <div className="container about-hero__layout">
         <div className="about-hero__copy">
           <Eyebrow light>About the Centre</Eyebrow>
-          <h1 id="about-title">Understanding gender helps us understand society.</h1>
+          <h1 id="about-title">Gender offers a critical lens on how society is structured, experienced and changed.</h1>
           <div className="about-hero__body">
             <p>{site.name} at {site.university} brings research, teaching and public engagement together to examine how gender shapes institutions, opportunity and everyday life—and to move evidence into public life.</p>
             <div className="about-hero__actions">
