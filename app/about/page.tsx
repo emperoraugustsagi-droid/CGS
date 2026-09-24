@@ -64,20 +64,6 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section about-public" aria-labelledby="conversation-title">
-      <div className="container about-public__layout">
-        <figure className="about-public__media">
-          <Image src="/assets/WhatsApp Image 2026-09-24 at 1.36.47 PM (1).jpeg" alt="A speaker addressing participants from a university podium" fill sizes="(max-width: 820px) 100vw, 55vw" />
-          <figcaption><span>Knowledge in practice</span><strong>Scholarship shared in public</strong></figcaption>
-        </figure>
-        <div className="about-public__copy">
-          <Eyebrow>Knowledge in public</Eyebrow>
-          <h2 id="conversation-title">Scholarship becomes more useful when it enters the conversation.</h2>
-          <p>CGS connects research and classroom learning with workshops, institutional dialogue, professional development and community engagement—making serious gender analysis available where people are learning, working and making decisions.</p>
-          <Link className="text-link" href="/activity">See the Centre in action <Arrow diagonal /></Link>
-        </div>
-      </div>
-    </section>
 
     <section className="section about-lens" aria-labelledby="lens-title">
       <div className="container about-lens__intro">
