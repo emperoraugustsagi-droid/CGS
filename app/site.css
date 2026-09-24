@@ -4437,3 +4437,24 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
   border-top-color: var(--border-default);
   color: color-mix(in srgb, var(--cgs-navy-800) 54%, transparent);
 }
+
+
+/* Structured institutional brand lockup */
+.brand__marks {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+}
+
+.brand__copy {
+  min-width: 0;
+}
+
+.brand__copy strong > span {
+  display: inline;
+}
+
+.brand__marks img {
+  object-fit: contain;
+}
