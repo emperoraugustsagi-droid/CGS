@@ -1252,3 +1252,55 @@
     font-size: 10.5px;
   }
 }
+
+
+/* Homepage leadership team handoff on phones */
+@media (max-width: 620px) {
+  .home-page .leadership-handoff {
+    margin-top: 26px;
+    padding-top: 0;
+  }
+
+  .home-page .leadership-team-cta {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    min-height: 0;
+    padding: 20px 18px 18px;
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at 103% -6%, rgb(239 136 189 / 22%) 0 52px, transparent 53px),
+      radial-gradient(circle at 95% 118%, rgb(113 195 244 / 17%) 0 62px, transparent 63px),
+      linear-gradient(120deg, #eef7ff 0%, #f8eff6 100%);
+    text-align: center;
+  }
+
+  .home-page .leadership-team-cta__copy {
+    max-width: 315px;
+    margin-inline: auto;
+  }
+
+  .home-page .leadership-team-cta__eyebrow {
+    font-size: 8px;
+  }
+
+  .home-page .leadership-team-cta strong {
+    margin-top: 8px;
+    font-size: 29px;
+    line-height: 1;
+  }
+
+  .home-page .leadership-team-cta p {
+    max-width: 295px;
+    margin: 9px auto 0;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+
+  .home-page .leadership-team-cta__action {
+    width: 100%;
+    min-height: 43px;
+    margin-top: 1px;
+    padding: 0 15px;
+    font-size: 9px;
+  }
+}
