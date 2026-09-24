@@ -4208,3 +4208,11 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
     font-size: 10px;
   }
 }
+
+
+.home-page .leadership-team-strip p {
+  margin-top: 8px;
+  color: var(--cgs-muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
