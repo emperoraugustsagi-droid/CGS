@@ -93,7 +93,7 @@ export default function AboutPage() {
     <section className="section about-people-leadership" id="people" aria-labelledby="people-title">
       <div className="container about-people-leadership__intro">
         <Eyebrow>People of CGS</Eyebrow>
-        <h2 id="people-title">Leadership that keeps scholarship connected to public life.</h2>
+        <h2 id="people-title">The people shaping CGS scholarship, programmes and public engagement.</h2>
       </div>
 
       <div className="container about-director">
@@ -120,14 +120,8 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section about-team" id="team" aria-labelledby="team-title">
+    <section className="section about-team" id="team" aria-label="Wider CGS team">
       <div className="container about-team__inner">
-        <header className="about-team__heading">
-          <Eyebrow>Centre team</Eyebrow>
-          <h2 id="team-title">The people supporting CGS programmes and scholarship.</h2>
-          <p>Across academics, programmes, communication and administration, the team helps turn the Centre&apos;s mandate into day-to-day work.</p>
-        </header>
-
         <div className="team-profile-grid">
           {teamProfiles.map((member, index) => (
             <article className="team-profile-card" key={member.name}>
