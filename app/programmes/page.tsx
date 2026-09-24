@@ -133,16 +133,25 @@ export default function ProgrammesPage() {
 
       
 
-      <section className="section page-visual page-visual--paper programmes-research-link" aria-labelledby="programmes-research-title">
-        <div className="container page-visual__grid">
-          <figure className="page-visual__media">
-            <Image src="/assets/cgs-research-workshop.jpg" alt="CGS participants working together during a research workshop" fill sizes="(max-width: 820px) 100vw, 55vw" />
-            <figcaption>Study connected to inquiry</figcaption>
+      <section className="section programmes-research-link" aria-labelledby="programmes-research-title">
+        <div className="container programmes-research-link__layout">
+          <figure className="programmes-research-link__media">
+            <Image
+              src="/assets/cgs-research-workshop.jpg"
+              alt="CGS participants working together during a research workshop"
+              fill
+              sizes="(max-width: 820px) 100vw, 55vw"
+            />
+            <figcaption>
+              <span>Study in practice</span>
+              <strong>Inquiry connected to real questions</strong>
+            </figcaption>
           </figure>
-          <div className="page-visual__copy">
+
+          <div className="programmes-research-link__copy">
             <Eyebrow>Study and research</Eyebrow>
             <h2 id="programmes-research-title">Advanced study becomes stronger when it stays close to real questions.</h2>
-            <p>Gender Studies at CGS sits in conversation with development, governance, health, education, leadership and public life.</p>
+            <p>Gender Studies at CGS connects advanced learning with questions across development, governance, health, education, leadership and public life.</p>
             <Link className="text-link" href="/research">Explore the Centre’s research focus <Arrow diagonal /></Link>
           </div>
         </div>
