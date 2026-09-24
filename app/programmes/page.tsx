@@ -150,7 +150,7 @@ export default function ProgrammesPage() {
 
           <div className="programmes-research-link__copy">
             <Eyebrow>Study and research</Eyebrow>
-            <h2 id="programmes-research-title">Advanced study becomes stronger when it stays close to real questions.</h2>
+            <h2 id="programmes-research-title">Advanced study is most valuable when it responds to real-world questions.</h2>
             <p>Gender Studies at CGS connects advanced learning with questions across development, governance, health, education, leadership and public life.</p>
             <Link className="text-link" href="/research">Explore the Centre’s research focus <Arrow diagonal /></Link>
           </div>
