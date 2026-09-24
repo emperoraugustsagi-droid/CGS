@@ -15,11 +15,14 @@ export function SiteHeader() {
       <header className="site-header" onKeyDown={(event) => { if (event.key === "Escape" && open) { setOpen(false); menuButton.current?.focus(); } }}>
         <div className="container header__inner">
           <Link className="brand" href="/" aria-label="Centre for Gender Studies home">
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 6, flexShrink: 0 }}>
-              <Image src="https://www.pngkey.com/png/detail/371-3715555_nasarawa-state-university-keffi-nsuk.png" alt="Nasarawa State University, Keffi logo" width={48} height={48} priority style={{ width: 40, height: 40 }} />
-              <Image src="/assets/cgs-logo.jpg" alt="Centre for Gender Studies logo" width={48} height={48} priority style={{ width: 40, height: 40 }} />
+            <span className="brand__marks" aria-hidden="true">
+              <Image src="https://www.pngkey.com/png/detail/371-3715555_nasarawa-state-university-keffi-nsuk.png" alt="" width={48} height={48} priority />
+              <Image src="/assets/cgs-logo.jpg" alt="" width={48} height={48} priority />
             </span>
-            <span><strong>Centre for Gender Studies</strong><small>Nasarawa State University, Keffi</small></span>
+            <span className="brand__copy">
+              <strong><span>Centre for</span> <span>Gender Studies</span></strong>
+              <small>Nasarawa State University, Keffi</small>
+            </span>
           </Link>
           <button ref={menuButton} className={open ? "menu-button menu-button--open" : "menu-button"} type="button" aria-label={open ? "Close navigation" : "Open navigation"} aria-expanded={open} aria-controls="site-nav" onClick={() => setOpen(!open)}><span aria-hidden="true"/><span aria-hidden="true"/><span aria-hidden="true"/></button>
           <nav id="site-nav" className={open ? "site-nav site-nav--open" : "site-nav"} aria-label="Primary navigation">
