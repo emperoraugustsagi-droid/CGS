@@ -79,15 +79,29 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section page-section about-lens" aria-labelledby="lens-title">
-      <div className="container page-grid page-grid--wide">
-        <div><Eyebrow>How we study society</Eyebrow><h2 id="lens-title">Gender is not a single subject. It is a lens across public life.</h2></div>
-        <div className="prose"><p>Our work crosses disciplines because the questions that shape opportunity and wellbeing do not fit neatly inside one field.</p><p>These six areas provide a practical map of the questions CGS brings into research, teaching and public engagement.</p></div>
+    <section className="section about-lens" aria-labelledby="lens-title">
+      <div className="container about-lens__intro">
+        <div>
+          <Eyebrow>How we study society</Eyebrow>
+          <h2 id="lens-title">Gender is not a single subject. It is a lens across public life.</h2>
+        </div>
+        <div className="about-lens__summary">
+          <p>Our work crosses disciplines because questions of opportunity, wellbeing, power and participation rarely fit neatly inside one field.</p>
+          <Link className="text-link" href="/research">Explore our research focus <Arrow diagonal /></Link>
+        </div>
       </div>
-      <ul className="container about-fields" aria-label="CGS areas of study">
-        {researchAreas.map(([title, description], index) => <li key={title}><span className="index">0{index + 1}</span><strong>{title}</strong><small>{description}</small></li>)}
+
+      <ul className="container about-lens__matrix" aria-label="CGS areas of study">
+        {researchAreas.map(([title, focus], index) => (
+          <li key={title}>
+            <span className="about-lens__index">0{index + 1}</span>
+            <div>
+              <strong>{title}</strong>
+              <small>{focus}</small>
+            </div>
+          </li>
+        ))}
       </ul>
-      <div className="container about-section-link"><Link className="text-link" href="/research">Explore our research focus <Arrow diagonal /></Link></div>
     </section>
 
     <section className="section page-section page-section--paper about-leadership" id="people" aria-labelledby="leadership-title">
