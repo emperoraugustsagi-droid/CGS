@@ -157,17 +157,18 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      <section className="section page-section programmes-guidance" aria-labelledby="admissions-guidance-title">
-        <div className="container page-grid page-grid--wide">
-          <div>
-            <Eyebrow>Current admissions guidance</Eyebrow>
-            <h2 id="admissions-guidance-title">Confirm the details before you apply.</h2>
+      <section className="programmes-guidance" aria-labelledby="admissions-guidance-title">
+        <div className="container programmes-guidance__inner">
+          <div className="programmes-guidance__heading">
+            <Eyebrow>Before you apply</Eyebrow>
+            <h2 id="admissions-guidance-title">Confirm the current details with CGS.</h2>
           </div>
-          <div className="prose">
-            <p>Programme requirements, deadlines, schedules and delivery arrangements can change. The website deliberately avoids publishing unverified admissions details.</p>
-            <p>When you contact the Centre, mention the programme you are interested in and your current academic or professional background.</p>
-            <Link className="button button--accent" href="/contact">Contact CGS <Arrow /></Link>
-          </div>
+
+          <p className="programmes-guidance__copy">Requirements, deadlines, schedules and delivery arrangements can change. When you contact the Centre, mention the programme you are interested in and your current academic or professional background.</p>
+
+          <Link className="button button--accent programmes-guidance__action" href="/contact">
+            Contact CGS <Arrow />
+          </Link>
         </div>
       </section>
 
