@@ -6,6 +6,7 @@ import { Arrow } from "../components/page-shell";
 import { HomeHeroCarousel } from "../components/home-hero-carousel";
 import { ProgrammeShowcase } from "../components/programme-showcase";
 import { EventSpotlightPopup } from "../components/event-spotlight-popup";
+import { EventCountdown } from "../components/event-countdown";
 import { HomeGallery } from "../components/home-gallery";
 import { activities, events, programmes, researchAreas } from "./site-data";
 
@@ -130,6 +131,11 @@ export default function Home() {
           <Eyebrow>Upcoming at CGS</Eyebrow>
           <h2 id="home-event-title">{events[0].title}</h2>
           <p>{events[0].theme}</p>
+          <EventCountdown
+            target="2026-11-04T00:00:00+01:00"
+            compact
+            className="home-event-compact__countdown"
+          />
           <div className="home-event-compact__meta">
             <span><strong>{events[0].deadlines.abstractSubmission}</strong> Abstract deadline</span>
             <span>{events[0].venue}</span>
@@ -162,6 +168,7 @@ export default function Home() {
       abstractDeadline={events[0].deadlines.abstractSubmission}
       earlyBirdDeadline={events[0].deadlines.earlyBirdRegistration}
       website={events[0].website}
+      countdownTarget="2026-11-04T00:00:00+01:00"
     />
   </main><SiteFooter /></>;
 }
