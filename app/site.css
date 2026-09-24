@@ -3520,3 +3520,115 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
 .about-page .about-next-links a > span:first-child {
   color: var(--cgs-pink-300) !important;
 }
+
+
+/* Homepage leadership → wider team handoff */
+.home-page .leadership-handoff {
+  margin-top: 46px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.home-page .leadership-team-cta {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+  min-height: 142px;
+  overflow: hidden;
+  padding: 30px 34px;
+  border: 1px solid rgb(11 35 72 / 12%);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 96% 8%, rgb(239 136 189 / 20%) 0 72px, transparent 73px),
+    radial-gradient(circle at 88% 130%, rgb(113 195 244 / 18%) 0 92px, transparent 93px),
+    linear-gradient(110deg, #eef7ff 0%, #f7eef5 100%);
+  color: var(--cgs-navy-800);
+  text-decoration: none;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+.home-page .leadership-team-cta:hover,
+.home-page .leadership-team-cta:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgb(207 20 112 / 28%);
+  box-shadow: 0 18px 42px rgb(11 35 72 / 8%);
+  outline: none;
+}
+
+.home-page .leadership-team-cta__copy {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+}
+
+.home-page .leadership-team-cta__eyebrow {
+  display: block;
+  color: var(--cgs-pink-600);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.home-page .leadership-team-cta strong {
+  display: block;
+  margin-top: 9px;
+  color: var(--cgs-navy-800);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(30px, 3vw, 42px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.home-page .leadership-team-cta p {
+  max-width: 570px;
+  margin-top: 10px;
+  color: var(--cgs-muted);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.home-page .leadership-team-cta__action {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  min-height: 46px;
+  padding: 0 18px;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  border-radius: 999px;
+  background: var(--cgs-pink-600);
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.home-page .leadership-team-cta__action > span {
+  font-size: 16px;
+}
+
+@media (max-width: 820px) {
+  .home-page .leadership-team-cta {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .home-page .leadership-team-cta__action {
+    width: max-content;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .leadership-team-cta {
+    transition: none;
+  }
+
+  .home-page .leadership-team-cta:hover,
+  .home-page .leadership-team-cta:focus-visible {
+    transform: none;
+  }
+}
