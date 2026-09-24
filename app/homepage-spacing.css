@@ -1,0 +1,278 @@
+/* Homepage vertical rhythm
+ * Final spacing layer for the homepage only.
+ * Keeps the hero generous, then tightens the rest into a consistent editorial cadence.
+ */
+
+.home-page {
+  --home-section-major: 84px;
+  --home-section-medium: 70px;
+  --home-section-compact: 48px;
+  --home-content-gap: 36px;
+  --home-content-gap-small: 24px;
+}
+
+/* Primary homepage sections */
+.home-page .mandate-section {
+  padding: 84px 0 78px;
+}
+
+.home-page .programmes--home {
+  padding-top: 82px;
+  padding-bottom: 76px;
+}
+
+.home-page .research--home.research-gallery {
+  padding: 76px 0 78px;
+}
+
+.home-page .leadership--home {
+  padding: 76px 0 74px;
+}
+
+.home-page .activity {
+  padding: 72px 0 74px;
+}
+
+.home-page .home-gallery--rail {
+  padding: 68px 0 72px;
+}
+
+.home-page .engage {
+  padding-block: 74px 78px;
+}
+
+/* Compact bridge section deliberately breaks the larger rhythm. */
+.home-page .home-event--compact {
+  padding: 48px 0;
+}
+
+/* Mandate: remove the feeling of a second section inside the section. */
+.home-page .mandate-cta {
+  min-height: 90px;
+  margin-top: 30px;
+  padding: 18px 26px;
+}
+
+/* Study: intro → rows → visual showcase. */
+.home-page .programmes--home .programme-list {
+  margin-top: 34px;
+}
+
+.home-page .programmes--home .programme-showcase {
+  margin-top: 42px;
+}
+
+/* Research: use one clear gap between intro and cards, not stacked gaps. */
+.home-page .research--home.research-gallery .research-gallery__header {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.home-page .research--home.research-gallery .research-gallery__grid {
+  margin-top: 34px;
+}
+
+.home-page .research--home.research-gallery .research-gallery__footer {
+  margin-top: 24px;
+}
+
+/* Leadership: imagery already provides breathing room. */
+.home-page .leadership__layout {
+  gap: clamp(48px, 5.5vw, 72px);
+}
+
+.home-page .leadership-handoff {
+  margin-top: 30px;
+  padding-top: 0;
+}
+
+/* Activity: reduce accumulated space inside an already tall image-led section. */
+.home-page .activity__layout {
+  gap: clamp(46px, 5vw, 68px);
+}
+
+.home-page .activity__copy > p {
+  margin-top: 18px;
+}
+
+.home-page .activity-list {
+  margin-top: 24px;
+}
+
+/* Gallery: keep it as a visual interlude, not another oversized chapter. */
+.home-page .home-gallery__rail-shell {
+  margin-top: 26px;
+}
+
+.home-page .home-gallery__toolbar {
+  margin-bottom: 12px;
+}
+
+/* Final router: decisive but not oversized. */
+.home-page .engage__layout {
+  gap: clamp(48px, 5.5vw, 76px);
+}
+
+.home-page .engage__options a {
+  min-height: 118px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+}
+
+/* Intro rhythm shared by the centered homepage chapters. */
+.home-page .programmes--home .section-heading h2,
+.home-page .research--home.research-gallery .research-gallery__header h2,
+.home-page .home-gallery__heading h2 {
+  margin-top: 16px;
+}
+
+.home-page .programmes--home .section-heading > p,
+.home-page .research--home.research-gallery .research-gallery__intro,
+.home-page .home-gallery__intro {
+  margin-top: 20px;
+}
+
+/* Tablet keeps the same relationships with slightly less air. */
+@media (min-width: 821px) and (max-width: 1100px) {
+  .home-page .mandate-section {
+    padding: 76px 0 70px;
+  }
+
+  .home-page .programmes--home {
+    padding-top: 74px;
+    padding-bottom: 70px;
+  }
+
+  .home-page .research--home.research-gallery,
+  .home-page .leadership--home,
+  .home-page .activity {
+    padding-top: 68px;
+    padding-bottom: 68px;
+  }
+
+  .home-page .home-gallery--rail {
+    padding: 62px 0 66px;
+  }
+
+  .home-page .engage {
+    padding-block: 68px 72px;
+  }
+}
+
+/* Mobile rhythm is intentionally tighter than desktop, not merely scaled down. */
+@media (max-width: 620px) {
+  .home-page {
+    --home-section-major: 52px;
+    --home-section-medium: 46px;
+    --home-section-compact: 34px;
+    --home-content-gap: 26px;
+    --home-content-gap-small: 18px;
+  }
+
+  .home-page .mandate-section {
+    padding: 42px 0 46px;
+  }
+
+  .home-page .programmes--home {
+    padding: 50px 0 52px;
+  }
+
+  .home-page .research--home.research-gallery {
+    padding: 50px 0 54px;
+  }
+
+  .home-page .home-event--compact {
+    padding: 34px 0;
+  }
+
+  .home-page .leadership--home {
+    padding: 50px 0 52px;
+  }
+
+  .home-page .activity {
+    padding: 50px 0 54px;
+  }
+
+  .home-page .home-gallery--rail {
+    padding: 48px 0 50px;
+  }
+
+  .home-page .engage {
+    padding: 54px 0 58px;
+  }
+
+  .home-page .mandate-cta {
+    min-height: 0;
+    margin-top: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .home-page .programmes--home .section-heading h2,
+  .home-page .research--home.research-gallery .research-gallery__header h2,
+  .home-page .home-gallery__heading h2 {
+    margin-top: 14px;
+  }
+
+  .home-page .programmes--home .section-heading > p,
+  .home-page .research--home.research-gallery .research-gallery__intro,
+  .home-page .home-gallery__intro {
+    margin-top: 16px;
+  }
+
+  .home-page .programmes--home .programme-list {
+    margin-top: 26px;
+  }
+
+  .home-page .programmes--home .programme-showcase {
+    gap: 26px;
+    margin-top: 28px;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__grid {
+    margin-top: 24px;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__footer {
+    margin-top: 20px;
+  }
+
+  .home-page .leadership__layout {
+    gap: 30px;
+  }
+
+  .home-page .leadership-handoff {
+    margin-top: 20px;
+    padding-top: 0;
+  }
+
+  .home-page .activity__layout {
+    gap: 28px;
+  }
+
+  .home-page .activity__copy > p {
+    margin-top: 16px;
+  }
+
+  .home-page .activity-list {
+    margin-top: 20px;
+  }
+
+  .home-page .home-gallery__rail-shell {
+    margin-top: 20px;
+  }
+
+  .home-page .home-gallery__toolbar {
+    margin-bottom: 9px;
+  }
+
+  .home-page .engage__layout {
+    gap: 34px;
+  }
+
+  .home-page .engage__options a {
+    min-height: 98px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
