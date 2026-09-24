@@ -275,3 +275,46 @@
     gap: 48px;
   }
 }
+
+
+/* Mandate closing statement: keep slogan and action as one composed desktop unit. */
+@media (min-width: 821px) {
+  .home-page .mandate-cta {
+    width: min(100%, 980px);
+    min-height: 104px;
+    margin: 40px auto 0;
+    padding: 24px 30px;
+    display: grid;
+    grid-template-columns: minmax(0, auto) auto;
+    justify-content: center;
+    align-items: center;
+    column-gap: clamp(48px, 6vw, 88px);
+    border-top: 1px solid var(--border-default);
+    border-bottom: 1px solid var(--border-default);
+    border-left: 0;
+    background: transparent;
+  }
+
+  .home-page .mandate-cta p {
+    margin: 0;
+    font-size: clamp(28px, 2.6vw, 36px);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .home-page .mandate-cta .text-link {
+    min-width: 190px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 1050px) {
+  .home-page .mandate-cta {
+    width: min(100%, 820px);
+    column-gap: 42px;
+  }
+
+  .home-page .mandate-cta p {
+    font-size: 27px;
+  }
+}
