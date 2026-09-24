@@ -1652,3 +1652,35 @@
     font-size: 18px;
   }
 }
+
+
+/* Research intro + closing CTA after the image cards on phones */
+@media (max-width: 620px) {
+  .home-page .research--home.research-gallery .research-gallery__intro {
+    max-width: 325px;
+    margin: 18px auto 0;
+    text-align: center;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__intro > span {
+    display: block;
+    margin-bottom: 9px;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__intro > p {
+    margin-inline: auto;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 26px;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__footer .text-link {
+    width: max-content;
+    min-height: 40px;
+    margin-inline: auto;
+    justify-content: center;
+  }
+}
