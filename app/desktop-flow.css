@@ -379,3 +379,59 @@
     justify-content: space-between;
   }
 }
+
+
+/* Center stacked section introductions on desktop for a consistent editorial rhythm. */
+@media (min-width: 821px) {
+  .home-page .programmes--home .section-heading {
+    text-align: center;
+  }
+
+  .home-page .programmes--home .section-heading > div {
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+
+  .home-page .programmes--home .section-heading .eyebrow {
+    justify-content: center;
+  }
+
+  .home-page .programmes--home .section-heading h2 {
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+
+  .home-page .programmes--home .section-heading > p {
+    max-width: 720px;
+    margin: 24px auto 0;
+    text-align: center;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__header {
+    text-align: center;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__header > div {
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__header .eyebrow {
+    justify-content: center;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__header h2 {
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__intro {
+    max-width: 720px;
+    margin: 24px auto 0;
+    text-align: center;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__intro > p {
+    margin-inline: auto;
+  }
+}
