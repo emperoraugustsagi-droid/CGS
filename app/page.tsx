@@ -144,6 +144,7 @@ export default function Home() {
           <div>
             <span>Meet the Centre</span>
             <strong>Explore the team behind CGS</strong>
+            <p>Meet the academic, programmes and administrative team supporting the Centre&apos;s work.</p>
           </div>
           <span className="leadership-team-strip__action">Meet the team <Arrow diagonal /></span>
         </Link>
