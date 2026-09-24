@@ -3632,3 +3632,83 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
     transform: none;
   }
 }
+
+
+/* Compact leadership → team handoff strip */
+.home-page .leadership-handoff {
+  margin-top: 30px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.home-page .leadership-team-strip {
+  display: flex;
+  min-height: 84px;
+  padding: 16px 18px 16px 20px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-top: 1px solid rgb(11 35 72 / 13%);
+  border-bottom: 1px solid rgb(11 35 72 / 13%);
+  border-left: 3px solid var(--cgs-pink-600);
+  background: linear-gradient(90deg, #fff8fb 0%, #f8fbff 100%);
+  color: var(--cgs-navy-800);
+  text-decoration: none;
+  transition: border-color .2s ease, background .2s ease;
+}
+
+.home-page .leadership-team-strip:hover,
+.home-page .leadership-team-strip:focus-visible {
+  border-left-color: var(--cgs-blue-600);
+  background: linear-gradient(90deg, #fff4f9 0%, #f3f9ff 100%);
+  outline: none;
+}
+
+.home-page .leadership-team-strip > div {
+  min-width: 0;
+}
+
+.home-page .leadership-team-strip > div > span {
+  display: block;
+  color: var(--cgs-pink-600);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.home-page .leadership-team-strip strong {
+  display: block;
+  margin-top: 5px;
+  color: var(--cgs-navy-800);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.home-page .leadership-team-strip__action {
+  display: inline-flex;
+  min-height: 40px;
+  padding: 0 15px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: 0 0 auto;
+  border-radius: 999px;
+  background: var(--cgs-pink-600);
+  color: white;
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.home-page .leadership-team-strip__action > span {
+  font-size: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .leadership-team-strip {
+    transition: none;
+  }
+}
