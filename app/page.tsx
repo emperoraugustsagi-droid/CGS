@@ -86,11 +86,10 @@ export default function Home() {
         <div>
           <Eyebrow>Research focus</Eyebrow>
           <h2 id="research-title">Questions grounded in the realities <em>of society.</em></h2>
-        </div>
-        <div className="research-gallery__intro">
-          <span>06 areas of inquiry</span>
-          <p>Our research explores how gender intersects with development, institutions, health, education, leadership and public life.</p>
-          <Link className="text-link" href="/research">Explore all research <Arrow diagonal /></Link>
+          <div className="research-gallery__intro">
+            <span>06 areas of inquiry</span>
+            <p>Our research explores how gender intersects with development, institutions, health, education, leadership and public life.</p>
+          </div>
         </div>
       </div>
       <div className="container research-gallery__grid">
@@ -116,6 +115,9 @@ export default function Home() {
             </div>
           </Link>
         ))}
+      </div>
+      <div className="container research-gallery__footer">
+        <Link className="text-link" href="/research">Explore all research <Arrow diagonal /></Link>
       </div>
     </section>
     <section className="home-event home-event--compact" id="events" aria-labelledby="home-event-title">
