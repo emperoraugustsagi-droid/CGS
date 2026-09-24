@@ -4407,3 +4407,33 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
   stroke-linecap: round;
   stroke-linejoin: round;
 }
+
+
+/* Light institutional footer */
+.site-footer {
+  background: #ffffff;
+  color: var(--cgs-navy-800);
+  border-top: 1px solid var(--border-default);
+}
+
+.site-footer .footer__brand strong,
+.site-footer a {
+  color: var(--cgs-navy-800);
+}
+
+.site-footer .footer__brand small,
+.site-footer .footer__grid > p,
+.site-footer .footer__grid address,
+.site-footer nav {
+  color: var(--cgs-muted);
+}
+
+.site-footer a:hover,
+.site-footer a:focus-visible {
+  color: var(--cgs-pink-600);
+}
+
+.site-footer .footer__bottom {
+  border-top-color: var(--border-default);
+  color: color-mix(in srgb, var(--cgs-navy-800) 54%, transparent);
+}
