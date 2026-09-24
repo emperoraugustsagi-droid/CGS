@@ -133,8 +133,8 @@ export default function Home() {
           </div>
         </div>
         <div className="home-event-compact__actions">
-          <Link className="button button--accent" href="/events">Conference details <Arrow /></Link>
-          <a className="text-link" href={events[0].website} target="_blank" rel="noreferrer">Conference website <Arrow diagonal /></a>
+          <a className="button button--accent" href={events[0].website} target="_blank" rel="noreferrer">Visit conference website <Arrow /></a>
+          <Link className="text-link" href="/events">View event details <Arrow diagonal /></Link>
         </div>
       </div>
     </section>
