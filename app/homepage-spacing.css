@@ -276,3 +276,37 @@
     padding-bottom: 20px;
   }
 }
+
+
+/* Study at CGS: explicit two-line desktop composition. */
+@media (min-width: 821px) {
+  .home-page .programmes--home .section-heading > div {
+    max-width: 1240px;
+  }
+
+  .home-page .programmes--home .section-heading h2 {
+    width: 100%;
+    max-width: none;
+    margin: 16px auto 0;
+    font-size: clamp(44px, 5.4vw, 82px);
+    line-height: .96;
+    text-wrap: nowrap;
+  }
+
+  .home-page .programmes--home .study-title__lead,
+  .home-page .programmes--home .section-heading h2 > em {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .home-page .programmes--home .section-heading > p {
+    max-width: 760px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 821px) and (max-width: 980px) {
+  .home-page .programmes--home .section-heading h2 {
+    font-size: clamp(42px, 5.1vw, 50px);
+  }
+}
