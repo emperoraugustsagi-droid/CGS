@@ -318,3 +318,21 @@
     font-size: 27px;
   }
 }
+
+
+/* Programmes intro: keep explanation directly under the headline on desktop. */
+@media (min-width: 821px) {
+  .home-page .programmes--home .section-heading {
+    display: block;
+  }
+
+  .home-page .programmes--home .section-heading > div {
+    max-width: 1040px;
+  }
+
+  .home-page .programmes--home .section-heading > p {
+    max-width: 680px;
+    margin-top: 24px;
+    padding-bottom: 0;
+  }
+}
