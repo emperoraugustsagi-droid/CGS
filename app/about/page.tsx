@@ -24,16 +24,15 @@ export default function AboutPage() {
           <Eyebrow light>About the Centre</Eyebrow>
           <h1 id="about-title">Understanding gender helps us understand society.</h1>
           <div className="about-hero__body">
-            <p>{site.name} at {site.university} brings research, teaching and public engagement together to examine how gender shapes institutions, opportunity and everyday life.</p>
-            <p>We create a place where difficult questions can be studied seriously, evidence can be tested, and knowledge can move beyond the university into public life.</p>
-            <div className="page-intro__actions">
+            <p>{site.name} at {site.university} brings research, teaching and public engagement together to examine how gender shapes institutions, opportunity and everyday life—and to move evidence into public life.</p>
+            <div className="about-hero__actions">
               <Link className="button button--accent" href="#purpose">Discover our purpose <Arrow /></Link>
               <Link className="text-link text-link--light" href="#people">Meet the people <Arrow diagonal /></Link>
             </div>
           </div>
         </div>
         <figure className="about-hero__media">
-          <Image src="/assets/cgs-advisory-group.jpg" alt="Members of the CGS academic and advisory community gathered together" fill priority sizes="(max-width: 820px) 100vw, 48vw" />
+          <Image src="/assets/cgs-advisory-group.jpg" alt="Members of the CGS academic and advisory community gathered together" fill priority sizes="(max-width: 820px) 100vw, 44vw" />
           <figcaption><span>Centre for Gender Studies</span><span>Knowledge is collective</span></figcaption>
         </figure>
       </div>
