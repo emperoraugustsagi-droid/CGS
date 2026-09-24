@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Arrow, ContactBand, Eyebrow, PageShell } from "../../components/page-shell";
-import { researchAreas, site, team } from "../site-data";
+import { researchAreas, site, teamProfiles } from "../site-data";
 
 export const metadata: Metadata = {
   title: "About",
@@ -105,8 +105,41 @@ export default function AboutPage() {
 
     <section className="section page-section about-team" id="team" aria-labelledby="team-title">
       <div className="container team-page-section">
-        <div><Eyebrow>The people behind the work</Eyebrow><h2 id="team-title">Different responsibilities. One shared Centre.</h2><p className="team-page-section__intro">Academic leadership, programmes and administration work together to make the Centre&apos;s teaching, research and engagement possible.</p></div>
-        <div className="team-roster__list">{team.map(([name, role], index) => <div key={name}><span className="index">0{index + 1}</span><strong>{name}</strong><small>{role}</small></div>)}</div>
+        <header className="team-page-section__heading">
+          <Eyebrow>Centre team</Eyebrow>
+          <h2 id="team-title">The people supporting CGS programmes and scholarship.</h2>
+          <p className="team-page-section__intro">Across academics, programmes, communication and administration, the team helps turn the Centre&apos;s mandate into day-to-day work.</p>
+        </header>
+
+        <div className="team-profile-grid">
+          {teamProfiles.map((member, index) => (
+            <article className="team-profile-card" key={member.name}>
+              <figure className="team-profile-card__media">
+                <Image
+                  src={member.image}
+                  alt={member.name}
+                  fill
+                  sizes="(max-width: 620px) 38vw, (max-width: 980px) 50vw, 33vw"
+                  quality={88}
+                  style={{ objectFit: "cover", objectPosition: member.imagePosition }}
+                />
+                <span className="team-profile-card__index">0{index + 1}</span>
+              </figure>
+              <div className="team-profile-card__body">
+                <p className="team-profile-card__role">{member.role}</p>
+                <h3>{member.name}</h3>
+                <p className="team-profile-card__department">{member.department}</p>
+                <p className="team-profile-card__summary">{member.summary}</p>
+                <p className="team-profile-card__detail">{member.detail}</p>
+                {"linkedin" in member && member.linkedin ? (
+                  <a className="text-link team-profile-card__link" href={member.linkedin} target="_blank" rel="noreferrer">
+                    LinkedIn profile <Arrow diagonal />
+                  </a>
+                ) : null}
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
 
