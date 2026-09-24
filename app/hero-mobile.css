@@ -1304,3 +1304,54 @@
     font-size: 9px;
   }
 }
+
+
+/* Compact leadership team strip on phones */
+@media (max-width: 620px) {
+  .home-page .leadership-handoff {
+    margin-top: 20px;
+  }
+
+  .home-page .leadership-team-strip {
+    min-height: 74px;
+    padding: 12px 12px 12px 14px;
+    gap: 12px;
+    border-radius: 0;
+  }
+
+  .home-page .leadership-team-strip > div > span {
+    font-size: 7px;
+    letter-spacing: .12em;
+  }
+
+  .home-page .leadership-team-strip strong {
+    margin-top: 4px;
+    font-size: 18px;
+    line-height: 1.02;
+  }
+
+  .home-page .leadership-team-strip__action {
+    min-height: 36px;
+    padding: 0 12px;
+    font-size: 8px;
+    gap: 8px;
+  }
+
+  .home-page .leadership-team-strip__action > span {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-page .leadership-team-strip {
+    padding-right: 10px;
+  }
+
+  .home-page .leadership-team-strip strong {
+    font-size: 17px;
+  }
+
+  .home-page .leadership-team-strip__action {
+    padding: 0 10px;
+  }
+}
