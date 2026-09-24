@@ -3446,3 +3446,71 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
     transform: none;
   }
 }
+
+
+/* Refined About team cards: clearer hierarchy, calmer reading rhythm */
+.about-page .team-profile-grid {
+  gap: 26px;
+}
+
+.about-page .team-profile-card {
+  border-color: rgb(11 35 72 / 13%);
+  border-radius: 10px;
+  background: #fffdfb;
+  box-shadow: 0 10px 28px rgb(11 35 72 / 4%);
+}
+
+.about-page .team-profile-card__media {
+  background: #eef3f8;
+}
+
+.about-page .team-profile-card__body {
+  padding: 26px 26px 28px;
+}
+
+.about-page .team-profile-card__role {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: rgb(207 20 112 / 8%);
+  color: var(--cgs-pink-600);
+  font-size: 9px;
+  line-height: 1.25;
+  letter-spacing: .09em;
+}
+
+.about-page .team-profile-card h3 {
+  margin-top: 14px;
+  font-size: clamp(27px, 2.15vw, 33px);
+  line-height: 1.03;
+}
+
+.about-page .team-profile-card__department {
+  margin-top: 10px;
+  color: var(--cgs-blue-700);
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.about-page .team-profile-card__summary {
+  max-width: 500px;
+  margin-top: 18px;
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.about-page .team-profile-card__detail {
+  max-width: 500px;
+  margin-top: 11px;
+  color: var(--text-muted);
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.about-page .team-profile-card__link {
+  margin-top: 20px;
+  font-size: 9px;
+}
