@@ -1534,3 +1534,10 @@
     font-size: 19px;
   }
 }
+
+
+@media (max-width: 620px) {
+  .home-page .leadership-team-strip p {
+    display: none;
+  }
+}
