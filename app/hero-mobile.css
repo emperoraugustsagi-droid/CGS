@@ -885,3 +885,28 @@
     text-align: left;
   }
 }
+
+
+@media (max-width: 620px) {
+  .home-page .leadership-handoff {
+    text-align: center;
+  }
+
+  .home-page .leadership-handoff .eyebrow {
+    justify-content: center;
+  }
+
+  .home-page .leadership-handoff p {
+    max-width: 340px;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .home-page .leadership-handoff .text-link {
+    width: max-content;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+  }
+}
