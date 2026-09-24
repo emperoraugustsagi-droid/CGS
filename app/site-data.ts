@@ -104,9 +104,9 @@ export const teamProfiles = [
     image: "/assets/cgs-team-hajara-hassan-ahmed-ii.jpg",
     department: "Department of Entrepreneurship Studies",
     summary:
-      "A Lecturer I and entrepreneurship scholar with interests in women entrepreneurship, innovation and business development.",
+      "Entrepreneurship scholar focused on women-led enterprise, innovation and business development, with experience across academic and administrative roles at NSUK.",
     detail:
-      "She holds a Ph.D. in Business Administration and has served in academic and administrative roles within Nasarawa State University, Keffi.",
+      "She is a Lecturer I in Entrepreneurship Studies and holds a Ph.D. in Business Administration.",
     imagePosition: "center 28%",
   },
   {
@@ -115,9 +115,9 @@ export const teamProfiles = [
     image: "/assets/cgs-team-ochanya-yakubu-lamai.jpg",
     department: "Department of Broadcasting · Faculty of Communication and Media Studies",
     summary:
-      "A communication strategist, broadcaster and gender advocate whose work spans strategic communication, gender equity, leadership and youth empowerment.",
+      "Communication scholar, broadcaster and gender advocate working across strategic communication, media development, leadership and youth empowerment.",
     detail:
-      "Her academic and public-engagement work connects teaching, research, mentorship, media and development advocacy.",
+      "Her work connects teaching and research with mentorship, media practice and development advocacy.",
     imagePosition: "center 24%",
   },
   {
@@ -126,9 +126,9 @@ export const teamProfiles = [
     image: "/assets/cgs-team-ifeoma-chidinma-eze.jpg",
     department: "Centre for Gender Studies",
     summary:
-      "Provides administrative, organisational and communication support for the effective coordination of the Centre’s activities.",
+      "Supports the Director and Centre operations across administration, communication and stakeholder coordination.",
     detail:
-      "Her experience includes digital communication, journalism, digital marketing and content management.",
+      "Her background spans journalism, digital communication, marketing and content management.",
     linkedin: "https://www.linkedin.com/in/ifeoma-chidinma-eze-ice-66040522a",
     imagePosition: "center 20%",
   },
@@ -138,9 +138,9 @@ export const teamProfiles = [
     image: "/assets/cgs-team-alaku-adamu.jpg",
     department: "Centre for Gender Studies",
     summary:
-      "An NSUK alumnus who supports the Centre’s administrative operations and institutional service.",
+      "Supports the Centre’s day-to-day administration and helps keep its internal operations organised and responsive.",
     detail:
-      "His work contributes to effective administration and the day-to-day coordination of the Centre.",
+      "An NSUK alumnus, his role centres on dependable institutional service and administrative coordination.",
     imagePosition: "center 18%",
   },
   {
@@ -149,7 +149,7 @@ export const teamProfiles = [
     image: "/assets/cgs-team-sefa-agba.jpg",
     department: "Centre for Gender Studies",
     summary:
-      "Coordinates programmes, partnerships and capacity-building initiatives focused on gender equality, social inclusion, research and sustainable development.",
+      "Coordinates programmes, partnerships and capacity-building work across gender equality, social inclusion, research and sustainable development.",
     detail:
       "His experience includes programme management, monitoring and evaluation, applied research and evidence-based interventions.",
     linkedin: "https://www.linkedin.com/in/sefa-agba-2332ab316",
