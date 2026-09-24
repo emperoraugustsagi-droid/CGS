@@ -134,7 +134,7 @@ export function HomeGallery() {
                 <small>{item.label}</small>
                 <strong>{item.title}</strong>
               </span>
-              <span className="home-gallery__expand" aria-hidden="true">↗</span>
+              <span className="home-gallery__expand" aria-hidden="true"><Arrow diagonal /></span>
             </button>
           ))}
         </div>
@@ -199,7 +199,9 @@ export function HomeGallery() {
                 )
               }
             >
-              ←
+              <span className="gallery-lightbox__nav-icon gallery-lightbox__nav-icon--prev" aria-hidden="true">
+                <Arrow />
+              </span>
             </button>
             <button
               className="gallery-lightbox__nav gallery-lightbox__nav--next"
@@ -211,7 +213,9 @@ export function HomeGallery() {
                 )
               }
             >
-              →
+              <span className="gallery-lightbox__nav-icon" aria-hidden="true">
+                <Arrow />
+              </span>
             </button>
           </div>
         </div>
