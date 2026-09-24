@@ -101,23 +101,33 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      <section className="section page-section page-section--paper programmes-other" aria-labelledby="other-study-title">
-        <div className="container page-grid page-grid--wide">
-          <div>
-            <Eyebrow>Other Centre study offerings</Eyebrow>
-            <h2 id="other-study-title">Certificate and diploma learning.</h2>
-          </div>
-          <div className="prose">
-            <p>The official NSUK learning platform lists Gender Studies Certificate and Diploma programmes. Their current admissions and delivery arrangements should be confirmed directly with CGS.</p>
-          </div>
+      <section className="section programmes-other" aria-labelledby="other-study-title">
+        <div className="container programmes-other__intro">
+          <Eyebrow>Other Centre study offerings</Eyebrow>
+          <h2 id="other-study-title">Certificate and diploma learning.</h2>
+          <p>The NSUK learning platform also lists Certificate and Diploma programmes in Gender Studies. Confirm current admissions and delivery arrangements directly with CGS.</p>
         </div>
 
-        <div className="container programme-offerings">
-          {centreStudyOfferings.map((offering, index) => <article key={offering.code}>
-            <span className="index">0{index + 1}</span>
-            <div><small>{offering.format}</small><h3>{offering.title}</h3><p>{offering.summary}</p></div>
-            <Link className="text-link" href="/contact">Ask for current guidance <Arrow diagonal /></Link>
-          </article>)}
+        <div className="container programmes-other__grid">
+          {centreStudyOfferings.map((offering, index) => (
+            <article className="programmes-other__item" key={offering.code}>
+              <span className="programmes-other__index">0{index + 1}</span>
+
+              <div className="programmes-other__content">
+                <span className="programmes-other__format">{offering.format}</span>
+                <h3>{offering.title}</h3>
+                <p>{offering.summary}</p>
+              </div>
+
+              <Link
+                className="programmes-other__action"
+                href="/contact"
+                aria-label={`Ask CGS about ${offering.title}`}
+              >
+                Ask for guidance <Arrow diagonal />
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 
