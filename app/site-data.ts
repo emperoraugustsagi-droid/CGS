@@ -177,7 +177,7 @@ export const activities = [
     id: "research-workshop",
     type: "Academic development",
     title: "CGS Research Workshop",
-    description: "A working session bringing the Centre’s academic community together.",
+    description: "Strengthening research capacity, advancing knowledge and driving impact.",
     sourceHref: "https://drive.google.com/drive/folders/1hpHDTWqsrZHiBJ4_RJHPcIy-FU5TdIlh",
     image: "/assets/cgs-research-workshop.jpg",
   },
