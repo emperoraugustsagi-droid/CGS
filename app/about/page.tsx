@@ -173,18 +173,19 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section page-section page-section--paper about-next" aria-labelledby="next-title">
-      <div className="container page-grid page-grid--wide">
-        <div><Eyebrow>Continue exploring</Eyebrow><h2 id="next-title">There is more than one way into the work of CGS.</h2></div>
-        <div className="prose">
-          <p>Choose the next part of the Centre to explore: study, research, upcoming events, or documented activity.</p>
-          <div className="about-next-links">
-            <Link href="/programmes"><span>Study</span><strong>Explore programmes</strong><Arrow diagonal /></Link>
-            <Link href="/research"><span>Knowledge</span><strong>Explore research</strong><Arrow diagonal /></Link>
-            <Link href="/events"><span>Participate</span><strong>See upcoming events</strong><Arrow diagonal /></Link>
-            <Link href="/activity"><span>Evidence</span><strong>See CGS activity</strong><Arrow diagonal /></Link>
-          </div>
+    <section className="about-next" aria-labelledby="next-title">
+      <div className="container about-next__inner">
+        <div className="about-next__intro">
+          <Eyebrow>Continue exploring</Eyebrow>
+          <h2 id="next-title">Explore more of CGS.</h2>
         </div>
+
+        <nav className="about-next__nav" aria-label="Explore more of CGS">
+          <Link href="/programmes"><span>Programmes</span><Arrow diagonal /></Link>
+          <Link href="/research"><span>Research</span><Arrow diagonal /></Link>
+          <Link href="/events"><span>Events</span><Arrow diagonal /></Link>
+          <Link href="/activity"><span>Activity</span><Arrow diagonal /></Link>
+        </nav>
       </div>
     </section>
 
