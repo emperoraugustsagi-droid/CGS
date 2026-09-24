@@ -72,7 +72,7 @@ export default function AboutPage() {
           <h2 id="lens-title">Gender is not a single subject. It is a lens across public life.</h2>
         </div>
         <div className="about-lens__summary">
-          <p>Our work crosses disciplines because questions of opportunity, wellbeing, power and participation rarely fit neatly inside one field.</p>
+          <p>Our work spans across disciplines of opportunities, well-being, power, and participation.</p>
           <Link className="text-link" href="/research">Explore our research focus <Arrow diagonal /></Link>
         </div>
       </div>
