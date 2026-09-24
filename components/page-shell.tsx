@@ -7,11 +7,24 @@ export function PageShell({ children }: Readonly<{ children: React.ReactNode }>)
 }
 
 export function Arrow({ diagonal = false }: { diagonal?: boolean }) {
-  return <span className={diagonal ? "link-arrow link-arrow--diagonal" : "link-arrow"} aria-hidden="true">
-    {diagonal
-      ? <svg viewBox="0 0 24 24" focusable="false"><path d="M7 17 17 7M8 7h9v9" /></svg>
-      : <svg viewBox="0 0 24 24" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" /></svg>}
-  </span>;
+  return (
+    <span
+      className={diagonal ? "link-arrow link-arrow--diagonal" : "link-arrow"}
+      aria-hidden="true"
+    >
+      {diagonal ? (
+        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+          <path d="M7.5 16.5 16.5 7.5" />
+          <path d="M10 7.5h6.5V14" />
+        </svg>
+      ) : (
+        <svg viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+          <path d="M5 12h13.5" />
+          <path d="m14 7.5 4.5 4.5-4.5 4.5" />
+        </svg>
+      )}
+    </span>
+  );
 }
 
 export function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
