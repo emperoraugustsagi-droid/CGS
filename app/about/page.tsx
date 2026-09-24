@@ -91,13 +91,13 @@ export default function AboutPage() {
 
     <section className="section page-section page-section--paper about-leadership" id="people" aria-labelledby="leadership-title">
       <div className="container person-feature">
-        <figure className="person-feature__media"><Image src="/assets/cgs-director-comfort-adokwe.jpeg" alt="Dr. Comfort Ayine Adokwe-Obed, Acting Director of the Centre for Gender Studies" fill sizes="(max-width: 820px) 100vw, 40vw" /></figure>
+        <figure className="person-feature__media"><Image src="/assets/cgs-director-comfort-adokwe.jpeg" alt="Dr. Comfort Ayine Adokwe-Obed, Director of the Centre for Gender Studies" fill sizes="(max-width: 820px) 100vw, 40vw" /></figure>
         <div className="person-feature__copy">
           <Eyebrow>Centre leadership</Eyebrow>
           <h2 id="leadership-title">Keeping scholarship connected to people, institutions and public life.</h2>
-          <p className="person-feature__role">Dr. Comfort Ayine Adokwe-Obed, Ag. Director</p>
-          <p>Dr. Comfort Ayine Adokwe-Obed is a Senior Lecturer in the Department of Public Administration and Ag. Director of the Centre for Gender Studies. Her work brings public policy, governance, gender analysis and development into conversation.</p>
-          <p>As Ag. Director, she leads a Centre that connects academic study with capacity development, institutional engagement and the practical questions facing society.</p>
+          <p className="person-feature__role">Dr. Comfort Ayine Adokwe-Obed, Director</p>
+          <p>Dr. Comfort Ayine Adokwe-Obed is a Senior Lecturer in the Department of Public Administration and Director of the Centre for Gender Studies. Her work brings public policy, governance, gender analysis and development into conversation.</p>
+          <p>As Director, she leads a Centre that connects academic study with capacity development, institutional engagement and the practical questions facing society.</p>
           <div className="leadership__links"><a className="text-link" href={site.directorLinkedIn} target="_blank" rel="noreferrer">View LinkedIn profile <Arrow diagonal /></a><Link className="text-link" href="#team">Meet the wider team <Arrow diagonal /></Link></div>
         </div>
       </div>
