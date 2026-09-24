@@ -1,0 +1,305 @@
+/* About page design authority
+ * Final, page-scoped system for rhythm, typography and responsive composition.
+ */
+
+.about-page {
+  --about-section: 72px;
+  --about-section-compact: 54px;
+  --about-content-gap: 36px;
+  --about-small-gap: 20px;
+  background: var(--surface-page);
+  color: var(--text-primary);
+}
+
+/* Establish one consistent vertical rhythm before section-level redesigns. */
+.about-page > .section {
+  padding-top: var(--about-section);
+  padding-bottom: var(--about-section);
+}
+
+.about-page .page-grid {
+  column-gap: clamp(42px, 5.5vw, 76px);
+}
+
+.about-page .page-grid h2,
+.about-page .page-visual__copy h2,
+.about-page .person-feature__copy h2,
+.about-page .team-page-section h2 {
+  font-size: clamp(40px, 4.2vw, 56px);
+  line-height: 1;
+}
+
+/* Step 2 — editorial About hero */
+.about-page .about-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 60px 0 62px;
+  background: var(--color-primary-strong);
+  color: white;
+  isolation: isolate;
+}
+
+.about-page .about-hero::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    radial-gradient(circle at 7% 82%, rgb(207 20 112 / 16%), transparent 25%),
+    linear-gradient(115deg, transparent 0 72%, rgb(255 255 255 / 2.5%) 72% 72.1%, transparent 72.1%);
+  content: "";
+}
+
+.about-page .about-hero__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(360px, .84fr);
+  gap: clamp(46px, 6vw, 78px);
+  align-items: center;
+}
+
+.about-page .about-hero__copy {
+  min-width: 0;
+  padding: 4px 0;
+}
+
+.about-page .about-hero__copy .eyebrow {
+  margin: 0;
+}
+
+.about-page .about-hero__copy h1 {
+  max-width: 690px;
+  margin-top: 17px;
+  color: white;
+  font-size: clamp(52px, 5vw, 72px);
+  line-height: .96;
+  letter-spacing: -.035em;
+  text-wrap: balance;
+}
+
+.about-page .about-hero__body {
+  max-width: 590px;
+  margin-top: 24px;
+  color: rgb(255 255 255 / 76%);
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.about-page .about-hero__body > p {
+  max-width: 570px;
+  margin: 0;
+}
+
+.about-page .about-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  align-items: center;
+  margin-top: 25px;
+}
+
+.about-page .about-hero__actions .button {
+  min-height: 48px;
+  padding-inline: 20px;
+}
+
+.about-page .about-hero__actions .text-link {
+  min-height: 44px;
+  color: white;
+  border-bottom-color: rgb(255 255 255 / 48%);
+}
+
+.about-page .about-hero__media {
+  position: relative;
+  min-height: 410px;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 2px;
+  background: var(--color-primary);
+  box-shadow: 9px 9px 0 rgb(207 20 112 / 14%);
+}
+
+.about-page .about-hero__media img {
+  object-fit: cover;
+  object-position: 52% 50%;
+  transform: scale(1.005);
+}
+
+.about-page .about-hero__media::after {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 54%, rgb(6 23 45 / 76%)),
+    linear-gradient(90deg, rgb(6 23 45 / 7%), transparent 32%);
+  content: "";
+}
+
+.about-page .about-hero__media figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 18px;
+  bottom: 16px;
+  left: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: rgb(255 255 255 / 88%);
+  font-size: 7px;
+  font-weight: 750;
+  letter-spacing: .12em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.about-page .about-hero__media figcaption span:last-child {
+  color: var(--cgs-pink-300);
+}
+
+/* Tablet */
+@media (min-width: 821px) and (max-width: 1080px) {
+  .about-page {
+    --about-section: 64px;
+    --about-section-compact: 50px;
+  }
+
+  .about-page .about-hero {
+    padding: 54px 0 56px;
+  }
+
+  .about-page .about-hero__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, .82fr);
+    gap: 42px;
+  }
+
+  .about-page .about-hero__copy h1 {
+    font-size: clamp(48px, 5.25vw, 61px);
+  }
+
+  .about-page .about-hero__media {
+    min-height: 370px;
+  }
+}
+
+/* Mobile is deliberately recomposed, not just scaled down. */
+@media (max-width: 820px) {
+  .about-page {
+    --about-section: 52px;
+    --about-section-compact: 42px;
+    --about-content-gap: 28px;
+    --about-small-gap: 16px;
+  }
+
+  .about-page > .section {
+    padding-top: var(--about-section);
+    padding-bottom: var(--about-section);
+  }
+
+  .about-page .about-hero {
+    padding: 42px 0 44px;
+  }
+
+  .about-page .about-hero__layout {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-page .about-hero__copy {
+    text-align: left;
+  }
+
+  .about-page .about-hero__copy .eyebrow {
+    justify-content: flex-start;
+  }
+
+  .about-page .about-hero__copy h1 {
+    max-width: 650px;
+    margin-inline: 0;
+    font-size: clamp(45px, 9vw, 58px);
+    line-height: .97;
+  }
+
+  .about-page .about-hero__body {
+    max-width: 590px;
+    margin-inline: 0;
+  }
+
+  .about-page .about-hero__actions {
+    justify-content: flex-start;
+  }
+
+  .about-page .about-hero__media {
+    order: 2;
+    min-height: 340px;
+    width: 100%;
+    box-shadow: 7px 7px 0 rgb(207 20 112 / 13%);
+  }
+}
+
+@media (max-width: 620px) {
+  .about-page {
+    --about-section: 48px;
+    --about-section-compact: 38px;
+  }
+
+  .about-page .about-hero {
+    padding: 36px 0 38px;
+  }
+
+  .about-page .about-hero__layout {
+    gap: 25px;
+  }
+
+  .about-page .about-hero__copy h1 {
+    max-width: 360px;
+    margin-top: 14px;
+    font-size: clamp(42px, 12vw, 51px);
+    line-height: .97;
+  }
+
+  .about-page .about-hero__body {
+    max-width: 355px;
+    margin-top: 19px;
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .about-page .about-hero__actions {
+    gap: 11px 17px;
+    margin-top: 20px;
+  }
+
+  .about-page .about-hero__actions .button {
+    min-height: 46px;
+    padding-inline: 17px;
+  }
+
+  .about-page .about-hero__media {
+    min-height: 292px;
+  }
+
+  .about-page .about-hero__media figcaption {
+    right: 14px;
+    bottom: 12px;
+    left: 14px;
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 420px) {
+  .about-page .about-hero__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .about-page .about-hero__actions .button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-page .about-hero__actions .text-link {
+    width: max-content;
+  }
+
+  .about-page .about-hero__media figcaption span:last-child {
+    display: none;
+  }
+}
