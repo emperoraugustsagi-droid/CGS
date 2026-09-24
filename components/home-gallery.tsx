@@ -52,7 +52,47 @@ const galleryItems = [
 
 export function HomeGallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [railIndex, setRailIndex] = useState(0);
   const dialogRef = useRef<HTMLDivElement>(null);
+  const railRef = useRef<HTMLDivElement>(null);
+
+  const scrollRail = (direction: -1 | 1) => {
+    const rail = railRef.current;
+    if (!rail) return;
+
+    const firstCard = rail.querySelector<HTMLElement>(".home-gallery__card");
+    if (!firstCard) return;
+
+    const styles = window.getComputedStyle(rail);
+    const gap = Number.parseFloat(styles.columnGap || styles.gap || "0");
+    const step = firstCard.getBoundingClientRect().width + gap;
+
+    rail.scrollBy({ left: step * direction, behavior: "smooth" });
+  };
+
+  const updateRailIndex = () => {
+    const rail = railRef.current;
+    if (!rail) return;
+
+    const cards = Array.from(
+      rail.querySelectorAll<HTMLElement>(".home-gallery__card"),
+    );
+    if (!cards.length) return;
+
+    const railLeft = rail.getBoundingClientRect().left;
+    let closestIndex = 0;
+    let closestDistance = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card, index) => {
+      const distance = Math.abs(card.getBoundingClientRect().left - railLeft);
+      if (distance < closestDistance) {
+        closestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    setRailIndex(closestIndex);
+  };
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -89,7 +129,7 @@ export function HomeGallery() {
 
   return (
     <>
-      <section className="home-gallery" aria-labelledby="home-gallery-title">
+      <section className="home-gallery home-gallery--rail" aria-labelledby="home-gallery-title">
         <div className="container home-gallery__heading">
           <div>
             <p className="eyebrow">Inside CGS</p>
@@ -108,35 +148,66 @@ export function HomeGallery() {
           </div>
         </div>
 
-        <div className="container home-gallery__grid">
-          {galleryItems.map((item, index) => (
-            <button
-              className={`home-gallery__item home-gallery__item--${index + 1}`}
-              type="button"
-              onClick={() => setActiveIndex(index)}
-              aria-label={`Open image ${index + 1}: ${item.title}`}
-              key={item.src}
-            >
-              <Image
-                src={item.src}
-                alt={item.alt}
-                fill
-                sizes={
-                  index === 0
-                    ? "(max-width: 620px) 100vw, 58vw"
-                    : "(max-width: 620px) 50vw, 36vw"
-                }
-                quality={86}
-                style={{ objectFit: "cover", objectPosition: item.position }}
+        <div className="container home-gallery__rail-shell">
+          <div className="home-gallery__toolbar" aria-label="Gallery controls">
+            <div className="home-gallery__progress" aria-hidden="true">
+              <span
+                style={{
+                  width: `${((railIndex + 1) / galleryItems.length) * 100}%`,
+                }}
               />
-              <span className="home-gallery__shade" />
-              <span className="home-gallery__caption">
-                <small>{item.label}</small>
-                <strong>{item.title}</strong>
-              </span>
-              <span className="home-gallery__expand" aria-hidden="true"><Arrow diagonal /></span>
-            </button>
-          ))}
+            </div>
+            <span className="home-gallery__count">
+              {String(railIndex + 1).padStart(2, "0")} /{" "}
+              {String(galleryItems.length).padStart(2, "0")}
+            </span>
+            <div className="home-gallery__controls">
+              <button type="button" onClick={() => scrollRail(-1)} aria-label="Previous gallery images">
+                <span className="home-gallery__control-icon home-gallery__control-icon--prev" aria-hidden="true">
+                  <Arrow />
+                </span>
+              </button>
+              <button type="button" onClick={() => scrollRail(1)} aria-label="Next gallery images">
+                <span className="home-gallery__control-icon" aria-hidden="true">
+                  <Arrow />
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <div
+            className="home-gallery__track"
+            ref={railRef}
+            onScroll={updateRailIndex}
+            aria-label="CGS photo gallery"
+          >
+            {galleryItems.map((item, index) => (
+              <button
+                className="home-gallery__card"
+                type="button"
+                onClick={() => setActiveIndex(index)}
+                aria-label={`Open image ${index + 1}: ${item.title}`}
+                key={item.src}
+              >
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 620px) 82vw, (max-width: 1024px) 44vw, 34vw"
+                  quality={86}
+                  style={{ objectFit: "cover", objectPosition: item.position }}
+                />
+                <span className="home-gallery__shade" />
+                <span className="home-gallery__caption">
+                  <small>{item.label}</small>
+                  <strong>{item.title}</strong>
+                </span>
+                <span className="home-gallery__expand" aria-hidden="true">
+                  <Arrow diagonal />
+                </span>
+              </button>
+            ))}
+          </div>
         </div>
       </section>
 
