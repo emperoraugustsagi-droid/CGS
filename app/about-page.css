@@ -303,3 +303,209 @@
     display: none;
   }
 }
+
+
+/* Step 3 — Purpose + Mandate become one coherent institutional chapter. */
+.about-page .about-purpose-mandate {
+  padding-top: 66px;
+  padding-bottom: 68px;
+  background:
+    linear-gradient(180deg, rgb(239 247 253 / 76%) 0%, rgb(246 249 252 / 92%) 100%);
+  border-top: 1px solid rgb(11 35 72 / 6%);
+  border-bottom: 1px solid rgb(11 35 72 / 7%);
+}
+
+.about-page .about-purpose-mandate__intro {
+  display: grid;
+  grid-template-columns: minmax(0, .98fr) minmax(0, 1.02fr);
+  gap: clamp(42px, 5vw, 72px);
+  align-items: end;
+}
+
+.about-page .about-purpose-mandate__heading {
+  min-width: 0;
+}
+
+.about-page .about-purpose-mandate__heading h2 {
+  max-width: 680px;
+  margin-top: 14px;
+  color: var(--text-primary);
+  font-size: clamp(42px, 4.25vw, 57px);
+  line-height: .99;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+
+.about-page .about-purpose-mandate__copy {
+  max-width: 610px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.about-page .about-purpose-mandate__copy p {
+  margin: 0;
+}
+
+.about-page .about-purpose-mandate__copy p + p {
+  margin-top: 13px;
+}
+
+.about-page .about-purpose-mandate__pillars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 38px;
+  border-top: 1px solid rgb(11 35 72 / 18%);
+  border-bottom: 1px solid rgb(11 35 72 / 14%);
+  border-left: 0;
+  background: rgb(255 255 255 / 36%);
+}
+
+.about-page .about-purpose-mandate__pillars article {
+  min-height: 176px;
+  padding: 22px 26px 24px;
+  border: 0;
+  border-right: 1px solid rgb(11 35 72 / 11%);
+  background: transparent;
+}
+
+.about-page .about-purpose-mandate__pillars article:last-child {
+  border-right: 0;
+}
+
+.about-page .about-purpose-mandate__pillar-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.about-page .about-purpose-mandate__pillars .index {
+  color: var(--cgs-pink-600);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .11em;
+}
+
+.about-page .about-purpose-mandate__pillars .label {
+  margin: 0;
+  color: var(--cgs-pink-600);
+  font-size: 8px;
+  font-weight: 800;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.about-page .about-purpose-mandate__pillars h3 {
+  margin-top: 24px;
+  color: var(--text-primary);
+  font-size: clamp(27px, 2.4vw, 34px);
+  line-height: 1;
+}
+
+.about-page .about-purpose-mandate__pillars article > p:last-child {
+  max-width: 300px;
+  margin-top: 11px;
+  color: var(--text-muted);
+  font-size: 12px;
+  line-height: 1.58;
+}
+
+@media (min-width: 821px) and (max-width: 1080px) {
+  .about-page .about-purpose-mandate {
+    padding-top: 60px;
+    padding-bottom: 62px;
+  }
+
+  .about-page .about-purpose-mandate__intro {
+    gap: 38px;
+  }
+
+  .about-page .about-purpose-mandate__heading h2 {
+    font-size: clamp(39px, 4.4vw, 49px);
+  }
+
+  .about-page .about-purpose-mandate__pillars article {
+    min-height: 170px;
+    padding-inline: 21px;
+  }
+}
+
+@media (max-width: 820px) {
+  .about-page .about-purpose-mandate {
+    padding-top: 52px;
+    padding-bottom: 54px;
+  }
+
+  .about-page .about-purpose-mandate__intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-page .about-purpose-mandate__heading h2 {
+    max-width: 660px;
+    font-size: clamp(38px, 7vw, 50px);
+  }
+
+  .about-page .about-purpose-mandate__copy {
+    max-width: 650px;
+  }
+
+  .about-page .about-purpose-mandate__pillars {
+    grid-template-columns: 1fr;
+    margin-top: 31px;
+    border-left: 0;
+  }
+
+  .about-page .about-purpose-mandate__pillars article {
+    min-height: 0;
+    padding: 21px 20px 22px;
+    border-right: 0;
+    border-bottom: 1px solid rgb(11 35 72 / 10%);
+  }
+
+  .about-page .about-purpose-mandate__pillars article:last-child {
+    border-bottom: 0;
+  }
+
+  .about-page .about-purpose-mandate__pillars h3 {
+    margin-top: 17px;
+  }
+
+  .about-page .about-purpose-mandate__pillars article > p:last-child {
+    max-width: 560px;
+  }
+}
+
+@media (max-width: 620px) {
+  .about-page .about-purpose-mandate {
+    padding-top: 46px;
+    padding-bottom: 48px;
+  }
+
+  .about-page .about-purpose-mandate__heading h2 {
+    margin-top: 12px;
+    font-size: clamp(35px, 10vw, 43px);
+    line-height: 1;
+  }
+
+  .about-page .about-purpose-mandate__copy {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .about-page .about-purpose-mandate__pillars {
+    margin-top: 26px;
+  }
+
+  .about-page .about-purpose-mandate__pillars article {
+    padding: 19px 17px 20px;
+  }
+
+  .about-page .about-purpose-mandate__pillars h3 {
+    font-size: 27px;
+  }
+
+  .about-page .about-purpose-mandate__pillars article > p:last-child {
+    font-size: 12px;
+  }
+}
