@@ -1050,3 +1050,117 @@
     font-size: 9px;
   }
 }
+
+
+/* About team — compact profile cards on phones */
+@media (max-width: 620px) {
+  .about-page .about-team {
+    padding-top: 56px;
+    padding-bottom: 62px;
+  }
+
+  .about-page .team-page-section__heading {
+    display: block;
+    padding-bottom: 23px;
+    text-align: center;
+  }
+
+  .about-page .team-page-section__heading .eyebrow {
+    justify-content: center;
+  }
+
+  .about-page .team-page-section__heading h2 {
+    max-width: 335px;
+    margin: 16px auto 0;
+    font-size: 36px;
+    line-height: .99;
+  }
+
+  .about-page .team-page-section__intro {
+    max-width: 330px;
+    margin: 16px auto 0;
+    font-size: 12px;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .about-page .team-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 25px;
+  }
+
+  .about-page .team-profile-card,
+  .about-page .team-profile-card:nth-child(-n + 2) {
+    grid-column: auto;
+    display: grid;
+    grid-template-columns: minmax(118px, 38%) minmax(0, 62%);
+    min-height: 218px;
+  }
+
+  .about-page .team-profile-card__media {
+    min-height: 218px;
+    aspect-ratio: auto;
+  }
+
+  .about-page .team-profile-card__index {
+    top: 10px;
+    left: 10px;
+    min-width: 30px;
+    height: 25px;
+    padding: 0 7px;
+    font-size: 8px;
+  }
+
+  .about-page .team-profile-card__body {
+    display: flex;
+    min-width: 0;
+    padding: 16px 14px 15px;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-page .team-profile-card__role {
+    font-size: 7px;
+    line-height: 1.35;
+  }
+
+  .about-page .team-profile-card h3 {
+    margin-top: 8px;
+    font-size: 22px;
+    line-height: 1;
+  }
+
+  .about-page .team-profile-card__department {
+    margin-top: 7px;
+    font-size: 7px;
+    line-height: 1.35;
+  }
+
+  .about-page .team-profile-card__summary {
+    margin-top: 11px;
+    font-size: 9px;
+    line-height: 1.45;
+  }
+
+  .about-page .team-profile-card__detail {
+    display: none;
+  }
+
+  .about-page .team-profile-card__link {
+    min-height: 29px;
+    margin-top: 10px;
+    font-size: 8px;
+  }
+}
+
+@media (max-width: 390px) {
+  .about-page .team-profile-card,
+  .about-page .team-profile-card:nth-child(-n + 2) {
+    grid-template-columns: 36% minmax(0, 64%);
+  }
+
+  .about-page .team-profile-card h3 {
+    font-size: 20px;
+  }
+}
