@@ -831,3 +831,57 @@
     font-size: 10px;
   }
 }
+
+
+/* Mobile section-intro alignment: centered introductions, left-aligned structured content */
+@media (max-width: 620px) {
+  .programme-showcase__content {
+    text-align: center;
+  }
+
+  .programme-showcase__content .eyebrow {
+    justify-content: center;
+  }
+
+  .programme-showcase__content h3,
+  .programme-showcase__content > p:not(.eyebrow) {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .research--home.research-gallery .research-gallery__header {
+    text-align: center;
+  }
+
+  .research--home.research-gallery .research-gallery__header .eyebrow {
+    justify-content: center;
+  }
+
+  .research--home.research-gallery .research-gallery__header h2 {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .research--home.research-gallery .research-gallery__intro {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .research--home.research-gallery .research-gallery__intro > p {
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .research--home.research-gallery .research-gallery__intro .text-link {
+    width: max-content;
+    margin-right: auto;
+    margin-left: auto;
+    justify-content: center;
+  }
+
+  /* Research cards remain left-aligned for faster scanning. */
+  .research--home.research-gallery .research-card__content {
+    text-align: left;
+  }
+}
