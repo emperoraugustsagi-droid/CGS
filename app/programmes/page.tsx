@@ -13,8 +13,8 @@ export default function ProgrammesPage() {
   return <PageShell>
     <div className="programmes-page">
       <PageIntro eyebrow="Study at CGS" title="Choose the pathway that matches your next step.">
-        <p>CGS supports study from certificate and diploma learning through postgraduate and doctoral research.</p>
-        <p>The current NSUK postgraduate listing includes five Gender Studies entries. Admissions, deadlines and delivery arrangements can change, so confirm current guidance with the Centre before applying.</p>
+        <p>Explore postgraduate study and Centre learning pathways in Gender Studies at Nasarawa State University, Keffi.</p>
+        <p className="programmes-intro__note">Programme requirements, deadlines and delivery arrangements should be confirmed with CGS before you apply.</p>
       </PageIntro>
 
       <section className="section page-visual programmes-pathway" aria-labelledby="programme-visual-title">
