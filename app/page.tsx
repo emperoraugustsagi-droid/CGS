@@ -139,13 +139,12 @@ export default function Home() {
       </div>
     </section>
     <section className="section leadership leadership--home" id="leadership" aria-labelledby="leadership-title"><div className="container leadership__layout"><div className="director-card"><figure><Image src={images.director} alt="Dr. Comfort Ayine Adokwe-Obed, Director of the Centre for Gender Studies" fill sizes="(max-width: 760px) 45vw, 260px" /></figure><div><span>Director, Centre for Gender Studies</span><strong>Dr. Comfort Ayine<br/>Adokwe-Obed</strong><small>Senior Lecturer, Department of Public Administration</small><div className="director-card__links"><a className="text-link" href="https://www.linkedin.com/in/adokwe-comfort-392a4223b/" target="_blank" rel="noreferrer">View LinkedIn profile <Arrow diagonal /></a><Link className="text-link" href="/contact">Contact the Centre <Arrow diagonal /></Link></div></div></div><div className="leadership__copy"><Eyebrow>Leadership</Eyebrow><h2 id="leadership-title">Policy scholarship with an institutional purpose.</h2><p>Dr. Comfort Ayine Adokwe-Obed serves as Director of the Centre, with academic interests connecting public policy, governance, gender analysis and development.</p><p>Her leadership connects the Centre’s teaching, research, capacity development and public engagement.</p></div></div><div className="container leadership-handoff">
-        <Link className="leadership-team-cta" href="/about#team">
-          <div className="leadership-team-cta__copy">
-            <span className="leadership-team-cta__eyebrow">Meet the Centre</span>
-            <strong>The people behind CGS.</strong>
-            <p>Meet the academic, programmes and administrative team supporting the Centre&apos;s work.</p>
+        <Link className="leadership-team-strip" href="/about#team">
+          <div>
+            <span>Meet the Centre</span>
+            <strong>Explore the team behind CGS</strong>
           </div>
-          <span className="leadership-team-cta__action">Meet the wider team <Arrow diagonal /></span>
+          <span className="leadership-team-strip__action">Meet the team <Arrow diagonal /></span>
         </Link>
       </div></section>
     <section className="section activity" id="activity" aria-labelledby="activity-title"><div className="container activity__layout"><figure className="activity__media"><Image src={images.community} alt="Members of the CGS academic and advisory community gathered after a Centre meeting" fill sizes="(max-width: 760px) 100vw, 52vw" /><figcaption>An institutional community for gender scholarship</figcaption></figure><div className="activity__copy"><Eyebrow>Current at CGS</Eyebrow><h2 id="activity-title">A Centre that convenes people around serious questions.</h2><p>Recent Centre records show an active academic and institutional community. Explore the documented activity on this site, with source folders available as supporting evidence.</p><div className="activity-list">{activities.map(activity=><Link href={`/activity#${activity.id}`} key={activity.title}><span>{activity.type}</span><strong>{activity.title}</strong><small>{activity.description}</small><Arrow diagonal /></Link>)}</div></div></div></section>
