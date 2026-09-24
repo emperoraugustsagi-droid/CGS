@@ -6,6 +6,21 @@ export const site = {
   phones: ["0803 581 0883", "0906 553 5223"],
   address: "Old Administrative Block / Lincoln Building, NSUK",
   directorLinkedIn: "https://www.linkedin.com/in/adokwe-comfort-392a4223b/",
+  socials: {
+    whatsapp: {
+      label: "WhatsApp",
+      value: "08035810883",
+      href: "https://wa.me/2348035810883",
+    },
+    facebook: {
+      label: "Facebook",
+      value: "Centre for Gender Studies, Nasarawa State University, Keffi",
+    },
+    tiktok: {
+      label: "TikTok",
+      value: "NSUK Gender Tea",
+    },
+  },
 } as const;
 
 export const programmes = [
