@@ -53,8 +53,11 @@ const galleryItems = [
 export function HomeGallery() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [railIndex, setRailIndex] = useState(0);
+  const [isAutoPaused, setIsAutoPaused] = useState(false);
+  const [isInteracting, setIsInteracting] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
   const railRef = useRef<HTMLDivElement>(null);
+  const interactionTimerRef = useRef<number | null>(null);
 
   const scrollRail = (direction: -1 | 1) => {
     const rail = railRef.current;
@@ -93,6 +96,55 @@ export function HomeGallery() {
 
     setRailIndex(closestIndex);
   };
+
+  const pauseForInteraction = () => {
+    setIsInteracting(true);
+
+    if (interactionTimerRef.current !== null) {
+      window.clearTimeout(interactionTimerRef.current);
+    }
+  };
+
+  const resumeAfterInteraction = () => {
+    if (interactionTimerRef.current !== null) {
+      window.clearTimeout(interactionTimerRef.current);
+    }
+
+    interactionTimerRef.current = window.setTimeout(() => {
+      setIsInteracting(false);
+    }, 2200);
+  };
+
+  useEffect(() => {
+    const rail = railRef.current;
+    if (!rail || activeIndex !== null || isAutoPaused || isInteracting) return;
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    if (reducedMotion.matches) return;
+
+    const advance = () => {
+      if (document.hidden) return;
+
+      const firstCard = rail.querySelector<HTMLElement>(".home-gallery__card");
+      if (!firstCard) return;
+
+      const styles = window.getComputedStyle(rail);
+      const gap = Number.parseFloat(styles.columnGap || styles.gap || "0");
+      const step = firstCard.getBoundingClientRect().width + gap;
+      const nearEnd =
+        rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - step * 0.45;
+
+      if (nearEnd) {
+        rail.scrollTo({ left: 0, behavior: "smooth" });
+      } else {
+        rail.scrollBy({ left: step, behavior: "smooth" });
+      }
+    };
+
+    const interval = window.setInterval(advance, 3200);
+
+    return () => window.clearInterval(interval);
+  }, [activeIndex, isAutoPaused, isInteracting]);
 
   useEffect(() => {
     if (activeIndex === null) return;
@@ -162,6 +214,23 @@ export function HomeGallery() {
               {String(galleryItems.length).padStart(2, "0")}
             </span>
             <div className="home-gallery__controls">
+              <button
+                className="home-gallery__autoplay"
+                type="button"
+                onClick={() => setIsAutoPaused((paused) => !paused)}
+                aria-label={isAutoPaused ? "Play gallery slideshow" : "Pause gallery slideshow"}
+                aria-pressed={isAutoPaused}
+              >
+                {isAutoPaused ? (
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="m9 7 8 5-8 5Z" />
+                  </svg>
+                ) : (
+                  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path d="M9 7v10M15 7v10" />
+                  </svg>
+                )}
+              </button>
               <button type="button" onClick={() => scrollRail(-1)} aria-label="Previous gallery images">
                 <span className="home-gallery__control-icon home-gallery__control-icon--prev" aria-hidden="true">
                   <Arrow />
@@ -179,7 +248,15 @@ export function HomeGallery() {
             className="home-gallery__track"
             ref={railRef}
             onScroll={updateRailIndex}
+            onMouseEnter={pauseForInteraction}
+            onMouseLeave={resumeAfterInteraction}
+            onFocusCapture={pauseForInteraction}
+            onBlurCapture={resumeAfterInteraction}
+            onPointerDown={pauseForInteraction}
+            onPointerUp={resumeAfterInteraction}
+            onPointerCancel={resumeAfterInteraction}
             aria-label="CGS photo gallery"
+            aria-roledescription="carousel"
           >
             {galleryItems.map((item, index) => (
               <button
