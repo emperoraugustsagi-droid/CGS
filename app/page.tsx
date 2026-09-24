@@ -16,10 +16,10 @@ const images = {
 const researchImages = [
   { src: "/assets/expo-community.jpg", position: "center 42%" },
   { src: "/assets/cgs-awareness-campaign.jpg", position: "center 38%" },
-  { src: "/assets/expo-panel.jpg", position: "center 42%" },
-  { src: "/assets/cgs-academic-event.jpeg", position: "center 30%" },
+  { src: "/assets/cgs-academic-event.jpeg", position: "center 24%" },
+  { src: "/assets/cgs-community-portrait.jpeg", position: "center 34%" },
   { src: "/assets/cgs-research-workshop.jpg", position: "center 42%" },
-  { src: "/assets/cgs-advisory-group.jpg", position: "center 44%" },
+  { src: "/assets/expo-panel.jpg", position: "center 42%" },
 ] as const;
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) { return <p className={light ? "eyebrow eyebrow--light" : "eyebrow"}>{children}</p>; }
