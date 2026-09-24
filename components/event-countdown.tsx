@@ -36,7 +36,7 @@ function getRemaining(target: string): Remaining {
 
 export function EventCountdown({
   target,
-  label = "Conference begins in",
+  label = "Conference countdown",
   compact = false,
   className = "",
 }: EventCountdownProps) {
@@ -45,9 +45,10 @@ export function EventCountdown({
   const dateLabel = useMemo(() => {
     const date = new Date(target);
     if (Number.isNaN(date.getTime())) return "the conference";
+
     return new Intl.DateTimeFormat("en-NG", {
       day: "numeric",
-      month: "long",
+      month: "short",
       year: "numeric",
       timeZone: "Africa/Lagos",
     }).format(date);
@@ -71,8 +72,13 @@ export function EventCountdown({
 
   if (remaining?.complete) {
     return (
-      <div className={`event-countdown event-countdown--complete ${compact ? "event-countdown--compact" : ""} ${className}`}>
-        <span className="event-countdown__kicker">Conference update</span>
+      <div
+        className={`event-countdown event-countdown--complete ${compact ? "event-countdown--compact" : ""} ${className}`}
+      >
+        <span className="event-countdown__status">
+          <i aria-hidden="true" />
+          Conference update
+        </span>
         <strong>The conference is underway.</strong>
       </div>
     );
@@ -90,16 +96,30 @@ export function EventCountdown({
       className={`event-countdown ${compact ? "event-countdown--compact" : ""} ${className}`}
     >
       <p className="event-countdown__sr">
-        Countdown to the conference beginning on {dateLabel}.
+        {label}. {values.days} days, {values.hours} hours, {values.minutes} minutes
+        and {values.seconds} seconds until {dateLabel}.
       </p>
-      <div className="event-countdown__topline" aria-hidden="true">
-        <span>{label}</span>
-        <i />
+
+      <div className="event-countdown__header" aria-hidden="true">
+        <div>
+          <span className="event-countdown__status">
+            <i />
+            {label}
+          </span>
+          <strong>Until {dateLabel}</strong>
+        </div>
+        <span className="event-countdown__live">Live</span>
       </div>
+
       <div className="event-countdown__grid" aria-hidden="true">
-        {units.map(([unit, value]) => (
-          <div className="event-countdown__unit" key={unit}>
-            <strong>{String(value).padStart(2, "0")}</strong>
+        {units.map(([unit, value], index) => (
+          <div
+            className={`event-countdown__unit ${index === 0 ? "event-countdown__unit--primary" : ""}`}
+            key={unit}
+          >
+            <strong className="event-countdown__number" key={`${unit}-${value}`}>
+              {String(value).padStart(2, "0")}
+            </strong>
             <span>{unit}</span>
           </div>
         ))}
