@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { Arrow } from "./page-shell";
+import { EventCountdown } from "./event-countdown";
 
 type EventSpotlightProps = {
   title: string;
@@ -12,6 +13,7 @@ type EventSpotlightProps = {
   abstractDeadline: string;
   earlyBirdDeadline: string;
   website: string;
+  countdownTarget: string;
 };
 
 const SESSION_KEY = "cgs-conference-spotlight-seen";
@@ -24,6 +26,7 @@ export function EventSpotlightPopup({
   abstractDeadline,
   earlyBirdDeadline,
   website,
+  countdownTarget,
 }: EventSpotlightProps) {
   const [open, setOpen] = useState(false);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -96,6 +99,11 @@ export function EventSpotlightPopup({
           <p className="event-spotlight__eyebrow">Upcoming at CGS · International conference</p>
           <h2 id="event-spotlight-title">{title}</h2>
           <p className="event-spotlight__theme">{theme}</p>
+
+          <EventCountdown
+            target={countdownTarget}
+            className="event-countdown--spotlight"
+          />
 
           <div className="event-spotlight__facts">
             <div>
