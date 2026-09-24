@@ -1,0 +1,171 @@
+/* CGS motion system
+ * Quiet, editorial movement for an institutional site.
+ * Motion supports hierarchy; it does not become the visual identity.
+ */
+
+:root {
+  --motion-ease-out: cubic-bezier(.22, 1, .36, 1);
+  --motion-ease-soft: cubic-bezier(.2, .75, .25, 1);
+  --motion-duration: 680ms;
+}
+
+/* Scroll-reveal states are only enabled after the client controller mounts. */
+html.motion-ready [data-motion="reveal"],
+html.motion-ready [data-motion="media"],
+html.motion-ready [data-motion="item"] {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+
+html.motion-ready [data-motion="reveal"] {
+  transform: translate3d(0, 18px, 0);
+  transition:
+    opacity var(--motion-duration) var(--motion-ease-out),
+    transform var(--motion-duration) var(--motion-ease-out);
+}
+
+html.motion-ready [data-motion="media"] {
+  transform: translate3d(0, 16px, 0) scale(.992);
+  transition:
+    opacity 760ms var(--motion-ease-out),
+    transform 900ms var(--motion-ease-out);
+}
+
+html.motion-ready [data-motion="item"] {
+  transform: translate3d(0, 14px, 0);
+  transition:
+    opacity 560ms var(--motion-ease-out),
+    transform 620ms var(--motion-ease-out);
+  transition-delay: calc(var(--motion-order, 0) * 58ms);
+}
+
+html.motion-ready [data-motion].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Sticky header gains depth only after the page moves. */
+.site-header {
+  transition:
+    box-shadow 260ms ease,
+    border-color 260ms ease,
+    background-color 260ms ease;
+}
+
+.site-header[data-scrolled="true"] {
+  border-bottom-color: rgb(11 35 72 / 9%);
+  background: rgb(250 247 242 / 92%);
+  box-shadow: 0 8px 28px rgb(8 29 57 / 7%);
+}
+
+/* Refined micro-interactions. */
+.button,
+.nav-cta {
+  transition:
+    transform 220ms var(--motion-ease-soft),
+    box-shadow 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease;
+}
+
+.button--accent:hover,
+.button--accent:focus-visible {
+  box-shadow: 0 10px 24px rgb(207 20 112 / 18%);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .button:hover,
+  .nav-cta:hover {
+    transform: translateY(-1px);
+  }
+
+  .page-visual__media img,
+  .person-feature__media img,
+  .activity__media img,
+  .about-hero__media img,
+  .director-card figure img {
+    transition: transform 900ms var(--motion-ease-out);
+  }
+
+  .page-visual__media:hover img,
+  .person-feature__media:hover img,
+  .activity__media:hover img,
+  .about-hero__media:hover img,
+  .director-card figure:hover img {
+    transform: scale(1.018);
+  }
+}
+
+/* Keep link movement small and directional. */
+.text-link .link-arrow,
+.button .link-arrow,
+.nav-cta .link-arrow {
+  transition: transform 220ms var(--motion-ease-out);
+}
+
+.text-link:hover .link-arrow,
+.text-link:focus-visible .link-arrow {
+  transform: translate(2px, -2px);
+}
+
+.button:hover .link-arrow,
+.button:focus-visible .link-arrow,
+.nav-cta:hover .link-arrow,
+.nav-cta:focus-visible .link-arrow {
+  transform: translateX(2px);
+}
+
+/* Phones get shorter, calmer reveals. */
+@media (max-width: 620px) {
+  :root {
+    --motion-duration: 540ms;
+  }
+
+  html.motion-ready [data-motion="reveal"] {
+    transform: translate3d(0, 12px, 0);
+  }
+
+  html.motion-ready [data-motion="media"],
+  html.motion-ready [data-motion="item"] {
+    transform: translate3d(0, 10px, 0);
+  }
+
+  html.motion-ready [data-motion="item"] {
+    transition-delay: calc(var(--motion-order, 0) * 42ms);
+  }
+}
+
+/* Accessibility: motion never blocks or delays content. */
+@media (prefers-reduced-motion: reduce) {
+  html.motion-ready [data-motion="reveal"],
+  html.motion-ready [data-motion="media"],
+  html.motion-ready [data-motion="item"] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    will-change: auto;
+  }
+
+  .site-header,
+  .button,
+  .nav-cta,
+  .text-link .link-arrow,
+  .button .link-arrow,
+  .nav-cta .link-arrow,
+  .page-visual__media img,
+  .person-feature__media img,
+  .activity__media img,
+  .about-hero__media img,
+  .director-card figure img {
+    transition: none !important;
+  }
+
+  .button:hover,
+  .nav-cta:hover,
+  .text-link:hover .link-arrow,
+  .button:hover .link-arrow,
+  .nav-cta:hover .link-arrow {
+    transform: none !important;
+  }
+}
