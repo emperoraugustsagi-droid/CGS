@@ -13,8 +13,10 @@ import "./desktop-flow.css";
 import "./hero-carousel.css";
 import "./eyebrow-cleanup.css";
 import "./editorial-center-desktop.css";
+import "./motion.css";
 import { siteUrl } from "../lib/site-config";
 import { ScrollToTop } from "../components/scroll-to-top";
+import { SiteMotion } from "../components/site-motion";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans" });
 const serif = DM_Serif_Display({ subsets: ["latin"], weight: "400", variable: "--font-serif" });
@@ -49,5 +51,5 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     parentOrganization: { "@type": "CollegeOrUniversity", name: "Nasarawa State University, Keffi" },
   };
 
-  return <html lang="en" className={`${sans.variable} ${serif.variable}`}><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} /><ScrollToTop />{children}</body></html>;
+  return <html lang="en" className={`${sans.variable} ${serif.variable}`}><body><script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }} /><ScrollToTop /><SiteMotion />{children}</body></html>;
 }
