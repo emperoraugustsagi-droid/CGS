@@ -9,6 +9,33 @@ export const metadata: Metadata = {
   description: "Explore Gender Studies postgraduate programmes and Centre study offerings at Nasarawa State University, Keffi.",
 };
 
+const studyPathways = [
+  {
+    number: "01",
+    label: "Foundation",
+    title: "Certificate & Diploma",
+    text: "Build core knowledge in Gender Studies and strengthen your grounding before more advanced study.",
+  },
+  {
+    number: "02",
+    label: "Professional",
+    title: "PGD & Professional Masters",
+    text: "Develop applied gender analysis for professional practice, institutions and public-facing work.",
+  },
+  {
+    number: "03",
+    label: "Academic",
+    title: "M.Sc. Gender Studies",
+    text: "Deepen academic study, research methods and scholarly engagement with gender and society.",
+  },
+  {
+    number: "04",
+    label: "Research",
+    title: "M.Phil./Ph.D. & Ph.D.",
+    text: "Progress toward independent, original research and doctoral-level scholarship in Gender Studies.",
+  },
+] as const;
+
 export default function ProgrammesPage() {
   return <PageShell>
     <div className="programmes-page">
@@ -17,18 +44,28 @@ export default function ProgrammesPage() {
         <p className="programmes-intro__note">Programme requirements, deadlines and delivery arrangements should be confirmed with CGS before you apply.</p>
       </PageIntro>
 
-      <section className="section page-visual programmes-pathway" aria-labelledby="programme-visual-title">
-        <div className="container page-visual__grid page-visual__grid--reverse">
-          <div className="page-visual__copy">
-            <Eyebrow>Understanding the pathways</Eyebrow>
-            <h2 id="programme-visual-title">Different levels serve different academic and professional goals.</h2>
-            <p>Certificate and diploma learning can provide an entry point into Gender Studies, while postgraduate programmes support deeper professional, academic and research development.</p>
-            <p>These routes should not be read as one compulsory ladder. The right next step depends on your background, goals and the Centre’s current admissions guidance.</p>
-          </div>
-          <figure className="page-visual__media">
-            <Image src="/assets/cgs-academic-event.jpeg" alt="Academic ceremony at Nasarawa State University" fill sizes="(max-width: 820px) 100vw, 55vw" />
-            <figcaption>Learning, recognition and progression</figcaption>
-          </figure>
+      <section className="section programmes-pathway" aria-labelledby="programme-pathway-title">
+        <div className="container programmes-pathway__intro">
+          <Eyebrow>Find your pathway</Eyebrow>
+          <h2 id="programme-pathway-title">Start with the outcome you want, then confirm the level that fits.</h2>
+          <p>CGS offers different routes into Gender Studies. These pathways are orientation—not an eligibility assessment—so confirm the programme that matches your qualifications and goals with the Centre.</p>
+        </div>
+
+        <div className="container programmes-pathway__grid">
+          {studyPathways.map((pathway) => (
+            <article key={pathway.number}>
+              <div className="programmes-pathway__meta">
+                <span>{pathway.number}</span>
+                <small>{pathway.label}</small>
+              </div>
+              <h3>{pathway.title}</h3>
+              <p>{pathway.text}</p>
+            </article>
+          ))}
+        </div>
+
+        <div className="container programmes-pathway__action">
+          <Link className="text-link" href="/contact">Ask CGS about your next step <Arrow diagonal /></Link>
         </div>
       </section>
 
@@ -69,19 +106,7 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      <section className="section page-section programmes-choose" aria-labelledby="choose-pathway-title">
-        <div className="container page-grid page-grid--wide">
-          <div>
-            <Eyebrow>Choosing a pathway</Eyebrow>
-            <h2 id="choose-pathway-title">Start with the outcome you want, then confirm eligibility.</h2>
-          </div>
-          <div className="prose">
-            <p>Foundation learning may suit someone building practical gender knowledge. Postgraduate diploma study can support transition into advanced study. Masters programmes deepen academic or professional work, while research degrees focus increasingly on independent scholarship.</p>
-            <p>This is orientation, not an eligibility assessment. CGS should confirm the programme that fits your qualifications and goals.</p>
-            <Link className="text-link" href="/contact">Ask CGS about your next step <Arrow diagonal /></Link>
-          </div>
-        </div>
-      </section>
+      
 
       <section className="section page-visual page-visual--paper programmes-research-link" aria-labelledby="programmes-research-title">
         <div className="container page-visual__grid">
