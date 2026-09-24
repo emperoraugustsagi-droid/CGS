@@ -236,3 +236,65 @@
     text-align: center;
   }
 }
+
+
+/* Homepage editorial intros belong to the same centered system. */
+@media (min-width: 821px) {
+  .home-page .programmes--home .section-heading,
+  .home-page .research--home.research-gallery .research-gallery__header,
+  .home-page .home-gallery__heading {
+    display: block;
+    max-width: 1120px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .home-page .programmes--home .section-heading > div,
+  .home-page .research--home.research-gallery .research-gallery__header > div,
+  .home-page .home-gallery__heading > div:first-child {
+    max-width: 1120px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .home-page .programmes--home .section-heading .eyebrow,
+  .home-page .research--home.research-gallery .research-gallery__header .eyebrow,
+  .home-page .home-gallery__heading .eyebrow {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .home-page .programmes--home .section-heading h2,
+  .home-page .research--home.research-gallery .research-gallery__header h2,
+  .home-page .home-gallery__heading h2 {
+    max-width: 1040px;
+    margin: 18px auto 0;
+    text-align: center;
+  }
+
+  .home-page .programmes--home .section-heading > p,
+  .home-page .research--home.research-gallery .research-gallery__intro,
+  .home-page .home-gallery__intro {
+    max-width: 720px;
+    margin: 24px auto 0;
+    text-align: center;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__intro > span {
+    display: block;
+    text-align: center;
+  }
+
+  .home-page .research--home.research-gallery .research-gallery__intro > p,
+  .home-page .home-gallery__intro p {
+    max-width: 680px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .home-page .home-gallery__intro .text-link {
+    width: max-content;
+    margin-inline: auto;
+    justify-content: center;
+  }
+}
