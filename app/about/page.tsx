@@ -134,12 +134,12 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section page-section about-team" id="team" aria-labelledby="team-title">
-      <div className="container team-page-section">
-        <header className="team-page-section__heading">
+    <section className="section about-team" id="team" aria-labelledby="team-title">
+      <div className="container about-team__inner">
+        <header className="about-team__heading">
           <Eyebrow>Centre team</Eyebrow>
           <h2 id="team-title">The people supporting CGS programmes and scholarship.</h2>
-          <p className="team-page-section__intro">Across academics, programmes, communication and administration, the team helps turn the Centre&apos;s mandate into day-to-day work.</p>
+          <p>Across academics, programmes, communication and administration, the team helps turn the Centre&apos;s mandate into day-to-day work.</p>
         </header>
 
         <div className="team-profile-grid">
@@ -150,7 +150,7 @@ export default function AboutPage() {
                   src={member.image}
                   alt={member.name}
                   fill
-                  sizes="(max-width: 620px) 38vw, (max-width: 980px) 50vw, 33vw"
+                  sizes="(max-width: 620px) 100vw, (max-width: 980px) 50vw, 33vw"
                   quality={88}
                   style={{ objectFit: "cover", objectPosition: member.imagePosition }}
                 />
@@ -161,7 +161,6 @@ export default function AboutPage() {
                 <h3>{member.name}</h3>
                 <p className="team-profile-card__department">{member.department}</p>
                 <p className="team-profile-card__summary">{member.summary}</p>
-                <p className="team-profile-card__detail">{member.detail}</p>
                 {"linkedin" in member && member.linkedin ? (
                   <a className="text-link team-profile-card__link" href={member.linkedin} target="_blank" rel="noreferrer">
                     LinkedIn profile <Arrow diagonal />
