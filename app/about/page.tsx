@@ -38,26 +38,29 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section page-section about-purpose" id="purpose" aria-labelledby="purpose-title">
-      <div className="container page-grid page-grid--wide">
-        <div>
-          <Eyebrow>Why CGS exists</Eyebrow>
-          <h2 id="purpose-title">Make visible the forces that shape who participates, who leads and who benefits.</h2>
+    <section className="section about-purpose-mandate" id="purpose" aria-labelledby="purpose-title">
+      <div className="container about-purpose-mandate__intro">
+        <div className="about-purpose-mandate__heading">
+          <Eyebrow>Purpose &amp; mandate</Eyebrow>
+          <h2 id="purpose-title">Understanding gender. Building knowledge. Connecting it to society.</h2>
         </div>
-        <div className="prose">
-          <p>Gender is present in education, health, work, leadership, family life, institutions and public policy. Understanding those patterns requires more than assumptions; it requires evidence, context and careful inquiry.</p>
-          <p>CGS exists to build that understanding and develop people who can use it thoughtfully in scholarship, professional practice and public decision-making.</p>
+        <div className="about-purpose-mandate__copy">
+          <p>Gender shapes education, health, work, leadership, family life, institutions and public policy. CGS studies those patterns through evidence, context and careful inquiry.</p>
+          <p>That work comes together through three connected responsibilities: producing knowledge, developing expertise and bringing serious gender analysis into public conversation.</p>
         </div>
       </div>
-    </section>
 
-    <section className="section page-section page-section--paper about-mandate" aria-labelledby="pillars-title">
-      <div className="container page-grid page-grid--wide">
-        <div><Eyebrow>Our mandate</Eyebrow><h2 id="pillars-title">One Centre. Three connected responsibilities.</h2></div>
-        <div className="prose"><p>Research gives us evidence. Teaching develops people who can work with that evidence. Engagement brings knowledge into conversation with the society it is meant to serve.</p></div>
-      </div>
-      <div className="container principle-grid">
-        {pillars.map(([number, label, title, text]) => <article key={number}><span className="index">{number}</span><p className="label">{label}</p><h3>{title}</h3><p>{text}</p></article>)}
+      <div className="container principle-grid about-purpose-mandate__pillars" aria-label="CGS mandate">
+        {pillars.map(([number, label, title, text]) => (
+          <article key={number}>
+            <div className="about-purpose-mandate__pillar-head">
+              <span className="index">{number}</span>
+              <p className="label">{label}</p>
+            </div>
+            <h3>{title}</h3>
+            <p>{text}</p>
+          </article>
+        ))}
       </div>
     </section>
 
