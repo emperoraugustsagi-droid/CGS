@@ -5,6 +5,7 @@ import { SiteFooter } from "../components/site-footer";
 import { Arrow } from "../components/page-shell";
 import { HomeHeroCarousel } from "../components/home-hero-carousel";
 import { ProgrammeShowcase } from "../components/programme-showcase";
+import { EventSpotlightPopup } from "../components/event-spotlight-popup";
 import { activities, events, programmes, researchAreas } from "./site-data";
 
 const images = {
@@ -116,9 +117,38 @@ export default function Home() {
         ))}
       </div>
     </section>
-    <section className="section home-event" id="events" aria-labelledby="home-event-title"><div className="container home-event__grid"><div className="home-event__date" aria-label={events[0].dateLabel}><span>NOV</span><strong>04</strong><small>TO 07 · 2026</small></div><div className="home-event__copy"><Eyebrow>Upcoming at CGS</Eyebrow><p className="label">{events[0].type}</p><h2 id="home-event-title">{events[0].title}</h2><p className="home-event__theme">{events[0].theme}</p><p>{events[0].summary}</p><div className="home-event__facts"><span><strong>{events[0].dateLabel}</strong>Conference dates</span><span><strong>{events[0].deadlines.abstractSubmission}</strong>Abstracts close</span><span><strong>{events[0].deadlines.earlyBirdRegistration}</strong>Early bird closes</span></div><div className="home-event__actions"><Link className="button button--accent" href="/events">View event details <Arrow /></Link><a className="text-link" href={events[0].website} target="_blank" rel="noreferrer">Conference website <Arrow diagonal /></a></div></div></div></section>
+    <section className="home-event home-event--compact" id="events" aria-labelledby="home-event-title">
+      <div className="container home-event-compact">
+        <div className="home-event-compact__date" aria-label={events[0].dateLabel}>
+          <strong>04–07</strong>
+          <span>NOV · 2026</span>
+        </div>
+        <div className="home-event-compact__copy">
+          <Eyebrow>Upcoming at CGS</Eyebrow>
+          <h2 id="home-event-title">{events[0].title}</h2>
+          <p>{events[0].theme}</p>
+          <div className="home-event-compact__meta">
+            <span><strong>{events[0].deadlines.abstractSubmission}</strong> Abstract deadline</span>
+            <span>{events[0].venue}</span>
+          </div>
+        </div>
+        <div className="home-event-compact__actions">
+          <Link className="button button--accent" href="/events">Conference details <Arrow /></Link>
+          <a className="text-link" href={events[0].website} target="_blank" rel="noreferrer">Conference website <Arrow diagonal /></a>
+        </div>
+      </div>
+    </section>
     <section className="section leadership leadership--home" id="leadership" aria-labelledby="leadership-title"><div className="container leadership__layout"><div className="director-card"><figure><Image src={images.director} alt="Dr. Comfort Ayine Adokwe-Obed, Acting Director of the Centre for Gender Studies" fill sizes="(max-width: 760px) 45vw, 260px" /></figure><div><span>Ag. Director, Centre for Gender Studies</span><strong>Dr. Comfort Ayine<br/>Adokwe-Obed</strong><small>Senior Lecturer, Department of Public Administration</small><div className="director-card__links"><a className="text-link" href="https://www.linkedin.com/in/adokwe-comfort-392a4223b/" target="_blank" rel="noreferrer">View LinkedIn profile <Arrow diagonal /></a><Link className="text-link" href="/contact">Contact the Centre <Arrow diagonal /></Link></div></div></div><div className="leadership__copy"><Eyebrow>Leadership</Eyebrow><h2 id="leadership-title">Policy scholarship with an institutional purpose.</h2><p>Dr. Comfort Ayine Adokwe-Obed serves as Ag. Director of the Centre, with academic interests connecting public policy, governance, gender analysis and development.</p><p>Her leadership connects the Centre’s teaching, research, capacity development and public engagement.</p></div></div><div className="container leadership-handoff"><div><Eyebrow>Meet the Centre</Eyebrow><p>Leadership is only one part of the institution. Explore the wider academic and administrative team behind CGS.</p></div><Link className="text-link" href="/about#team">Meet the wider team <Arrow diagonal /></Link></div></section>
     <section className="section activity" id="activity" aria-labelledby="activity-title"><div className="container activity__layout"><figure className="activity__media"><Image src={images.community} alt="Members of the CGS academic and advisory community gathered after a Centre meeting" fill sizes="(max-width: 760px) 100vw, 52vw" /><figcaption>An institutional community for gender scholarship</figcaption></figure><div className="activity__copy"><Eyebrow>Current at CGS</Eyebrow><h2 id="activity-title">A Centre that convenes people around serious questions.</h2><p>Recent Centre records show an active academic and institutional community. Explore the documented activity on this site, with source folders available as supporting evidence.</p><div className="activity-list">{activities.map(activity=><Link href={`/activity#${activity.id}`} key={activity.title}><span>{activity.type}</span><strong>{activity.title}</strong><small>{activity.description}</small><Arrow diagonal /></Link>)}</div></div></div></section>
     <section className="engage" id="engage" aria-labelledby="engage-title"><div className="container engage__layout"><div><Eyebrow light>Choose your next step</Eyebrow><h2 id="engage-title">What brings you to CGS?</h2></div><div className="engage__options"><Link href="/programmes"><span>Study</span><strong>Find the right programme</strong><Arrow diagonal /></Link><Link href="/research"><span>Research</span><strong>Explore questions and collaboration</strong><Arrow diagonal /></Link><Link href="/events"><span>Events</span><strong>See what is coming next</strong><Arrow diagonal /></Link><Link href="/contact"><span>Engage</span><strong>Training, dialogue or another enquiry</strong><Arrow diagonal /></Link></div></div></section>
+    <EventSpotlightPopup
+      title={events[0].title}
+      theme={events[0].theme}
+      dateLabel={events[0].dateLabel}
+      venue={events[0].venue}
+      abstractDeadline={events[0].deadlines.abstractSubmission}
+      earlyBirdDeadline={events[0].deadlines.earlyBirdRegistration}
+      website={events[0].website}
+    />
   </main><SiteFooter /></>;
 }
