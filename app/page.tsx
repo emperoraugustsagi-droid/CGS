@@ -60,7 +60,7 @@ export default function Home() {
     <section className="section programmes programmes--home" id="programmes" aria-labelledby="programmes-title">
       <div className="container">
         <div className="section-heading">
-          <div><Eyebrow>Study at CGS</Eyebrow><h2 id="programmes-title">Choose the level that matches <em>your next step.</em></h2></div>
+          <div><Eyebrow>Study at CGS</Eyebrow><h2 id="programmes-title"><span className="study-title__lead">Choose the level that matches</span> <em>your next step.</em></h2></div>
           <p>CGS supports different routes into gender study, from executive certificate learning to postgraduate and doctoral research.</p>
         </div>
         <div className="programme-list">
