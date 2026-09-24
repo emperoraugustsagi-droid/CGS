@@ -137,8 +137,8 @@ export default function ProgrammesPage() {
         <div className="container programmes-research-link__layout">
           <figure className="programmes-research-link__media">
             <Image
-              src="/assets/cgs-research-workshop.jpg"
-              alt="CGS participants working together during a research workshop"
+              src="/assets/WhatsApp Image 2026-08-04 at 2.03.55 PM (1).jpeg"
+              alt="Participants taking part in an interactive university learning session"
               fill
               sizes="(max-width: 820px) 100vw, 55vw"
             />
