@@ -117,18 +117,18 @@ export function EventSpotlightPopup({
           </p>
 
           <div className="event-spotlight__actions">
-            <Link className="button button--accent" href="/events" onClick={() => setOpen(false)}>
-              View conference details <Arrow />
-            </Link>
             <a
-              className="text-link"
+              className="button button--accent"
               href={website}
               target="_blank"
               rel="noreferrer"
               onClick={() => setOpen(false)}
             >
-              Conference website <Arrow diagonal />
+              Visit conference website <Arrow />
             </a>
+            <Link className="text-link" href="/events" onClick={() => setOpen(false)}>
+              View event details <Arrow diagonal />
+            </Link>
           </div>
         </div>
       </div>
