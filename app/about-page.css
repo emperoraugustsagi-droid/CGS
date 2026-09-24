@@ -1144,7 +1144,7 @@
 }
 
 
-/* Step 7 — Centre team: centered editorial intro + one uniform profile system. */
+/* Step 7 — Centre team: centered editorial intro + respectful 2 + 3 hierarchy. */
 .about-page .about-team {
   padding-top: 48px;
   padding-bottom: 66px;
@@ -1185,6 +1185,7 @@
   text-wrap: balance;
 }
 
+/* Desktop hierarchy: two Deputy Directors first, three supporting profiles below. */
 .about-page .team-profile-grid {
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
@@ -1192,8 +1193,7 @@
   margin-top: 34px;
 }
 
-.about-page .team-profile-card,
-.about-page .team-profile-card:nth-child(-n + 2) {
+.about-page .team-profile-card {
   grid-column: span 2;
   display: flex;
   min-width: 0;
@@ -1207,12 +1207,8 @@
   transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
 }
 
-.about-page .team-profile-card:nth-child(4) {
-  grid-column: 2 / span 2;
-}
-
-.about-page .team-profile-card:nth-child(5) {
-  grid-column: 4 / span 2;
+.about-page .team-profile-card:nth-child(-n + 2) {
+  grid-column: span 3;
 }
 
 .about-page .team-profile-card:hover {
@@ -1228,6 +1224,10 @@
   overflow: hidden;
   margin: 0;
   background: #eef3f8;
+}
+
+.about-page .team-profile-card:nth-child(-n + 2) .team-profile-card__media {
+  aspect-ratio: 4 / 3;
 }
 
 .about-page .team-profile-card__media img {
@@ -1265,6 +1265,10 @@
   flex-direction: column;
 }
 
+.about-page .team-profile-card:nth-child(-n + 2) .team-profile-card__body {
+  padding: 22px 24px 24px;
+}
+
 .about-page .team-profile-card__role {
   width: fit-content;
   max-width: 100%;
@@ -1287,6 +1291,10 @@
   font-size: clamp(25px, 2vw, 29px);
   line-height: 1.02;
   letter-spacing: -.02em;
+}
+
+.about-page .team-profile-card:nth-child(-n + 2) h3 {
+  font-size: clamp(28px, 2.45vw, 34px);
 }
 
 .about-page .team-profile-card__department {
@@ -1319,6 +1327,7 @@
   font-size: 8px;
 }
 
+/* Tablet: equality is clearer and easier to scan at this width. */
 @media (min-width: 821px) and (max-width: 1080px) {
   .about-page .about-team {
     padding-top: 46px;
@@ -1332,9 +1341,7 @@
   }
 
   .about-page .team-profile-card,
-  .about-page .team-profile-card:nth-child(-n + 2),
-  .about-page .team-profile-card:nth-child(4),
-  .about-page .team-profile-card:nth-child(5) {
+  .about-page .team-profile-card:nth-child(-n + 2) {
     grid-column: auto;
   }
 
@@ -1344,7 +1351,17 @@
     justify-self: center;
   }
 
-  .about-page .team-profile-card h3 {
+  .about-page .team-profile-card__media,
+  .about-page .team-profile-card:nth-child(-n + 2) .team-profile-card__media {
+    aspect-ratio: 4 / 4.35;
+  }
+
+  .about-page .team-profile-card:nth-child(-n + 2) .team-profile-card__body {
+    padding: 20px 21px 22px;
+  }
+
+  .about-page .team-profile-card h3,
+  .about-page .team-profile-card:nth-child(-n + 2) h3 {
     font-size: clamp(25px, 2.8vw, 30px);
   }
 }
@@ -1371,9 +1388,7 @@
   }
 
   .about-page .team-profile-card,
-  .about-page .team-profile-card:nth-child(-n + 2),
-  .about-page .team-profile-card:nth-child(4),
-  .about-page .team-profile-card:nth-child(5) {
+  .about-page .team-profile-card:nth-child(-n + 2) {
     grid-column: auto;
   }
 
@@ -1383,8 +1398,19 @@
     justify-self: center;
   }
 
-  .about-page .team-profile-card__body {
+  .about-page .team-profile-card__media,
+  .about-page .team-profile-card:nth-child(-n + 2) .team-profile-card__media {
+    aspect-ratio: 4 / 4.25;
+  }
+
+  .about-page .team-profile-card__body,
+  .about-page .team-profile-card:nth-child(-n + 2) .team-profile-card__body {
     padding: 18px 18px 20px;
+  }
+
+  .about-page .team-profile-card h3,
+  .about-page .team-profile-card:nth-child(-n + 2) h3 {
+    font-size: 27px;
   }
 
   .about-page .team-profile-card__summary {
@@ -1417,22 +1443,23 @@
 
   .about-page .team-profile-card,
   .about-page .team-profile-card:nth-child(-n + 2),
-  .about-page .team-profile-card:nth-child(4),
-  .about-page .team-profile-card:nth-child(5),
   .about-page .team-profile-card:last-child {
     grid-column: auto;
     width: 100%;
   }
 
-  .about-page .team-profile-card__media {
+  .about-page .team-profile-card__media,
+  .about-page .team-profile-card:nth-child(-n + 2) .team-profile-card__media {
     aspect-ratio: 4 / 4.25;
   }
 
-  .about-page .team-profile-card__body {
+  .about-page .team-profile-card__body,
+  .about-page .team-profile-card:nth-child(-n + 2) .team-profile-card__body {
     padding: 18px 18px 19px;
   }
 
-  .about-page .team-profile-card h3 {
+  .about-page .team-profile-card h3,
+  .about-page .team-profile-card:nth-child(-n + 2) h3 {
     font-size: 27px;
   }
 
