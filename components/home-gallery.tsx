@@ -1,0 +1,221 @@
+"use client";
+
+import Image from "next/image";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { Arrow } from "./page-shell";
+
+const galleryItems = [
+  {
+    src: "/assets/cgs-research-workshop.jpg",
+    alt: "CGS research workshop with participants gathered around a meeting table",
+    label: "Academic life",
+    title: "Research in conversation",
+    position: "center 44%",
+  },
+  {
+    src: "/assets/cgs-advisory-group.jpg",
+    alt: "Members of the CGS academic and advisory community gathered together",
+    label: "Community",
+    title: "People behind the work",
+    position: "center 46%",
+  },
+  {
+    src: "/assets/cgs-awareness-campaign.jpg",
+    alt: "Participants at a CGS gender awareness campaign",
+    label: "Public engagement",
+    title: "Awareness in action",
+    position: "center 38%",
+  },
+  {
+    src: "/assets/expo-community.jpg",
+    alt: "CGS community members gathered at the Abuja Business and Investment Expo",
+    label: "Participation",
+    title: "Showing up in public spaces",
+    position: "center 42%",
+  },
+  {
+    src: "/assets/cgs-speaker-podium.png",
+    alt: "A speaker addressing an audience at a CGS academic event",
+    label: "Knowledge exchange",
+    title: "Ideas shared beyond the classroom",
+    position: "center 36%",
+  },
+  {
+    src: "/assets/expo-panel.jpg",
+    alt: "Panel participants seated during an institutional discussion",
+    label: "Dialogue",
+    title: "Conversation across institutions",
+    position: "center 44%",
+  },
+] as const;
+
+export function HomeGallery() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const dialogRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (activeIndex === null) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setActiveIndex(null);
+      if (event.key === "ArrowRight") {
+        setActiveIndex((current) =>
+          current === null ? 0 : (current + 1) % galleryItems.length,
+        );
+      }
+      if (event.key === "ArrowLeft") {
+        setActiveIndex((current) =>
+          current === null
+            ? galleryItems.length - 1
+            : (current - 1 + galleryItems.length) % galleryItems.length,
+        );
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    window.setTimeout(() => dialogRef.current?.focus(), 0);
+
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [activeIndex]);
+
+  const active = activeIndex === null ? null : galleryItems[activeIndex];
+
+  return (
+    <>
+      <section className="home-gallery" aria-labelledby="home-gallery-title">
+        <div className="container home-gallery__heading">
+          <div>
+            <p className="eyebrow">Inside CGS</p>
+            <h2 id="home-gallery-title">
+              Moments of learning, dialogue <em>and community.</em>
+            </h2>
+          </div>
+          <div className="home-gallery__intro">
+            <p>
+              A visual record of the people, conversations and activities that
+              bring the Centre&apos;s work to life.
+            </p>
+            <Link className="text-link" href="/activity">
+              Explore documented activity <Arrow diagonal />
+            </Link>
+          </div>
+        </div>
+
+        <div className="container home-gallery__grid">
+          {galleryItems.map((item, index) => (
+            <button
+              className={`home-gallery__item home-gallery__item--${index + 1}`}
+              type="button"
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Open image ${index + 1}: ${item.title}`}
+              key={item.src}
+            >
+              <Image
+                src={item.src}
+                alt={item.alt}
+                fill
+                sizes={
+                  index === 0
+                    ? "(max-width: 620px) 100vw, 58vw"
+                    : "(max-width: 620px) 50vw, 36vw"
+                }
+                quality={86}
+                style={{ objectFit: "cover", objectPosition: item.position }}
+              />
+              <span className="home-gallery__shade" />
+              <span className="home-gallery__caption">
+                <small>{item.label}</small>
+                <strong>{item.title}</strong>
+              </span>
+              <span className="home-gallery__expand" aria-hidden="true">↗</span>
+            </button>
+          ))}
+        </div>
+      </section>
+
+      {active ? (
+        <div
+          className="gallery-lightbox"
+          role="presentation"
+          onMouseDown={(event) => {
+            if (event.target === event.currentTarget) setActiveIndex(null);
+          }}
+        >
+          <div
+            className="gallery-lightbox__dialog"
+            ref={dialogRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={active.title}
+            tabIndex={-1}
+          >
+            <button
+              className="gallery-lightbox__close"
+              type="button"
+              aria-label="Close gallery"
+              onClick={() => setActiveIndex(null)}
+            >
+              ×
+            </button>
+
+            <div className="gallery-lightbox__media">
+              <Image
+                src={active.src}
+                alt={active.alt}
+                fill
+                sizes="96vw"
+                quality={92}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+
+            <div className="gallery-lightbox__footer">
+              <div>
+                <small>{active.label}</small>
+                <strong>{active.title}</strong>
+              </div>
+              <span>
+                {String((activeIndex ?? 0) + 1).padStart(2, "0")} /{" "}
+                {String(galleryItems.length).padStart(2, "0")}
+              </span>
+            </div>
+
+            <button
+              className="gallery-lightbox__nav gallery-lightbox__nav--prev"
+              type="button"
+              aria-label="Previous image"
+              onClick={() =>
+                setActiveIndex((current) =>
+                  current === null
+                    ? galleryItems.length - 1
+                    : (current - 1 + galleryItems.length) % galleryItems.length,
+                )
+              }
+            >
+              ←
+            </button>
+            <button
+              className="gallery-lightbox__nav gallery-lightbox__nav--next"
+              type="button"
+              aria-label="Next image"
+              onClick={() =>
+                setActiveIndex((current) =>
+                  current === null ? 0 : (current + 1) % galleryItems.length,
+                )
+              }
+            >
+              →
+            </button>
+          </div>
+        </div>
+      ) : null}
+    </>
+  );
+}
