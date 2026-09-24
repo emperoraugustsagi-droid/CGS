@@ -32,7 +32,7 @@ export default function AboutPage() {
           </div>
         </div>
         <figure className="about-hero__media">
-          <Image src="/assets/cgs-advisory-group.jpg" alt="Members of the CGS academic and advisory community gathered together" fill priority sizes="(max-width: 820px) 100vw, 44vw" />
+          <Image src="/assets/WhatsApp Image 2026-09-24 at 1.36.45 PM.jpeg" alt="University and programme participants gathered together outside a campus venue" fill priority sizes="(max-width: 820px) 100vw, 44vw" />
           <figcaption><span>Centre for Gender Studies</span><span>Knowledge is collective</span></figcaption>
         </figure>
       </div>
@@ -67,7 +67,7 @@ export default function AboutPage() {
     <section className="section about-public" aria-labelledby="conversation-title">
       <div className="container about-public__layout">
         <figure className="about-public__media">
-          <Image src="/assets/cgs-speaker-podium.png" alt="A university speaker addressing an audience at a CGS event" fill sizes="(max-width: 820px) 100vw, 55vw" />
+          <Image src="/assets/WhatsApp Image 2026-09-24 at 1.36.47 PM (1).jpeg" alt="A speaker addressing participants from a university podium" fill sizes="(max-width: 820px) 100vw, 55vw" />
           <figcaption><span>Knowledge in practice</span><strong>Scholarship shared in public</strong></figcaption>
         </figure>
         <div className="about-public__copy">

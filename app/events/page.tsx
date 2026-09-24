@@ -95,7 +95,7 @@ export default function EventsPage() {
     <section className="section page-visual events-special" aria-labelledby="event-feature-title">
       <div className="container page-visual__grid">
         <figure className="page-visual__media">
-          <Image src="/assets/cgs-speaker-podium.png" alt="A speaker addressing an audience during a CGS academic event" fill sizes="(max-width: 820px) 100vw, 55vw" />
+          <Image src="/assets/WhatsApp Image 2026-08-04 at 2.03.38 PM.jpeg" alt="A presenter addressing participants during a university institutional session" fill sizes="(max-width: 820px) 100vw, 55vw" />
           <figcaption>Academic exchange at CGS</figcaption>
         </figure>
         <div className="page-visual__copy">

@@ -69,7 +69,7 @@ export default function ContactPage() {
             <p>Programme, research and event questions often have useful context elsewhere on the website. For training, institutional dialogue or general enquiries, you can contact the Centre directly.</p>
           </div>
           <figure className="page-visual__media">
-            <Image src="/assets/cgs-community-portrait.jpeg" alt="A member of the CGS community in a welcoming interior" fill sizes="(max-width: 820px) 100vw, 55vw" />
+            <Image src="/assets/WhatsApp Image 2026-09-24 at 1.36.48 PM (1).jpeg" alt="Two participants in conversation during a university gathering" fill sizes="(max-width: 820px) 100vw, 55vw" />
             <figcaption>Conversation begins with listening</figcaption>
           </figure>
         </div>

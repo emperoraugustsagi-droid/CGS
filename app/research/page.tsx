@@ -26,7 +26,7 @@ export default function ResearchPage() {
       <section className="section page-visual research-practice" aria-labelledby="research-practice-title">
         <div className="container page-visual__grid">
           <figure className="page-visual__media">
-            <Image src="/assets/cgs-research-workshop.jpg" alt="Participants gathered around a table during a CGS research workshop" fill sizes="(max-width: 820px) 100vw, 55vw" />
+            <Image src="/assets/WhatsApp Image 2026-08-04 at 2.03.32 PM.jpeg" alt="A participant contributing during a university academic session" fill sizes="(max-width: 820px) 100vw, 55vw" />
             <figcaption>Research questions worked through together</figcaption>
           </figure>
           <div className="page-visual__copy">

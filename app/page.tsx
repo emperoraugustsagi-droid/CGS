@@ -13,7 +13,7 @@ import { activities, events, programmes, researchAreas } from "./site-data";
 
 const images = {
   director: "/assets/cgs-director-comfort-adokwe.jpeg",
-  community: "/assets/cgs-advisory-group.jpg",
+  community: "/assets/WhatsApp Image 2026-09-24 at 1.36.47 PM (2).jpeg",
 };
 
 const researchImages = [
@@ -21,7 +21,7 @@ const researchImages = [
   { src: "/assets/cgs-awareness-campaign.jpg", position: "center 38%" },
   { src: "/assets/cgs-academic-event.jpeg", position: "center 24%" },
   { src: "/assets/cgs-community-portrait.jpeg", position: "center 34%" },
-  { src: "/assets/cgs-research-workshop.jpg", position: "center 42%" },
+  { src: "/assets/cgs-speaker-podium.png", position: "center 38%" },
   { src: "/assets/expo-panel.jpg", position: "center 42%" },
 ] as const;
 

@@ -7,19 +7,19 @@ import { Arrow } from "./page-shell";
 
 const slides = [
   {
-    src: "/assets/cgs-research-workshop.jpg",
-    alt: "CGS research workshop with participants gathered around a table",
+    src: "/assets/WhatsApp Image 2026-09-24 at 1.36.46 PM (1).jpeg",
+    alt: "Participants working together around tables during an institutional learning session",
+    position: "center 44%",
+  },
+  {
+    src: "/assets/WhatsApp Image 2026-09-24 at 1.36.48 PM (2).jpeg",
+    alt: "Participants reviewing programme material together during a university gathering",
     position: "center 42%",
   },
   {
-    src: "/assets/expo-panel.jpg",
-    alt: "Academic panel and institutional discussion involving the CGS community",
-    position: "center 45%",
-  },
-  {
-    src: "/assets/cgs-advisory-group.jpg",
-    alt: "Members of the CGS academic and advisory community gathered together",
-    position: "center 45%",
+    src: "/assets/WhatsApp Image 2026-09-24 at 1.36.45 PM (2).jpeg",
+    alt: "Participants seated in a university auditorium during an academic session",
+    position: "center 46%",
   },
 ] as const;
 

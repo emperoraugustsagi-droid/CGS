@@ -28,7 +28,7 @@ export function HomeHeroCarousel() {
     <div className="container hero__layout hero-institutional">
       <figure className="hero__media" aria-hidden="true">
         <Image
-          src="/assets/cgs-research-workshop.jpg"
+          src="/assets/WhatsApp Image 2026-09-24 at 1.36.46 PM.jpeg"
           alt=""
           fill
           priority
