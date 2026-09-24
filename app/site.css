@@ -3514,3 +3514,9 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
   margin-top: 20px;
   font-size: 9px;
 }
+
+
+/* Keep Continue Exploring category labels visually consistent */
+.about-page .about-next-links a > span:first-child {
+  color: var(--cgs-pink-300) !important;
+}
