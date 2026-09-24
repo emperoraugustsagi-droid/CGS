@@ -995,3 +995,58 @@
     font-size: 14px;
   }
 }
+
+
+/* Compact mobile mandate CTA — short editorial ribbon */
+@media (max-width: 620px) {
+  .home-page .mandate-cta {
+    position: relative;
+    min-height: 0;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 15px 18px 13px;
+    border-left: 3px solid var(--cgs-blue-600);
+    border-radius: 18px;
+    background:
+      radial-gradient(circle at 96% 8%, rgb(239 136 189 / 28%) 0 42px, transparent 43px),
+      radial-gradient(circle at 88% 115%, rgb(113 195 244 / 24%) 0 54px, transparent 55px),
+      linear-gradient(110deg, #edf7ff 0%, #eef6ff 70%, #f8edf5 100%);
+    text-align: center;
+  }
+
+  .home-page .mandate-cta::before {
+    position: absolute;
+    top: 13px;
+    left: 50%;
+    width: 38px;
+    height: 3px;
+    transform: translateX(-50%);
+    border-radius: 999px;
+    background: var(--cgs-blue-600);
+    content: "";
+  }
+
+  .home-page .mandate-cta p {
+    position: relative;
+    z-index: 1;
+    max-width: 310px;
+    margin: 11px auto 0;
+    font-size: 18px;
+    line-height: 1.02;
+    text-align: center;
+  }
+
+  .home-page .mandate-cta .text-link {
+    position: relative;
+    z-index: 1;
+    width: max-content;
+    min-height: 30px;
+    margin: 0 auto;
+    padding: 0 2px;
+    gap: 16px;
+    font-size: 9px;
+  }
+}
