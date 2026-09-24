@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Arrow, ContactBand, Eyebrow, PageIntro, PageShell, SectionHeading } from "../../components/page-shell";
+import { Arrow, ContactBand, Eyebrow, PageIntro, PageShell } from "../../components/page-shell";
 import { centreStudyOfferings, programmes } from "../site-data";
 
 export const metadata: Metadata = {
@@ -69,20 +69,35 @@ export default function ProgrammesPage() {
         </div>
       </section>
 
-      <section className="section page-section programmes-postgraduate" aria-labelledby="programme-list-title">
-        <div className="container">
-          <SectionHeading eyebrow="Postgraduate programmes" title="Five current Gender Studies listings." id="programme-list-title">
-            These titles follow the current NSUK School of Postgraduate Studies public listing. Contact CGS for current entry requirements, duration and application guidance.
-          </SectionHeading>
+      <section className="section programmes-postgraduate" aria-labelledby="programme-list-title">
+        <div className="container programmes-postgraduate__intro">
+          <Eyebrow>Postgraduate programmes</Eyebrow>
+          <h2 id="programme-list-title">Five Gender Studies pathways currently listed by NSUK.</h2>
+          <p>Use this directory to compare the current programme titles and study orientation. Contact CGS for entry requirements, duration and application guidance.</p>
+        </div>
 
-          <div className="programme-list programme-list--page">
-            {programmes.map((programme, index) => <article className="programme-row" key={programme.code}>
-              <span className="index">0{index + 1}</span>
-              <div className="programme-row__title"><strong>{programme.code}</strong><h3>{programme.title}</h3></div>
-              <div className="programme-row__detail"><span>{programme.format}</span><p>{programme.summary}</p></div>
-              <Link href="/contact" aria-label={`Ask about ${programme.title}`}>Ask CGS <Arrow diagonal /></Link>
-            </article>)}
-          </div>
+        <div className="container programme-directory">
+          {programmes.map((programme, index) => (
+            <article className="programme-directory__row" key={programme.code}>
+              <span className="programme-directory__index">0{index + 1}</span>
+
+              <div className="programme-directory__identity">
+                <span className="programme-directory__code">{programme.code}</span>
+                <h3>{programme.title}</h3>
+                <small>{programme.format}</small>
+              </div>
+
+              <p className="programme-directory__summary">{programme.summary}</p>
+
+              <Link
+                className="programme-directory__action"
+                href="/contact"
+                aria-label={`Ask CGS about ${programme.title}`}
+              >
+                Ask CGS <Arrow diagonal />
+              </Link>
+            </article>
+          ))}
         </div>
       </section>
 
