@@ -90,11 +90,71 @@ export const researchAreas = [
 ] as const;
 
 export const team = [
-  ["Dr. Hajarah Hassan Ahmed II", "Deputy Director, Programs"],
+  ["Dr. Hajara Hassan Ahmed II", "Deputy Director, Programs"],
   ["Dr. Ochanya M. Yakubu Lamai", "Deputy Director, Academics"],
   ["Ifeoma Chidinma Eze", "Personal Assistant to the Director"],
   ["Mr. Alaku Adamu", "Secretary"],
   ["Sefa Agba", "Programs Officer"],
+] as const;
+
+export const teamProfiles = [
+  {
+    name: "Dr. Hajara Hassan Ahmed II",
+    role: "Deputy Director, Programs",
+    image: "/assets/cgs-team-hajara-hassan-ahmed-ii.jpg",
+    department: "Department of Entrepreneurship Studies",
+    summary:
+      "A Lecturer I and entrepreneurship scholar with interests in women entrepreneurship, innovation and business development.",
+    detail:
+      "She holds a Ph.D. in Business Administration and has served in academic and administrative roles within Nasarawa State University, Keffi.",
+    imagePosition: "center 28%",
+  },
+  {
+    name: "Dr. Ochanya M. Yakubu Lamai",
+    role: "Deputy Director, Academics",
+    image: "/assets/cgs-team-ochanya-yakubu-lamai.jpg",
+    department: "Department of Broadcasting · Faculty of Communication and Media Studies",
+    summary:
+      "A communication strategist, broadcaster and gender advocate whose work spans strategic communication, gender equity, leadership and youth empowerment.",
+    detail:
+      "Her academic and public-engagement work connects teaching, research, mentorship, media and development advocacy.",
+    imagePosition: "center 24%",
+  },
+  {
+    name: "Ifeoma Chidinma Eze",
+    role: "Personal Assistant to the Director",
+    image: "/assets/cgs-team-ifeoma-chidinma-eze.jpg",
+    department: "Centre for Gender Studies",
+    summary:
+      "Provides administrative, organisational and communication support for the effective coordination of the Centre’s activities.",
+    detail:
+      "Her experience includes digital communication, journalism, digital marketing and content management.",
+    linkedin: "https://www.linkedin.com/in/ifeoma-chidinma-eze-ice-66040522a",
+    imagePosition: "center 20%",
+  },
+  {
+    name: "Mr. Alaku Adamu",
+    role: "Secretary",
+    image: "/assets/cgs-team-alaku-adamu.jpg",
+    department: "Centre for Gender Studies",
+    summary:
+      "An NSUK alumnus who supports the Centre’s administrative operations and institutional service.",
+    detail:
+      "His work contributes to effective administration and the day-to-day coordination of the Centre.",
+    imagePosition: "center 18%",
+  },
+  {
+    name: "Sefa Agba",
+    role: "Programs Officer",
+    image: "/assets/cgs-team-sefa-agba.jpg",
+    department: "Centre for Gender Studies",
+    summary:
+      "Coordinates programmes, partnerships and capacity-building initiatives focused on gender equality, social inclusion, research and sustainable development.",
+    detail:
+      "His experience includes programme management, monitoring and evaluation, applied research and evidence-based interventions.",
+    linkedin: "https://www.linkedin.com/in/sefa-agba-2332ab316",
+    imagePosition: "center 20%",
+  },
 ] as const;
 
 export const activities = [
