@@ -435,3 +435,55 @@
     margin-inline: auto;
   }
 }
+
+
+/* Gallery intro: center the editorial message on desktop and separate it from controls. */
+@media (min-width: 821px) {
+  .home-page .home-gallery__heading {
+    display: block;
+    max-width: 1120px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  .home-page .home-gallery__heading > div:first-child {
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+
+  .home-page .home-gallery__heading .eyebrow {
+    justify-content: center;
+  }
+
+  .home-page .home-gallery__heading h2 {
+    max-width: 980px;
+    margin: 18px auto 0;
+  }
+
+  .home-page .home-gallery__intro {
+    max-width: 720px;
+    margin: 24px auto 0;
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  .home-page .home-gallery__intro p {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+
+  .home-page .home-gallery__intro .text-link {
+    width: max-content;
+    margin: 18px auto 0;
+    justify-content: center;
+  }
+
+  .home-page .home-gallery__rail-shell {
+    margin-top: 34px;
+  }
+
+  .home-page .home-gallery__toolbar {
+    max-width: 520px;
+    margin: 0 auto 14px;
+  }
+}
