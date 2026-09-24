@@ -4627,3 +4627,129 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
     gap: 6px;
   }
 }
+
+
+/* Compact single-screen conference popup on desktop */
+@media (min-width: 821px) {
+  .event-spotlight {
+    padding: 20px;
+  }
+
+  .event-spotlight__dialog {
+    width: min(1120px, calc(100vw - 40px));
+    max-height: calc(100vh - 40px);
+    grid-template-columns: 220px minmax(0, 1fr);
+    overflow: hidden;
+  }
+
+  .event-spotlight__date {
+    min-height: 0;
+    height: 100%;
+    padding: 30px 26px 28px;
+  }
+
+  .event-spotlight__date span {
+    font-size: 50px;
+  }
+
+  .event-spotlight__content {
+    padding: 32px 42px 28px;
+  }
+
+  .event-spotlight__eyebrow {
+    font-size: 8px;
+  }
+
+  .event-spotlight__content h2 {
+    max-width: 780px;
+    margin-top: 10px;
+    font-size: clamp(36px, 3.6vw, 52px);
+    line-height: .93;
+  }
+
+  .event-spotlight__theme {
+    max-width: 760px;
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .event-spotlight__facts {
+    grid-template-columns: minmax(0, .88fr) minmax(0, 1.12fr);
+    margin-top: 14px;
+  }
+
+  .event-spotlight__facts > div {
+    padding: 11px 13px 12px;
+  }
+
+  .event-spotlight__facts span {
+    font-size: 7px;
+  }
+
+  .event-spotlight__facts strong {
+    margin-top: 5px;
+    font-size: 15px;
+    line-height: 1.12;
+  }
+
+  .event-spotlight__facts small {
+    display: block;
+    margin-top: 5px;
+    color: var(--cgs-muted);
+    font-size: 9px;
+    line-height: 1.3;
+  }
+
+  .event-spotlight__actions {
+    flex-wrap: nowrap;
+    gap: 18px;
+    margin-top: 15px;
+  }
+
+  .event-spotlight__actions .button {
+    min-height: 48px;
+    padding-inline: 20px;
+  }
+
+  .event-spotlight__actions .text-link {
+    min-height: 42px;
+  }
+
+  .event-spotlight__close {
+    top: 14px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+  }
+}
+
+@media (min-width: 821px) and (max-height: 700px) {
+  .event-spotlight {
+    padding: 12px;
+  }
+
+  .event-spotlight__dialog {
+    max-height: calc(100vh - 24px);
+  }
+
+  .event-spotlight__content {
+    padding: 24px 34px 22px;
+  }
+
+  .event-spotlight__content h2 {
+    font-size: clamp(32px, 3.2vw, 46px);
+  }
+
+  .event-spotlight__theme {
+    font-size: 15px;
+  }
+
+  .event-spotlight__facts {
+    margin-top: 11px;
+  }
+
+  .event-spotlight__actions {
+    margin-top: 12px;
+  }
+}
