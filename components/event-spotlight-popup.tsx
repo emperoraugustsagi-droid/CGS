@@ -89,7 +89,7 @@ export function EventSpotlightPopup({
           <span aria-hidden="true" />
         </button>
 
-        <div className="event-spotlight__date">
+        <div className="event-spotlight__date" aria-label={`Conference dates ${dateLabel}`}>
           <span>04–07</span>
           <strong>NOV</strong>
           <small>2026</small>
@@ -107,22 +107,15 @@ export function EventSpotlightPopup({
 
           <div className="event-spotlight__facts">
             <div>
-              <span>Conference dates</span>
-              <strong>{dateLabel}</strong>
-            </div>
-            <div>
-              <span>Abstracts close</span>
-              <strong>{abstractDeadline}</strong>
+              <span>Deadlines</span>
+              <strong>Abstracts · {abstractDeadline}</strong>
+              <small>Early bird · {earlyBirdDeadline}</small>
             </div>
             <div>
               <span>Venue</span>
               <strong>{venue}</strong>
             </div>
           </div>
-
-          <p className="event-spotlight__note">
-            Early-bird registration closes {earlyBirdDeadline}.
-          </p>
 
           <div className="event-spotlight__actions">
             <a
