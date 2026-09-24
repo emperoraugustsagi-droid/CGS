@@ -1,11 +1,43 @@
 /* Conference countdown
- * Editorial numerals + visible grid, designed to complement the CGS event system.
+ * High-attention, institutional treatment shared by the homepage and event popup.
  */
 
 .event-countdown {
+  position: relative;
   width: 100%;
-  max-width: 610px;
-  margin-top: 24px;
+  max-width: 640px;
+  margin-top: 22px;
+  padding: 14px;
+  overflow: hidden;
+  border: 1px solid rgb(207 20 112 / 18%);
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 96% 0%, rgb(207 20 112 / 10%) 0 86px, transparent 87px),
+    linear-gradient(120deg, #fff8fb 0%, #fbf7f9 48%, #f4f8fc 100%);
+  box-shadow:
+    0 14px 34px rgb(11 35 72 / 7%),
+    inset 0 1px 0 rgb(255 255 255 / 78%);
+  isolation: isolate;
+}
+
+.event-countdown::before {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 3px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--cgs-pink-600) 0%,
+      var(--cgs-pink-300) 32%,
+      var(--cgs-blue-600) 67%,
+      var(--cgs-pink-600) 100%
+    );
+  background-size: 180% 100%;
+  content: "";
+  animation: countdownAccentFlow 8s linear infinite;
 }
 
 .event-countdown__sr {
@@ -19,112 +51,191 @@
   border: 0;
 }
 
-.event-countdown__topline {
+.event-countdown__header {
+  position: relative;
+  z-index: 1;
   display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 9px;
+  min-height: 38px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 3px 3px 11px;
 }
 
-.event-countdown__topline > span,
-.event-countdown__kicker {
-  flex: 0 0 auto;
+.event-countdown__header > div {
+  min-width: 0;
+}
+
+.event-countdown__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   color: var(--cgs-pink-600);
   font-size: 8px;
   font-weight: 800;
   letter-spacing: .14em;
+  line-height: 1;
   text-transform: uppercase;
 }
 
-.event-countdown__topline > i {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(90deg, rgb(207 20 112 / 42%), rgb(11 35 72 / 10%));
+.event-countdown__status > i {
+  width: 7px;
+  height: 7px;
+  flex: 0 0 7px;
+  border-radius: 50%;
+  background: var(--cgs-pink-600);
+  box-shadow: 0 0 0 0 rgb(207 20 112 / 30%);
+  animation: countdownStatusPulse 2.8s ease-out infinite;
+}
+
+.event-countdown__header > div > strong {
+  display: block;
+  margin-top: 6px;
+  color: var(--cgs-navy-800);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.event-countdown__live {
+  display: inline-flex;
+  min-height: 24px;
+  padding: 0 9px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(11 35 72 / 10%);
+  border-radius: 999px;
+  background: rgb(255 255 255 / 68%);
+  color: var(--cgs-navy-800);
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
 }
 
 .event-countdown__grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  border-top: 1px solid rgb(11 35 72 / 14%);
-  border-bottom: 1px solid rgb(11 35 72 / 14%);
-  background: rgb(255 255 255 / 30%);
+  gap: 8px;
 }
 
 .event-countdown__unit {
   position: relative;
   min-width: 0;
-  padding: 12px 15px 11px;
+  min-height: 82px;
+  display: flex;
+  padding: 13px 14px 11px;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid rgb(11 35 72 / 10%);
+  border-radius: 8px;
+  background: rgb(255 255 255 / 82%);
+  box-shadow: 0 5px 14px rgb(11 35 72 / 4%);
 }
 
-.event-countdown__unit + .event-countdown__unit {
-  border-left: 1px solid rgb(11 35 72 / 12%);
+.event-countdown__unit--primary {
+  border-color: var(--cgs-navy-900);
+  background:
+    radial-gradient(circle at 100% 0%, rgb(239 136 189 / 19%) 0 54px, transparent 55px),
+    var(--cgs-navy-950);
+  box-shadow: 0 9px 22px rgb(6 23 45 / 16%);
 }
 
-.event-countdown__unit strong,
-.event-countdown__unit span {
+.event-countdown__number {
   display: block;
-}
-
-.event-countdown__unit strong {
   color: var(--cgs-navy-800);
   font-family: var(--font-serif), Georgia, serif;
-  font-size: clamp(29px, 2.25vw, 38px);
+  font-size: clamp(34px, 2.6vw, 44px);
   font-weight: 400;
   font-variant-numeric: tabular-nums lining-nums;
-  line-height: .95;
-  letter-spacing: -.025em;
+  line-height: .86;
+  letter-spacing: -.035em;
+  animation: countdownDigitIn .28s ease-out;
 }
 
-.event-countdown__unit:first-child strong {
-  color: var(--cgs-pink-600);
+.event-countdown__unit--primary .event-countdown__number {
+  color: white;
 }
 
-.event-countdown__unit span {
-  margin-top: 6px;
+.event-countdown__unit > span {
+  display: block;
+  margin-top: 9px;
   color: var(--cgs-muted);
   font-size: 7px;
   font-weight: 800;
-  letter-spacing: .13em;
+  letter-spacing: .15em;
+  line-height: 1;
   text-transform: uppercase;
 }
 
+.event-countdown__unit--primary > span {
+  color: var(--cgs-pink-300);
+}
+
+/* Homepage event uses the same focal component, kept compact enough for the section. */
 .event-countdown--compact {
-  max-width: 525px;
-  margin-top: 20px;
+  max-width: 620px;
+  margin-top: 18px;
+  padding: 12px;
+}
+
+.event-countdown--compact .event-countdown__header {
+  padding-bottom: 9px;
 }
 
 .event-countdown--compact .event-countdown__unit {
-  padding: 10px 13px 9px;
+  min-height: 74px;
+  padding: 11px 12px 10px;
 }
 
-.event-countdown--compact .event-countdown__unit strong {
-  font-size: clamp(27px, 2vw, 34px);
+.event-countdown--compact .event-countdown__number {
+  font-size: clamp(32px, 2.35vw, 40px);
 }
 
+/* Popup version keeps the same identity but uses less vertical space. */
 .event-countdown--spotlight {
   max-width: none;
-  margin-top: 25px;
-  padding: 16px 18px 15px;
-  border: 1px solid rgb(11 35 72 / 11%);
-  background:
-    linear-gradient(100deg, rgb(255 247 251 / 96%) 0%, rgb(247 250 255 / 96%) 100%);
+  margin-top: 14px;
+  padding: 10px;
+  border-radius: 10px;
 }
 
-.event-countdown--spotlight .event-countdown__topline {
-  margin-bottom: 8px;
+.event-countdown--spotlight .event-countdown__header {
+  min-height: 32px;
+  padding: 2px 2px 8px;
+}
+
+.event-countdown--spotlight .event-countdown__header > div > strong {
+  margin-top: 4px;
+  font-size: 13px;
+}
+
+.event-countdown--spotlight .event-countdown__live {
+  min-height: 21px;
+  padding-inline: 8px;
+  font-size: 6.5px;
 }
 
 .event-countdown--spotlight .event-countdown__grid {
-  border-bottom: 0;
-  background: transparent;
+  gap: 6px;
 }
 
 .event-countdown--spotlight .event-countdown__unit {
-  padding: 12px 13px 6px;
+  min-height: 66px;
+  padding: 9px 10px 8px;
+  border-radius: 7px;
 }
 
-.event-countdown--spotlight .event-countdown__unit strong {
-  font-size: clamp(28px, 2.7vw, 39px);
+.event-countdown--spotlight .event-countdown__number {
+  font-size: clamp(27px, 2.15vw, 34px);
+}
+
+.event-countdown--spotlight .event-countdown__unit > span {
+  margin-top: 6px;
+  font-size: 6px;
 }
 
 .event-countdown--complete {
@@ -133,8 +244,6 @@
   padding: 16px 18px;
   align-items: center;
   gap: 16px;
-  border-top: 1px solid rgb(11 35 72 / 14%);
-  border-bottom: 1px solid rgb(11 35 72 / 14%);
 }
 
 .event-countdown--complete > strong {
@@ -144,65 +253,141 @@
   font-weight: 400;
 }
 
-/* Let the new timer feel integrated with the compact event composition. */
 .home-event-compact__copy .event-countdown {
   margin-bottom: 17px;
 }
 
 .event-spotlight__content .event-countdown + .event-spotlight__facts {
-  margin-top: 22px;
+  margin-top: 12px;
 }
 
-@media (max-width: 820px) {
-  .event-countdown {
-    max-width: 100%;
+@keyframes countdownStatusPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgb(207 20 112 / 30%);
+  }
+  45% {
+    box-shadow: 0 0 0 7px rgb(207 20 112 / 0%);
+  }
+  100% {
+    box-shadow: 0 0 0 7px rgb(207 20 112 / 0%);
+  }
+}
+
+@keyframes countdownAccentFlow {
+  from {
+    background-position: 0% 50%;
+  }
+  to {
+    background-position: 180% 50%;
+  }
+}
+
+@keyframes countdownDigitIn {
+  from {
+    opacity: .55;
+    transform: translateY(2px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 821px) and (max-height: 700px) {
+  .event-countdown--spotlight {
+    margin-top: 10px;
+    padding: 8px;
   }
 
-  .event-countdown__unit {
-    padding-inline: 10px;
+  .event-countdown--spotlight .event-countdown__header {
+    min-height: 27px;
+    padding-bottom: 6px;
   }
 
-  .event-countdown__unit strong {
+  .event-countdown--spotlight .event-countdown__header > div > strong {
+    display: none;
+  }
+
+  .event-countdown--spotlight .event-countdown__unit {
+    min-height: 58px;
+    padding-top: 8px;
+    padding-bottom: 7px;
+  }
+
+  .event-countdown--spotlight .event-countdown__number {
     font-size: 28px;
   }
 
+  .event-spotlight__content .event-countdown + .event-spotlight__facts {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 820px) {
+  .event-countdown,
+  .event-countdown--compact,
   .event-countdown--spotlight {
-    margin-top: 22px;
-    padding: 14px 14px 13px;
+    max-width: 100%;
   }
 }
 
 @media (max-width: 620px) {
   .event-countdown {
     margin-top: 18px;
+    padding: 10px;
+    border-radius: 10px;
   }
 
-  .event-countdown__topline {
-    gap: 9px;
-    margin-bottom: 7px;
+  .event-countdown__header {
+    min-height: 34px;
+    gap: 10px;
+    padding-bottom: 8px;
   }
 
-  .event-countdown__topline > span,
-  .event-countdown__kicker {
+  .event-countdown__status {
     font-size: 6.5px;
-    letter-spacing: .12em;
+    letter-spacing: .11em;
+  }
+
+  .event-countdown__status > i {
+    width: 6px;
+    height: 6px;
+    flex-basis: 6px;
+  }
+
+  .event-countdown__header > div > strong {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+
+  .event-countdown__live {
+    min-height: 21px;
+    padding-inline: 7px;
+    font-size: 6px;
+  }
+
+  .event-countdown__grid {
+    gap: 5px;
   }
 
   .event-countdown__unit,
   .event-countdown--compact .event-countdown__unit,
   .event-countdown--spotlight .event-countdown__unit {
+    min-height: 64px;
     padding: 9px 7px 8px;
+    border-radius: 7px;
   }
 
-  .event-countdown__unit strong,
-  .event-countdown--compact .event-countdown__unit strong,
-  .event-countdown--spotlight .event-countdown__unit strong {
-    font-size: clamp(24px, 8vw, 30px);
+  .event-countdown__number,
+  .event-countdown--compact .event-countdown__number,
+  .event-countdown--spotlight .event-countdown__number {
+    font-size: clamp(25px, 7.4vw, 31px);
   }
 
-  .event-countdown__unit span {
-    margin-top: 5px;
-    font-size: 6px;
+  .event-countdown__unit > span,
+  .event-countdown--spotlight .event-countdown__unit > span {
+    margin-top: 7px;
+    font-size: 5.5px;
     letter-spacing: .09em;
   }
 
@@ -211,8 +396,8 @@
   }
 
   .event-countdown--spotlight {
-    margin-top: 18px;
-    padding: 12px 11px 11px;
+    margin-top: 14px;
+    padding: 9px;
   }
 
   .event-countdown--complete {
@@ -226,60 +411,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .event-countdown *,
-  .event-countdown *::before,
-  .event-countdown *::after {
-    transition: none !important;
+  .event-countdown::before,
+  .event-countdown__status > i,
+  .event-countdown__number {
     animation: none !important;
-  }
-}
-
-
-/* Popup countdown should support a single-screen dialog, not dominate it. */
-@media (min-width: 821px) {
-  .event-countdown--spotlight {
-    margin-top: 15px;
-    padding: 10px 12px 9px;
-  }
-
-  .event-countdown--spotlight .event-countdown__topline {
-    margin-bottom: 6px;
-  }
-
-  .event-countdown--spotlight .event-countdown__unit {
-    padding: 8px 11px 5px;
-  }
-
-  .event-countdown--spotlight .event-countdown__unit strong {
-    font-size: clamp(26px, 2.2vw, 34px);
-  }
-
-  .event-countdown--spotlight .event-countdown__unit span {
-    margin-top: 4px;
-    font-size: 6.5px;
-  }
-
-  .event-spotlight__content .event-countdown + .event-spotlight__facts {
-    margin-top: 14px;
-  }
-}
-
-@media (min-width: 821px) and (max-height: 700px) {
-  .event-countdown--spotlight {
-    margin-top: 12px;
-    padding: 8px 10px 7px;
-  }
-
-  .event-countdown--spotlight .event-countdown__unit {
-    padding-top: 6px;
-    padding-bottom: 4px;
-  }
-
-  .event-countdown--spotlight .event-countdown__unit strong {
-    font-size: 28px;
-  }
-
-  .event-spotlight__content .event-countdown + .event-spotlight__facts {
-    margin-top: 11px;
   }
 }
