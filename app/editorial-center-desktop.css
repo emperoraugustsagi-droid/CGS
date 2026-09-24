@@ -1,0 +1,238 @@
+/* Site-wide desktop editorial intro alignment.
+ * Centers headings + supporting intro copy while preserving structured content.
+ */
+
+@media (min-width: 821px) {
+  /* Child-page hero intros */
+  :is(
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .page-intro__inner {
+    display: block;
+    max-width: 1120px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  :is(
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .page-intro .eyebrow {
+    justify-content: center;
+  }
+
+  :is(
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .page-intro h1 {
+    max-width: 980px;
+    margin: 20px auto 0;
+  }
+
+  :is(
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .page-intro__body {
+    max-width: 720px;
+    margin: 26px auto 0;
+    text-align: center;
+  }
+
+  :is(
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .page-intro__actions {
+    justify-content: center;
+  }
+
+  /* Shared section-heading component */
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .section-heading {
+    display: block;
+    max-width: 1120px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .section-heading > div {
+    max-width: 1120px;
+    margin-inline: auto;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .section-heading .eyebrow {
+    justify-content: center;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .section-heading h2 {
+    max-width: 940px;
+    margin: 18px auto 0;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .events-page,
+    .activity-page,
+    .contact-page
+  ) .section-heading > p {
+    max-width: 720px;
+    margin: 22px auto 0;
+    padding-bottom: 0;
+    text-align: center;
+  }
+
+  /* Heading + prose layouts only. Structured second columns are left alone. */
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .activity-page,
+    .contact-page
+  ) .page-grid.page-grid--wide:has(> .prose) {
+    display: block;
+    max-width: 1120px;
+    margin-inline: auto;
+    text-align: center;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .activity-page,
+    .contact-page
+  ) .page-grid.page-grid--wide:has(> .prose) > div:first-child {
+    max-width: 1040px;
+    margin-inline: auto;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .activity-page,
+    .contact-page
+  ) .page-grid.page-grid--wide:has(> .prose) .eyebrow {
+    justify-content: center;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .activity-page,
+    .contact-page
+  ) .page-grid.page-grid--wide:has(> .prose) h2 {
+    max-width: 920px;
+    margin: 19px auto 0;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .activity-page,
+    .contact-page
+  ) .page-grid.page-grid--wide:has(> .prose) > .prose {
+    max-width: 720px;
+    margin: 24px auto 0;
+    text-align: center;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .activity-page,
+    .contact-page
+  ) .page-grid.page-grid--wide:has(> .prose) > .prose .text-link {
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  :is(
+    .about-page,
+    .programmes-page,
+    .research-page,
+    .activity-page,
+    .contact-page
+  ) .page-grid.page-grid--wide:has(> .prose) > .prose > .button {
+    width: max-content;
+    margin-inline: auto;
+  }
+
+  /* Keep structured link collections readable after their centered intro. */
+  .about-page .about-next-links,
+  .research-page .research-next-links {
+    margin-top: 34px;
+    text-align: left;
+  }
+
+  /* About team heading has its own historical layout. */
+  .about-page .team-page-section__heading {
+    display: block;
+    max-width: 1120px;
+    margin-inline: auto;
+    padding-bottom: 34px;
+    text-align: center;
+  }
+
+  .about-page .team-page-section__heading .eyebrow {
+    justify-content: center;
+  }
+
+  .about-page .team-page-section__heading h2 {
+    max-width: 900px;
+    margin: 18px auto 0;
+  }
+
+  .about-page .team-page-section__intro {
+    max-width: 700px;
+    margin: 22px auto 0;
+    padding-bottom: 0;
+    text-align: center;
+  }
+}
