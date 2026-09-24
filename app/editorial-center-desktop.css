@@ -320,3 +320,16 @@
     max-width: 17.5ch;
   }
 }
+
+
+/* Keep the Study at CGS desktop headline on two intentional lines. */
+@media (min-width: 821px) {
+  .home-page .programmes--home .study-title__lead {
+    display: block;
+    white-space: nowrap;
+  }
+
+  .home-page .programmes--home .section-heading h2 > em {
+    display: block;
+  }
+}
