@@ -4154,3 +4154,57 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
 .gallery-lightbox__nav {
   font-size: 0;
 }
+
+
+/* Desktop leadership team bridge refinement */
+@media (min-width: 821px) {
+  .home-page .leadership-handoff {
+    display: flex;
+    justify-content: center;
+    margin-top: 42px;
+  }
+
+  .home-page .leadership-team-strip {
+    width: min(100%, 1040px);
+    min-height: 122px;
+    padding: 26px 30px 26px 32px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 48px;
+    align-items: center;
+    border: 1px solid rgb(11 35 72 / 12%);
+    border-left: 4px solid var(--cgs-pink-600);
+    border-radius: 14px;
+    background:
+      linear-gradient(100deg, #fff8fb 0%, #fbfbfd 48%, #f4f9ff 100%);
+    box-shadow: 0 14px 34px rgb(11 35 72 / 4%);
+  }
+
+  .home-page .leadership-team-strip > div {
+    max-width: 700px;
+  }
+
+  .home-page .leadership-team-strip > div > span {
+    font-size: 9px;
+  }
+
+  .home-page .leadership-team-strip strong {
+    margin-top: 7px;
+    font-size: clamp(30px, 2.8vw, 40px);
+    line-height: 1;
+  }
+
+  .home-page .leadership-team-strip p {
+    max-width: 620px;
+    margin-top: 10px;
+    color: var(--cgs-muted);
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .home-page .leadership-team-strip__action {
+    min-height: 48px;
+    padding: 0 20px;
+    font-size: 10px;
+  }
+}
