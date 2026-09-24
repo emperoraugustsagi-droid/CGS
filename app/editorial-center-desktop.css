@@ -298,3 +298,25 @@
     justify-content: center;
   }
 }
+
+
+/* Study at CGS: control the desktop headline composition. */
+@media (min-width: 821px) {
+  .home-page .programmes--home .section-heading h2 {
+    max-width: 18ch;
+    margin: 16px auto 0;
+    text-wrap: balance;
+    line-height: .96;
+  }
+
+  .home-page .programmes--home .section-heading > p {
+    max-width: 720px;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .home-page .programmes--home .section-heading h2 {
+    max-width: 17.5ch;
+  }
+}
