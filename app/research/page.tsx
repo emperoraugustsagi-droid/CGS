@@ -20,7 +20,7 @@ export default function ResearchPage() {
     <div className="research-page">
       <PageIntro eyebrow="Research at CGS" title="Questions grounded in the realities of society.">
         <p>Gender intersects with institutions, opportunity, health, education, leadership and public life. Research helps make those intersections visible and open to careful analysis.</p>
-        <p>CGS approaches inquiry as interdisciplinary work: asking better questions, examining evidence and connecting scholarship to teaching and public conversation.</p>
+        <p>CGS brings disciplines into conversation to examine how gender shapes institutions, opportunity and everyday life—producing evidence that strengthens scholarship, teaching and public understanding.</p>
       </PageIntro>
 
       <section className="section page-visual research-practice" aria-labelledby="research-practice-title">
