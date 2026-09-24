@@ -51,7 +51,7 @@ export default function Home() {
       <HomeHeroCarousel />
       <div className="container proof-strip" aria-label="Centre at a glance">
         <div><ProofIcon name="book"/><strong>{String(programmes.length).padStart(2, "0")}</strong><span data-mobile-label="Postgraduate programmes">Postgraduate programmes</span></div>
-        <div><ProofIcon name="community"/><strong>Certificate + Diploma</strong><span data-mobile-label="Study pathways">Additional Centre learning</span></div>
+        <div><ProofIcon name="community"/><strong>Executive Certificate</strong><span data-mobile-label="Study pathways">Professional Centre learning</span></div>
         <div><ProofIcon name="impact"/><strong>Research · Teaching · Engagement</strong><span data-mobile-label="Public engagement">Knowledge connected to public life</span></div>
         <a className="proof-strip__scroll" href="#about">Scroll to explore <span aria-hidden="true">⌄</span></a>
       </div>
@@ -61,11 +61,11 @@ export default function Home() {
       <div className="container">
         <div className="section-heading">
           <div><Eyebrow>Study at CGS</Eyebrow><h2 id="programmes-title">Choose the level that matches <em>your next step.</em></h2></div>
-          <p>CGS supports different routes into gender study, from certificate and diploma learning to postgraduate and doctoral research.</p>
+          <p>CGS supports different routes into gender study, from executive certificate learning to postgraduate and doctoral research.</p>
         </div>
         <div className="programme-list">
           {[
-            ["01", "Foundation learning", "Certificate & diploma", "Begin with structured Gender Studies learning and confirm current admission arrangements directly with CGS."],
+            ["01", "Executive learning", "Executive Certificate", "Build focused, practical Gender Studies knowledge through an executive learning pathway designed for professionals and institutional leaders."],
             ["02", "Postgraduate transition", "PGD Gender Studies", "Build a postgraduate foundation before progressing further in academic or professional study."],
             ["03", "Advanced study", "Academic & professional masters", "Choose between academic research-oriented study and a professional masters pathway."],
             ["04", "Research degrees", "M.Phil./Ph.D. & Ph.D.", "Progress into advanced research and original doctoral scholarship in Gender Studies."],
