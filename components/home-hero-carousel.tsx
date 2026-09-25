@@ -10,12 +10,6 @@ const leadership = [
     scale: 1,
   },
   {
-    role: "Deputy Vice-Chancellor (Academic)",
-    image: "/assets/nsuk-dvc-academic-maikano-ari.jpeg",
-    objectPosition: "50% 24%",
-    scale: 1.05,
-  },
-  {
     role: "CGS Director",
     image: "/assets/cgs-director-comfort-adokwe.jpeg",
     objectPosition: "50% 18%",
