@@ -93,7 +93,7 @@ export default function AboutPage() {
     <section className="section about-people-leadership" id="people" aria-labelledby="people-title">
       <div className="container about-people-leadership__intro">
         <Eyebrow>People of CGS</Eyebrow>
-        <h2 id="people-title">The people shaping CGS scholarship, programmes and public engagement.</h2>
+        <h2 id="people-title">Leadership connecting scholarship, policy and public life.</h2>
       </div>
 
       <div className="container about-director">
