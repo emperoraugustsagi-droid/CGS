@@ -161,7 +161,7 @@
 @media (max-width: 820px) {
   .hero-institutional .hero__media::before {
     background:
-      linear-gradient(180deg, rgb(3 15 32 / 94%) 0%, rgb(3 15 32 / 85%) 35%, rgb(3 15 32 / 66%) 62%, rgb(3 15 32 / 86%) 100%);
+      linear-gradient(180deg, rgb(3 15 32 / 82%) 0%, rgb(3 15 32 / 72%) 35%, rgb(3 15 32 / 50%) 62%, rgb(3 15 32 / 66%) 100%);
   }
 
   .home-page .hero > .hero-institutional {
@@ -341,27 +341,27 @@
   }
 
   .hero-leadership {
-    width: min(100%, 340px);
-    margin-top: 25px;
+    width: min(100%, 360px);
+    margin-top: 22px;
   }
 
   .hero-leadership__heading {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     font-size: 9.5px;
     line-height: 1.35;
     letter-spacing: .13em;
   }
 
   .hero-leadership__portraits {
-    gap: 12px;
+    gap: 14px;
   }
 
   .hero-leadership__portrait,
   .hero-leadership__image {
-    width: 80px;
+    width: 94px;
   }
 
   .hero-leadership__portrait {
-    flex-basis: 80px;
+    flex-basis: 94px;
   }
 }
