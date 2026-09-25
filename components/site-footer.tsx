@@ -21,7 +21,7 @@ export function SiteFooter() {
           <p>Research, teaching and public engagement focused on gender and society.</p>
         </div>
 
-        <div className="footer__column">
+        <div className="footer__column footer__contact">
           <strong className="footer__label">Contact</strong>
           <address>
             <span>{site.address}</span>
@@ -50,7 +50,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <nav className="footer__column" aria-label="Footer navigation">
+        <nav className="footer__column footer__explore" aria-label="Footer navigation">
           <strong className="footer__label">Explore</strong>
           {navigation.map(([label, href]) => (
             <Link href={href} key={href}>
