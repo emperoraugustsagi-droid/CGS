@@ -70,11 +70,11 @@ const galleryItems = [
     position: "center 22%",
   },
   {
-    src: "/assets/expo-stage.jpg",
-    alt: "A public event stage connected with CGS community participation",
+    src: "/assets/WhatsApp Image 2026-08-04 at 2.03.38 PM.jpeg",
+    alt: "A presenter addressing participants during a university learning session",
     label: "Public engagement",
-    title: "Taking the work beyond the Centre",
-    position: "center 44%",
+    title: "Ideas shared in public",
+    position: "center 46%",
   },
 ] as const;
 
