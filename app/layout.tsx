@@ -19,6 +19,7 @@ import "./event-countdown.css";
 import "./partners-band.css";
 import "./about-page.css";
 import "./programmes-page.css";
+import "./footer-mobile.css";
 import { siteUrl } from "../lib/site-config";
 import { ScrollToTop } from "../components/scroll-to-top";
 import { SiteMotion } from "../components/site-motion";
