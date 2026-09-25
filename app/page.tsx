@@ -17,12 +17,12 @@ const images = {
 };
 
 const researchImages = [
-  { src: "/assets/expo-community.jpg", position: "center 42%" },
+  { src: "/assets/WhatsApp Image 2026-08-04 at 2.03.57 PM (1).jpeg", position: "center 44%" },
   { src: "/assets/cgs-awareness-campaign.jpg", position: "center 38%" },
   { src: "/assets/cgs-academic-event.jpeg", position: "center 24%" },
   { src: "/assets/WhatsApp Image 2026-09-24 at 1.36.46 PM (1).jpeg", position: "center 46%" },
   { src: "/assets/WhatsApp Image 2026-09-24 at 1.36.46 PM (2).jpeg", position: "center 44%" },
-  { src: "/assets/expo-panel.jpg", position: "center 42%" },
+  { src: "/assets/WhatsApp Image 2026-09-24 at 1.36.45 PM.jpeg", position: "center 44%" },
 ] as const;
 
 function Eyebrow({ children, light = false }: { children: React.ReactNode; light?: boolean }) { return <p className={light ? "eyebrow eyebrow--light" : "eyebrow"}>{children}</p>; }
