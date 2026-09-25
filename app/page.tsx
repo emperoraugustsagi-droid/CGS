@@ -20,8 +20,8 @@ const researchImages = [
   { src: "/assets/expo-community.jpg", position: "center 42%" },
   { src: "/assets/cgs-awareness-campaign.jpg", position: "center 38%" },
   { src: "/assets/cgs-academic-event.jpeg", position: "center 24%" },
-  { src: "/assets/cgs-community-portrait.jpeg", position: "center 34%" },
-  { src: "/assets/cgs-speaker-podium.png", position: "center 38%" },
+  { src: "/assets/WhatsApp Image 2026-09-24 at 1.36.46 PM (1).jpeg", position: "center 46%" },
+  { src: "/assets/WhatsApp Image 2026-09-24 at 1.36.46 PM (2).jpeg", position: "center 44%" },
   { src: "/assets/expo-panel.jpg", position: "center 42%" },
 ] as const;
 
