@@ -42,7 +42,7 @@ export function HomeHeroCarousel() {
         </h1>
         <p className="hero__summary">
           A multidisciplinary Centre for research, teaching and public engagement,
-          advancing gender knowledge within the academic community of NSUK.
+          advancing gender knowledge across NSUK and the globe.
         </p>
         <div className="hero__actions">
           <Link className="button button--accent" href="/programmes">
