@@ -9,7 +9,7 @@ import { EventSpotlightPopup } from "../components/event-spotlight-popup";
 import { EventCountdown } from "../components/event-countdown";
 import { HomeGallery } from "../components/home-gallery";
 import { PartnersBand } from "../components/partners-band";
-import { activities, events, programmes, researchAreas } from "./site-data";
+import { activities, events, institutionalContent, programmes, researchAreas } from "./site-data";
 
 const images = {
   director: "/assets/cgs-director-comfort-adokwe.jpeg",
@@ -30,11 +30,6 @@ function ProofIcon({ name }: { name: "book" | "community" | "impact" }) {
   if (name === "book") return <svg className="proof-strip__icon" viewBox="0 0 32 32" aria-hidden="true"><path d="M4 7.5c4.8-1.8 8.8-.9 12 2.3v17.4c-3.2-3.2-7.2-4-12-2.3V7.5Zm24 0c-4.8-1.8-8.8-.9-12 2.3v17.4c3.2-3.2 7.2-4 12-2.3V7.5Z"/></svg>;
   if (name === "community") return <svg className="proof-strip__icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="11" cy="10" r="4"/><circle cx="22.5" cy="11.5" r="3.2"/><path d="M3.5 27v-3.2c0-4 3.3-7.3 7.5-7.3s7.5 3.3 7.5 7.3V27M19.5 18.5c.9-.5 2-.8 3.1-.8 3.3 0 5.9 2.6 5.9 5.8V27"/></svg>;
   return <svg className="proof-strip__icon" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="12"/><path d="M4.5 16h23M16 4c3.4 3.3 5.1 7.3 5.1 12S19.4 24.7 16 28c-3.4-3.3-5.1-7.3-5.1-12S12.6 7.3 16 4Z"/></svg>;
-}
-function MandateIcon({ name }: { name: "research" | "teaching" | "engagement" }) {
-  if (name === "research") return <svg className="mandate-list__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M10 6h17v24H10zM14 11h9M14 16h9M14 21h5"/><circle cx="27" cy="27" r="5"/><path d="m31 31 4 4"/></svg>;
-  if (name === "teaching") return <svg className="mandate-list__icon" viewBox="0 0 40 40" aria-hidden="true"><path d="m4 13 16-7 16 7-16 7L4 13Z"/><path d="M10 16v8c5 4 15 4 20 0v-8M34 14v11"/><circle cx="34" cy="27" r="2"/></svg>;
-  return <svg className="mandate-list__icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="11" r="5"/><circle cx="9" cy="16" r="3.5"/><circle cx="31" cy="16" r="3.5"/><path d="M10 32v-3c0-5 4.4-9 10-9s10 4 10 9v3M3 32v-2c0-3.5 2.7-6.5 6.5-6.5M37 32v-2c0-3.5-2.7-6.5-6.5-6.5"/></svg>;
 }
 function ProgrammeIcon({ index }: { index: number }) {
   const paths = [
@@ -58,7 +53,18 @@ export default function Home() {
         <a className="proof-strip__scroll" href="#about">Scroll to explore <span aria-hidden="true">⌄</span></a>
       </div>
     </section>
-    <section className="section mandate-section" id="about" aria-labelledby="mandate-title"><div className="container mandate-layout"><div className="section-intro"><Eyebrow>Our mandate</Eyebrow><h2 id="mandate-title">Gender shapes institutions. We study how, and what can change.</h2><p>CGS is a multidisciplinary home for advanced study, research and public engagement at Nasarawa State University, Keffi.</p></div><div className="mandate-list">{[["01","Research","Produce evidence.","Examine the policies, systems and social expectations that shape people’s opportunities.","research"],["02","Teaching","Develop expertise.","Equip students and professionals with the knowledge and methods needed for serious gender analysis.","teaching"],["03","Engagement","Inform public life.","Bring scholarship into conversation with communities, institutions, practitioners and policymakers.","engagement"]].map(([i,l,h,p,icon])=><article key={i}><div className="mandate-list__marker"><MandateIcon name={icon as "research" | "teaching" | "engagement"}/><span className="index">{i}</span></div><div><p className="label">{l}</p><h3>{h}</h3><p>{p}</p></div></article>)}</div></div><div className="container mandate-cta"><p>Knowledge. People. <em>A fairer tomorrow.</em></p><Link className="text-link" href="/about">About the Centre <Arrow /></Link></div></section>
+    <section className="section guiding-section" id="about" aria-labelledby="guiding-title">
+      <div className="container">
+        <div className="guiding-section__header">
+          <div><Eyebrow>What guides us</Eyebrow><h2 id="guiding-title">A shared mission and vision for gender equality.</h2></div>
+          <Link className="text-link" href="/about#mission-vision">Our mission and vision <Arrow diagonal /></Link>
+        </div>
+        <div className="guiding-section__grid">
+          <article><h3>Mission</h3><p>{institutionalContent.mission}</p></article>
+          <article><h3>Vision</h3><p>{institutionalContent.vision}</p></article>
+        </div>
+      </div>
+    </section>
     <section className="section programmes programmes--home" id="programmes" aria-labelledby="programmes-title">
       <div className="container">
         <div className="section-heading">
