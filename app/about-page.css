@@ -203,27 +203,27 @@
   }
 
   .about-page .about-hero__copy {
-    text-align: left;
+    text-align: center;
   }
 
   .about-page .about-hero__copy .eyebrow {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .about-page .about-hero__copy h1 {
     max-width: 650px;
-    margin-inline: 0;
+    margin-inline: auto;
     font-size: clamp(45px, 9vw, 58px);
     line-height: .97;
   }
 
   .about-page .about-hero__body {
     max-width: 590px;
-    margin-inline: 0;
+    margin-inline: auto;
   }
 
   .about-page .about-hero__actions {
-    justify-content: flex-start;
+    justify-content: center;
   }
 
   .about-page .about-hero__media {
@@ -286,7 +286,7 @@
 
 @media (max-width: 420px) {
   .about-page .about-hero__actions {
-    align-items: stretch;
+    align-items: center;
     flex-direction: column;
   }
 
