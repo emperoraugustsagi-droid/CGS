@@ -1410,7 +1410,7 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
   border-bottom: 1px solid var(--border-default);
   background: var(--surface-page);
 }
-.contact-route-grid article:nth-child(even) { background: var(--surface-accent-blue); }
+.contact-route-grid article:nth-child(even) { background: var(--surface-page); }
 .contact-route-grid small {
   margin-top: 34px;
   color: var(--color-accent);
@@ -1419,7 +1419,7 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
   letter-spacing: .11em;
   text-transform: uppercase;
 }
-.contact-route-grid article:nth-child(even) small { color: var(--color-info); }
+.contact-route-grid article:nth-child(even) small { color: var(--color-accent); }
 .contact-route-grid h3 {
   max-width: 330px;
   margin-top: 10px;
