@@ -354,12 +354,27 @@
   }
 
   .guiding-section__header {
+    align-items: center;
     gap: 14px;
+    text-align: center;
+  }
+
+  .guiding-section__header > div {
+    width: 100%;
+  }
+
+  .guiding-section__header .eyebrow {
+    justify-content: center;
   }
 
   .guiding-section__header h2 {
+    margin-inline: auto;
     font-size: clamp(35px, 9.5vw, 43px);
     line-height: 1.02;
+  }
+
+  .guiding-section__header .text-link {
+    margin-inline: auto;
   }
 
   .guiding-section__grid {

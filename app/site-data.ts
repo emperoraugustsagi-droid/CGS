@@ -2,7 +2,7 @@ export const site = {
   name: "Centre for Gender Studies",
   shortName: "CGS",
   university: "Nasarawa State University, Keffi",
-  email: "genderstudies@nsuk.edu.ng",
+  email: "nsuk-genderstudies@nsuk.edu.ng",
   phones: ["0803 581 0883", "0906 553 5223"],
   address: "Old Administrative Block / Lincoln Building, NSUK",
   directorLinkedIn: "https://www.linkedin.com/in/adokwe-comfort-392a4223b/",

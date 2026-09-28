@@ -21,6 +21,7 @@ import "./about-page.css";
 import "./programmes-page.css";
 import "./footer-mobile.css";
 import { siteUrl } from "../lib/site-config";
+import { site } from "./site-data";
 import { ScrollToTop } from "../components/scroll-to-top";
 import { SiteMotion } from "../components/site-motion";
 
@@ -51,7 +52,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     name: "Centre for Gender Studies",
     alternateName: "CGS NSUK",
     url: siteUrl,
-    email: "genderstudies@nsuk.edu.ng",
+    email: site.email,
     telephone: ["08035810883", "09065535223"],
     address: { "@type": "PostalAddress", streetAddress: "Old Administrative Block / Lincoln Building", addressCountry: "NG" },
     parentOrganization: { "@type": "CollegeOrUniversity", name: "Nasarawa State University, Keffi" },
