@@ -3114,6 +3114,90 @@ h1, h2, h3 { font-family: var(--font-serif), Georgia, serif; font-weight: 400; l
   }
 }
 
+@media (max-width: 620px) {
+  /* Phone layout: keep the conference teaser compact and remove the empty date column. */
+  .home-event--compact {
+    padding: 32px 0 36px;
+  }
+
+  .home-event-compact {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .home-event-compact__date {
+    grid-row: auto;
+    width: min(100%, 220px);
+    min-height: 0;
+    display: flex;
+    padding: 12px 14px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  .home-event-compact__date strong {
+    font-size: 34px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .home-event-compact__date span {
+    margin-top: 0;
+    font-size: 8px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .home-event-compact__copy h2 {
+    margin-top: 9px;
+    font-size: clamp(31px, 9vw, 38px);
+    line-height: .99;
+  }
+
+  .home-event-compact__copy > p {
+    margin-top: 9px;
+    font-size: 15px;
+    line-height: 1.3;
+  }
+
+  .home-event-compact__copy .event-countdown {
+    margin-top: 13px;
+    margin-bottom: 13px;
+  }
+
+  .home-event-compact__meta {
+    gap: 7px;
+    margin-top: 0;
+    flex-direction: column;
+  }
+
+  .home-event-compact__meta span + span {
+    padding-left: 0;
+  }
+
+  .home-event-compact__meta span + span::before {
+    display: none;
+  }
+
+  .home-event-compact__actions {
+    grid-column: 1;
+    gap: 8px;
+    align-items: stretch;
+    flex-direction: column;
+    margin-top: 2px;
+  }
+
+  .home-event-compact__actions .button {
+    width: 100%;
+  }
+
+  .home-event-compact__actions .text-link {
+    width: max-content;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .event-spotlight,
   .event-spotlight__dialog {
