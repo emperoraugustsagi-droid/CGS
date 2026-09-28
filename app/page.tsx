@@ -57,7 +57,6 @@ export default function Home() {
       <div className="container">
         <div className="guiding-section__header">
           <div><Eyebrow>What guides us</Eyebrow><h2 id="guiding-title">A shared mission and vision for gender equity.</h2></div>
-          <Link className="text-link" href="/about#mission-vision">Our mission and vision <Arrow diagonal /></Link>
         </div>
         <div className="guiding-section__grid">
           <article><h3>Mission</h3><p>{institutionalContent.mission}</p></article>
