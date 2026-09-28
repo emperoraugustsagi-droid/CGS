@@ -23,6 +23,24 @@ export const site = {
   },
 } as const;
 
+export const institutionalContent = {
+  mission:
+    "To advance knowledge, research, and advocacy on gender issues by fostering inclusive education, promoting equity, and empowering communities to challenge discrimination and achieve sustainable development.",
+  vision:
+    "To be a leading academic and research hub that shapes policies, transforms mindsets, and builds a society where gender equality and social justice thrive.",
+  acronym: "GENDER",
+  values: [
+    { title: "G — GROWTH", description: "Encouraging learning, personal development" },
+    { title: "E — EMPOWERMENT", description: "Supporting individuals, amplifying voices" },
+    { title: "N — NETWORKING", description: "Strategic partnerships with academic institutions, government agencies, NGOs, & international bodies" },
+    { title: "D — DIVERSITY", description: "Embracing diversity, promoting equity" },
+    { title: "E — EXCELLENCE", description: "The pursuit of rigorous scholarship, innovative research, & advocacy that advance equity, inclusion, & social justice" },
+    { title: "R — RESPECT", description: "Fostering a safe non-judgmental space" },
+  ],
+  mandate:
+    "The Centre for Gender Studies, Nasarawa State University, Keffi, is mandated to promote teaching, research, and advocacy on gender issues. It advances knowledge, fosters equity, and supports inclusive development by preparing students, engaging communities, and informing policy for a just and gender-balanced society.",
+} as const;
+
 export const programmes = [
   {
     code: "PGD",

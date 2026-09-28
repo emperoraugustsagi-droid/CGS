@@ -15,7 +15,20 @@ function visit(path) {
   }
   if (!extensions.has(path.slice(path.lastIndexOf(".")))) return;
   const contents = readFileSync(path, "utf8");
-  const checkedContents = path.endsWith(".css") ? contents.replace(/\/\*[\s\S]*?\*\//g, "") : contents;
+  let checkedContents = path.endsWith(".css") ? contents.replace(/\/\*[\s\S]*?\*\//g, "") : contents;
+  if (path === join("app", "site-data.ts")) {
+    // The official GENDER headings use an em dash as a required separator.
+    for (const heading of [
+      "G — GROWTH",
+      "E — EMPOWERMENT",
+      "N — NETWORKING",
+      "D — DIVERSITY",
+      "E — EXCELLENCE",
+      "R — RESPECT",
+    ]) {
+      checkedContents = checkedContents.replace(heading, heading.replace(" — ", " "));
+    }
+  }
   if (checkedContents.includes(forbidden)) findings.push(relative(process.cwd(), path));
 }
 

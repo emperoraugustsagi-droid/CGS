@@ -410,7 +410,133 @@
   line-height: 1.58;
 }
 
+/* Official Mission, Vision, Values and Mandate content. */
+.about-page .about-mission-vision {
+  padding-top: 66px;
+  padding-bottom: 68px;
+  background: var(--surface-page);
+  border-bottom: 1px solid rgb(11 35 72 / 7%);
+}
+
+.about-page .about-mission-vision__heading h2 {
+  font-size: clamp(40px, 4vw, 52px);
+}
+
+.about-mission-vision__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 27px;
+}
+
+.about-mission-vision__grid article {
+  padding-top: 17px;
+  border-top: 1px solid var(--border-default);
+}
+
+.about-mission-vision__grid h3 {
+  color: var(--text-primary);
+  font-size: 28px;
+}
+
+.about-mission-vision__grid p {
+  margin-top: 10px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.72;
+}
+
+.about-page .about-values {
+  padding-top: 70px;
+  padding-bottom: 72px;
+  background: var(--surface-paper);
+}
+
+.about-values__intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.about-values__intro h2 {
+  max-width: 650px;
+  margin-top: 14px;
+  color: var(--text-primary);
+  font-size: clamp(40px, 4.2vw, 54px);
+  line-height: 1;
+}
+
+.about-values__word {
+  color: var(--cgs-pink-600);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .28em;
+}
+
+.about-values__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 30px;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border-default);
+}
+
+.about-values__list li {
+  min-height: 128px;
+  padding: 21px 20px 22px 0;
+  border-bottom: 1px solid var(--border-default);
+}
+
+.about-values__list li:nth-child(3n + 2),
+.about-values__list li:nth-child(3n) {
+  padding-left: 20px;
+  border-left: 1px solid var(--border-default);
+}
+
+.about-values__list h3 {
+  color: var(--text-primary);
+  font-family: var(--font-sans), Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  line-height: 1.4;
+}
+
+.about-values__list h3::first-letter {
+  color: var(--cgs-pink-600);
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 39px;
+  font-weight: 400;
+  line-height: .95;
+}
+
+.about-values__list p {
+  margin-top: 7px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.about-page .about-purpose-mandate__copy {
+  max-width: 650px;
+  font-size: 15px;
+}
+
 @media (min-width: 821px) and (max-width: 1080px) {
+  .about-mission-vision__grid {
+    gap: 19px;
+  }
+
+  .about-values__list li {
+    padding-right: 14px;
+  }
+
+  .about-values__list li:nth-child(3n + 2),
+  .about-values__list li:nth-child(3n) {
+    padding-left: 14px;
+  }
+
   .about-page .about-purpose-mandate {
     padding-top: 60px;
     padding-bottom: 62px;
@@ -431,6 +557,35 @@
 }
 
 @media (max-width: 820px) {
+  .about-page .about-mission-vision {
+    padding-top: 54px;
+    padding-bottom: 56px;
+  }
+
+  .about-mission-vision__grid {
+    gap: 22px;
+  }
+
+  .about-page .about-values {
+    padding-top: 58px;
+    padding-bottom: 60px;
+  }
+
+  .about-values__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-values__list li:nth-child(3n + 2),
+  .about-values__list li:nth-child(3n) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .about-values__list li:nth-child(even) {
+    padding-left: 18px;
+    border-left: 1px solid var(--border-default);
+  }
+
   .about-page .about-purpose-mandate {
     padding-top: 52px;
     padding-bottom: 54px;
@@ -477,6 +632,66 @@
 }
 
 @media (max-width: 620px) {
+  .about-page .about-mission-vision {
+    padding-top: 46px;
+    padding-bottom: 48px;
+  }
+
+  .about-page .about-mission-vision__heading h2,
+  .about-values__intro h2 {
+    font-size: clamp(35px, 9.5vw, 43px);
+    line-height: 1.02;
+  }
+
+  .about-mission-vision__grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .about-mission-vision__grid h3 {
+    font-size: 25px;
+  }
+
+  .about-mission-vision__grid p {
+    font-size: 13px;
+    line-height: 1.68;
+  }
+
+  .about-page .about-values {
+    padding-top: 50px;
+    padding-bottom: 52px;
+  }
+
+  .about-values__intro {
+    align-items: start;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .about-values__word {
+    font-size: 12px;
+  }
+
+  .about-values__list {
+    grid-template-columns: 1fr;
+    margin-top: 22px;
+  }
+
+  .about-values__list li,
+  .about-values__list li:nth-child(even) {
+    min-height: 0;
+    padding: 18px 0 19px;
+    border-left: 0;
+  }
+
+  .about-values__list h3::first-letter {
+    font-size: 35px;
+  }
+
+  .about-values__list p {
+    font-size: 13px;
+  }
+
   .about-page .about-purpose-mandate {
     padding-top: 46px;
     padding-bottom: 48px;

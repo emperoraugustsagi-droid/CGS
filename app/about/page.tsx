@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Arrow, ContactBand, Eyebrow, PageShell } from "../../components/page-shell";
-import { researchAreas, site, teamProfiles } from "../site-data";
+import { institutionalContent, researchAreas, site, teamProfiles } from "../site-data";
 
 export const metadata: Metadata = {
   title: "About",
@@ -26,7 +26,7 @@ export default function AboutPage() {
           <div className="about-hero__body">
             <p>{site.name} at {site.university} brings research, teaching and public engagement together to examine how gender shapes institutions, opportunity and everyday life—and to move evidence into public life.</p>
             <div className="about-hero__actions">
-              <Link className="button button--accent" href="#purpose">Discover our purpose <Arrow /></Link>
+              <Link className="button button--accent" href="#mission-vision">Discover our purpose <Arrow /></Link>
               <Link className="text-link text-link--light" href="#people">Meet the people <Arrow diagonal /></Link>
             </div>
           </div>
@@ -38,19 +38,43 @@ export default function AboutPage() {
       </div>
     </section>
 
-    <section className="section about-purpose-mandate" id="purpose" aria-labelledby="purpose-title">
-      <div className="container about-purpose-mandate__intro">
-        <div className="about-purpose-mandate__heading">
-          <Eyebrow>Purpose &amp; mandate</Eyebrow>
-          <h2 id="purpose-title">Understanding gender. Building knowledge. Connecting it to society.</h2>
+    <section className="section about-mission-vision" id="mission-vision" aria-labelledby="mission-vision-title">
+      <div className="container about-mission-vision__intro">
+        <div className="about-mission-vision__heading">
+          <Eyebrow>Mission &amp; Vision</Eyebrow>
+          <h2 id="mission-vision-title">What guides us.</h2>
         </div>
-        <div className="about-purpose-mandate__copy">
-          <p>Gender shapes education, health, work, leadership, family life, institutions and public policy. CGS studies those patterns through evidence, context and careful inquiry.</p>
-          <p>That work comes together through three connected responsibilities: producing knowledge, developing expertise and bringing serious gender analysis into public conversation.</p>
+        <div className="about-mission-vision__grid">
+          <article><h3>Mission</h3><p>{institutionalContent.mission}</p></article>
+          <article><h3>Vision</h3><p>{institutionalContent.vision}</p></article>
         </div>
       </div>
+    </section>
 
-      <div className="container principle-grid about-purpose-mandate__pillars" aria-label="CGS mandate">
+    <section className="section about-values" id="values" aria-labelledby="values-title">
+      <div className="container about-values__intro">
+        <div><Eyebrow>Our values</Eyebrow><h2 id="values-title">The principles behind the work.</h2></div>
+        <p className="about-values__word">{institutionalContent.acronym}</p>
+      </div>
+      <ol className="container about-values__list">
+        {institutionalContent.values.map((value) => (
+          <li key={value.title}>
+            <div><h3>{value.title}</h3><p>{value.description}</p></div>
+          </li>
+        ))}
+      </ol>
+    </section>
+
+    <section className="section about-purpose-mandate" id="mandate" aria-labelledby="mandate-title">
+      <div className="container about-purpose-mandate__intro">
+        <div className="about-purpose-mandate__heading">
+          <Eyebrow>Our mandate</Eyebrow>
+          <h2 id="mandate-title">The work CGS is mandated to do.</h2>
+        </div>
+        <div className="about-purpose-mandate__copy"><p>{institutionalContent.mandate}</p></div>
+      </div>
+
+      <div className="container about-purpose-mandate__pillars" aria-label="Research, teaching and engagement">
         {pillars.map(([number, label, title, text]) => (
           <article key={number}>
             <div className="about-purpose-mandate__pillar-head">
